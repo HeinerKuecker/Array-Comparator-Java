@@ -67,22 +67,22 @@ public class ComparableArrayComparatorTest
 						ArrayNulls.FORBIDDEN ,
 						ElementNulls.FORBIDDEN );
 
-		assertLesser(
+		ArrayComparatorTestUtil.assertLesser(
 				comparator.compare(
 						arr1 ,
 						arr2 ) );
 
-		assertGreater(
+		ArrayComparatorTestUtil.assertGreater(
 				comparator.compare(
 						arr2 ,
 						arr1 ) );
 
-		assertEqual(
+		ArrayComparatorTestUtil.assertEqual(
 				comparator.compare(
 						arr1 ,
 						arr1 ) );
 
-		assertEqual(
+		ArrayComparatorTestUtil.assertEqual(
 				comparator.compare(
 						arr2 ,
 						arr2 ) );
@@ -102,22 +102,22 @@ public class ComparableArrayComparatorTest
 						ArrayNulls.FORBIDDEN ,
 						ElementNulls.FORBIDDEN );
 
-		assertLesser(
+		ArrayComparatorTestUtil.assertLesser(
 				comparator.compare(
 						arr1 ,
 						arr2 ) );
 
-		assertGreater(
+		ArrayComparatorTestUtil.assertGreater(
 				comparator.compare(
 						arr2 ,
 						arr1 ) );
 
-		assertEqual(
+		ArrayComparatorTestUtil.assertEqual(
 				comparator.compare(
 						arr1 ,
 						arr1 ) );
 
-		assertEqual(
+		ArrayComparatorTestUtil.assertEqual(
 				comparator.compare(
 						arr2 ,
 						arr2 ) );
@@ -137,22 +137,22 @@ public class ComparableArrayComparatorTest
 						ArrayNulls.FIRST ,
 						ElementNulls.FORBIDDEN );
 
-		assertLesser(
+		ArrayComparatorTestUtil.assertLesser(
 				comparator.compare(
 						arr1 ,
 						arr2 ) );
 
-		assertGreater(
+		ArrayComparatorTestUtil.assertGreater(
 				comparator.compare(
 						arr2 ,
 						arr1 ) );
 
-		assertEqual(
+		ArrayComparatorTestUtil.assertEqual(
 				comparator.compare(
 						arr1 ,
 						arr1 ) );
 
-		assertEqual(
+		ArrayComparatorTestUtil.assertEqual(
 				comparator.compare(
 						arr2 ,
 						arr2 ) );
@@ -172,22 +172,22 @@ public class ComparableArrayComparatorTest
 						ArrayNulls.FIRST ,
 						ElementNulls.FORBIDDEN );
 
-		assertLesser(
+		ArrayComparatorTestUtil.assertLesser(
 				comparator.compare(
 						arr2 ,
 						arr1 ) );
 
-		assertGreater(
+		ArrayComparatorTestUtil.assertGreater(
 				comparator.compare(
 						arr1 ,
 						arr2 ) );
 
-		assertEqual(
+		ArrayComparatorTestUtil.assertEqual(
 				comparator.compare(
 						arr1 ,
 						arr1 ) );
 
-		assertEqual(
+		ArrayComparatorTestUtil.assertEqual(
 				comparator.compare(
 						arr2 ,
 						arr2 ) );
@@ -207,22 +207,22 @@ public class ComparableArrayComparatorTest
 						ArrayNulls.LAST ,
 						ElementNulls.FORBIDDEN );
 
-		assertLesser(
+		ArrayComparatorTestUtil.assertLesser(
 				comparator.compare(
 						arr1 ,
 						arr2 ) );
 
-		assertGreater(
+		ArrayComparatorTestUtil.assertGreater(
 				comparator.compare(
 						arr2 ,
 						arr1 ) );
 
-		assertEqual(
+		ArrayComparatorTestUtil.assertEqual(
 				comparator.compare(
 						arr1 ,
 						arr1 ) );
 
-		assertEqual(
+		ArrayComparatorTestUtil.assertEqual(
 				comparator.compare(
 						arr2 ,
 						arr2 ) );
@@ -242,22 +242,22 @@ public class ComparableArrayComparatorTest
 						ArrayNulls.LAST ,
 						ElementNulls.FORBIDDEN );
 
-		assertLesser(
+		ArrayComparatorTestUtil.assertLesser(
 				comparator.compare(
 						arr2 ,
 						arr1 ) );
 
-		assertGreater(
+		ArrayComparatorTestUtil.assertGreater(
 				comparator.compare(
 						arr1 ,
 						arr2 ) );
 
-		assertEqual(
+		ArrayComparatorTestUtil.assertEqual(
 				comparator.compare(
 						arr1 ,
 						arr1 ) );
 
-		assertEqual(
+		ArrayComparatorTestUtil.assertEqual(
 				comparator.compare(
 						arr2 ,
 						arr2 ) );
@@ -277,22 +277,22 @@ public class ComparableArrayComparatorTest
 						ArrayNulls.FORBIDDEN ,
 						ElementNulls.FIRST );
 
-		assertLesser(
+		ArrayComparatorTestUtil.assertLesser(
 				comparator.compare(
 						arr1 ,
 						arr2 ) );
 
-		assertGreater(
+		ArrayComparatorTestUtil.assertGreater(
 				comparator.compare(
 						arr2 ,
 						arr1 ) );
 
-		assertEqual(
+		ArrayComparatorTestUtil.assertEqual(
 				comparator.compare(
 						arr1 ,
 						arr1 ) );
 
-		assertEqual(
+		ArrayComparatorTestUtil.assertEqual(
 				comparator.compare(
 						arr2 ,
 						arr2 ) );
@@ -312,22 +312,22 @@ public class ComparableArrayComparatorTest
 						ArrayNulls.FORBIDDEN ,
 						ElementNulls.FIRST );
 
-		assertLesser(
+		ArrayComparatorTestUtil.assertLesser(
 				comparator.compare(
 						arr2 ,
 						arr1 ) );
 
-		assertGreater(
+		ArrayComparatorTestUtil.assertGreater(
 				comparator.compare(
 						arr1 ,
 						arr2 ) );
 
-		assertEqual(
+		ArrayComparatorTestUtil.assertEqual(
 				comparator.compare(
 						arr1 ,
 						arr1 ) );
 
-		assertEqual(
+		ArrayComparatorTestUtil.assertEqual(
 				comparator.compare(
 						arr2 ,
 						arr2 ) );
@@ -347,22 +347,22 @@ public class ComparableArrayComparatorTest
 						ArrayNulls.FORBIDDEN ,
 						ElementNulls.LAST );
 
-		assertLesser(
+		ArrayComparatorTestUtil.assertLesser(
 				comparator.compare(
 						arr1 ,
 						arr2 ) );
 
-		assertGreater(
+		ArrayComparatorTestUtil.assertGreater(
 				comparator.compare(
 						arr2 ,
 						arr1 ) );
 
-		assertEqual(
+		ArrayComparatorTestUtil.assertEqual(
 				comparator.compare(
 						arr1 ,
 						arr1 ) );
 
-		assertEqual(
+		ArrayComparatorTestUtil.assertEqual(
 				comparator.compare(
 						arr2 ,
 						arr2 ) );
@@ -382,22 +382,22 @@ public class ComparableArrayComparatorTest
 						ArrayNulls.FORBIDDEN ,
 						ElementNulls.LAST );
 
-		assertLesser(
+		ArrayComparatorTestUtil.assertLesser(
 				comparator.compare(
 						arr2 ,
 						arr1 ) );
 
-		assertGreater(
+		ArrayComparatorTestUtil.assertGreater(
 				comparator.compare(
 						arr1 ,
 						arr2 ) );
 
-		assertEqual(
+		ArrayComparatorTestUtil.assertEqual(
 				comparator.compare(
 						arr1 ,
 						arr1 ) );
 
-		assertEqual(
+		ArrayComparatorTestUtil.assertEqual(
 				comparator.compare(
 						arr2 ,
 						arr2 ) );
@@ -455,22 +455,22 @@ public class ComparableArrayComparatorTest
 						ArrayNulls.FORBIDDEN ,
 						ElementNulls.FORBIDDEN );
 
-		assertLesser(
+		ArrayComparatorTestUtil.assertLesser(
 				comparator.compare(
 						arr1 ,
 						arr2 ) );
 
-		assertGreater(
+		ArrayComparatorTestUtil.assertGreater(
 				comparator.compare(
 						arr2 ,
 						arr1 ) );
 
-		assertEqual(
+		ArrayComparatorTestUtil.assertEqual(
 				comparator.compare(
 						arr1 ,
 						arr1 ) );
 
-		assertEqual(
+		ArrayComparatorTestUtil.assertEqual(
 				comparator.compare(
 						arr2 ,
 						arr2 ) );
@@ -490,47 +490,25 @@ public class ComparableArrayComparatorTest
 						ArrayNulls.FORBIDDEN ,
 						ElementNulls.FORBIDDEN );
 
-		assertLesser(
+		ArrayComparatorTestUtil.assertLesser(
 				comparator.compare(
 						arr1 ,
 						arr2 ) );
 
-		assertGreater(
+		ArrayComparatorTestUtil.assertGreater(
 				comparator.compare(
 						arr2 ,
 						arr1 ) );
 
-		assertEqual(
+		ArrayComparatorTestUtil.assertEqual(
 				comparator.compare(
 						arr1 ,
 						arr1 ) );
 
-		assertEqual(
+		ArrayComparatorTestUtil.assertEqual(
 				comparator.compare(
 						arr2 ,
 						arr2 ) );
-	}
-
-	static void assertLesser(
-			final int actualCompareResult )
-	{
-		Assert.assertTrue(
-				actualCompareResult < 0 );
-	}
-
-	static void assertGreater(
-			final int actualCompareResult )
-	{
-		Assert.assertTrue(
-				actualCompareResult > 0 );
-	}
-
-	static void assertEqual(
-			final int actualCompareResult )
-	{
-		Assert.assertEquals(
-				0 ,
-				actualCompareResult );
 	}
 
 }
