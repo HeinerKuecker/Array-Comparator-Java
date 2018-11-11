@@ -17,21 +17,21 @@ public class ArrayComparatorTestUtil
 		super();
 	}
 
-	static void assertLesser(
+	public static void assertLesser(
 			final int actualCompareResult )
 	{
 		Assert.assertTrue(
 				actualCompareResult < 0 );
 	}
 
-	static void assertGreater(
+	public static void assertGreater(
 			final int actualCompareResult )
 	{
 		Assert.assertTrue(
 				actualCompareResult > 0 );
 	}
 
-	static void assertEqual(
+	public static void assertEqual(
 			final int actualCompareResult )
 	{
 		Assert.assertEquals(
