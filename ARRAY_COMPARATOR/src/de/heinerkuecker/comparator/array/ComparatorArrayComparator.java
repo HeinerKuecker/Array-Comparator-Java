@@ -43,7 +43,7 @@ implements Comparator<T[]>
 	/**
 	 * {@link Comparator} to compare array elements.
 	 */
-	public final Comparator<T> comparator;
+	public final Comparator<? super T> comparator;
 
 	/**
 	 * Constructor.
@@ -55,7 +55,7 @@ implements Comparator<T[]>
 	public ComparatorArrayComparator(
 			final Nulls arrayNulls ,
 			final Nulls elementNulls ,
-			final Comparator<T> comparator )
+			final Comparator<? super T> comparator )
 	{
 		this.arrayNulls =
 				Objects.requireNonNull(
