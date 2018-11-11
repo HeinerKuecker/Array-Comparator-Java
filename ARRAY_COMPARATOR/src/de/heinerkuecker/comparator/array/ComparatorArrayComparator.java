@@ -74,6 +74,25 @@ implements Comparator<T[]>
 	}
 
 	/**
+	 * Factory method.
+	 *
+	 * @param arrayNulls Control handling of null arrays to sort
+	 * @param elementNulls Control handling of null elements in arrays to sort
+	 * @param comparator Comparator to compare array elements
+	 * @return new instance
+	 */
+	public static <T> ComparatorArrayComparator<T> newComparatorArrayComparator(
+			final Nulls arrayNulls ,
+			final Nulls elementNulls ,
+			final Comparator<? super T> comparator )
+	{
+		return new ComparatorArrayComparator<>(
+				arrayNulls ,
+				elementNulls ,
+				comparator );
+	}
+
+	/**
 	 * @see Comparator#compare
 	 */
 	@Override
