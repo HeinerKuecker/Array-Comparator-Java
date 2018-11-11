@@ -59,8 +59,8 @@ public class ComparableArrayComparatorTest
 	@Test
 	public void testCompare_1()
 	{
-		final String[] arr1 = new String[] { "a" };
-		final String[] arr2 = new String[] { "b" };
+		final String[] arr1 = { "a" };
+		final String[] arr2 = { "b" };
 
 		final ComparableArrayComparator<String> comparator =
 				new ComparableArrayComparator<>(
@@ -94,8 +94,8 @@ public class ComparableArrayComparatorTest
 	@Test
 	public void testCompare_2()
 	{
-		final String[] arr1 = new String[] { "a" , "b" };
-		final String[] arr2 = new String[] { "a" , "c" };
+		final String[] arr1 = { "a" , "b" };
+		final String[] arr2 = { "a" , "c" };
 
 		final ComparableArrayComparator<String> comparator =
 				new ComparableArrayComparator<>(
@@ -130,7 +130,7 @@ public class ComparableArrayComparatorTest
 	public void testCompare_ArrayNulls_FIRST_1()
 	{
 		final String[] arr1 = null;
-		final String[] arr2 = new String[] { "a" , "c" };
+		final String[] arr2 = { "a" , "c" };
 
 		final ComparableArrayComparator<String> comparator =
 				new ComparableArrayComparator<>(
@@ -164,7 +164,7 @@ public class ComparableArrayComparatorTest
 	@Test
 	public void testCompare_ArrayNulls_FIRST_2()
 	{
-		final String[] arr1 = new String[] { "a" , "b" };
+		final String[] arr1 = { "a" , "b" };
 		final String[] arr2 = null;
 
 		final ComparableArrayComparator<String> comparator =
@@ -199,7 +199,7 @@ public class ComparableArrayComparatorTest
 	@Test
 	public void testCompare_ArrayNulls_LAST_1()
 	{
-		final String[] arr1 = new String[] { "a" , "b" };
+		final String[] arr1 = { "a" , "b" };
 		final String[] arr2 = null;
 
 		final ComparableArrayComparator<String> comparator =
@@ -235,7 +235,7 @@ public class ComparableArrayComparatorTest
 	public void testCompare_ArrayNulls_LAST_2()
 	{
 		final String[] arr1 = null;
-		final String[] arr2 = new String[] { "a" , "c" };
+		final String[] arr2 = { "a" , "c" };
 
 		final ComparableArrayComparator<String> comparator =
 				new ComparableArrayComparator<>(
@@ -269,8 +269,8 @@ public class ComparableArrayComparatorTest
 	@Test
 	public void testCompare_ElementNulls_FIRST_1()
 	{
-		final String[] arr1 = new String[] { "a" , null };
-		final String[] arr2 = new String[] { "a" , "c" };
+		final String[] arr1 = { "a" , null };
+		final String[] arr2 = { "a" , "c" };
 
 		final ComparableArrayComparator<String> comparator =
 				new ComparableArrayComparator<>(
@@ -304,8 +304,8 @@ public class ComparableArrayComparatorTest
 	@Test
 	public void testCompare_ElementNulls_FIRST_2()
 	{
-		final String[] arr1 = new String[] { "a" , "b" };
-		final String[] arr2 = new String[] { "a" , null };
+		final String[] arr1 = { "a" , "b" };
+		final String[] arr2 = { "a" , null };
 
 		final ComparableArrayComparator<String> comparator =
 				new ComparableArrayComparator<>(
@@ -339,8 +339,8 @@ public class ComparableArrayComparatorTest
 	@Test
 	public void testCompare_ElementNulls_LAST_1()
 	{
-		final String[] arr1 = new String[] { "a" , "b" };
-		final String[] arr2 = new String[] { "a" , null };
+		final String[] arr1 = { "a" , "b" };
+		final String[] arr2 = { "a" , null };
 
 		final ComparableArrayComparator<String> comparator =
 				new ComparableArrayComparator<>(
@@ -374,8 +374,8 @@ public class ComparableArrayComparatorTest
 	@Test
 	public void testCompare_ElementNulls_LAST_2()
 	{
-		final String[] arr1 = new String[] { "a" , null };
-		final String[] arr2 = new String[] { "a" , "c" };
+		final String[] arr1 = { "a" , null };
+		final String[] arr2 = { "a" , "c" };
 
 		final ComparableArrayComparator<String> comparator =
 				new ComparableArrayComparator<>(
@@ -410,7 +410,7 @@ public class ComparableArrayComparatorTest
 	public void testCompare_Negative_Array_is_null()
 	{
 		final String[] arr1 = null;
-		final String[] arr2 = new String[] { "a" , "c" };
+		final String[] arr2 = { "a" , "c" };
 
 		final ComparableArrayComparator<String> comparator =
 				new ComparableArrayComparator<>(
@@ -428,8 +428,8 @@ public class ComparableArrayComparatorTest
 	@Test( expected = NullPointerException.class )
 	public void testCompare_Negative_Array_element_is_null()
 	{
-		final String[] arr1 = new String[] { "a" , null };
-		final String[] arr2 = new String[] { "a" , "c" };
+		final String[] arr1 = { "a" , null };
+		final String[] arr2 = { "a" , "c" };
 
 		final ComparableArrayComparator<String> comparator =
 				new ComparableArrayComparator<>(
@@ -447,8 +447,8 @@ public class ComparableArrayComparatorTest
 	@Test
 	public void testCompare_Different_array_length_1()
 	{
-		final String[] arr1 = new String[] { "a" , "b" };
-		final String[] arr2 = new String[] { "a" , "b" , "c" };
+		final String[] arr1 = { "a" , "b" };
+		final String[] arr2 = { "a" , "b" , "c" };
 
 		final ComparableArrayComparator<String> comparator =
 				new ComparableArrayComparator<>(
@@ -482,8 +482,8 @@ public class ComparableArrayComparatorTest
 	@Test
 	public void testCompare_Different_array_length_2()
 	{
-		final String[] arr1 = new String[] { "a" , "b" , "c" };
-		final String[] arr2 = new String[] { "a" , "c" };
+		final String[] arr1 = { "a" , "b" , "c" };
+		final String[] arr2 = { "a" , "c" };
 
 		final ComparableArrayComparator<String> comparator =
 				new ComparableArrayComparator<>(
