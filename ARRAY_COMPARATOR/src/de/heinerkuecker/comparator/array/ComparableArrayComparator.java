@@ -41,6 +41,7 @@ implements Comparator<T[]>
 
 	/**
 	 * Constructor.
+	 *
 	 * @param arrayNulls Control handling of null arrays to sort
 	 * @param elementNulls Control handling of null elements in arrays to sort
 	 */
