@@ -17,7 +17,7 @@ public class IntArrayComparatorTest
 	 * Test method for {@link IntArrayComparator#IntArrayComparator}.
 	 */
 	@Test
-	public void testComparableArrayComparator()
+	public void testIntArrayComparator()
 	{
 		final IntArrayComparator comparator =
 				new IntArrayComparator(
@@ -31,7 +31,7 @@ public class IntArrayComparatorTest
 	 * Test method for {@link IntArrayComparator#IntArrayComparator}.
 	 */
 	@Test( expected = NullPointerException.class )
-	public void testComparableArrayComparator_ArrayNulls_is_null()
+	public void testIntArrayComparator_ArrayNulls_is_null()
 	{
 		new IntArrayComparator(
 				// arrayNulls

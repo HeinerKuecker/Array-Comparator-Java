@@ -17,7 +17,7 @@ public class CharArrayComparatorTest
 	 * Test method for {@link CharArrayComparator#CharArrayComparator}.
 	 */
 	@Test
-	public void testComparableArrayComparator()
+	public void testCharArrayComparator()
 	{
 		final CharArrayComparator comparator =
 				new CharArrayComparator(
@@ -31,7 +31,7 @@ public class CharArrayComparatorTest
 	 * Test method for {@link CharArrayComparator#CharArrayComparator}.
 	 */
 	@Test( expected = NullPointerException.class )
-	public void testComparableArrayComparator_ArrayNulls_is_null()
+	public void testCharArrayComparator_ArrayNulls_is_null()
 	{
 		new CharArrayComparator(
 				// arrayNulls

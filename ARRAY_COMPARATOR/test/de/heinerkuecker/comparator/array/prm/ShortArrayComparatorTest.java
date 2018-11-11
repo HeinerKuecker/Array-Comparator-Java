@@ -17,7 +17,7 @@ public class ShortArrayComparatorTest
 	 * Test method for {@link ShortArrayComparator#ShortArrayComparator}.
 	 */
 	@Test
-	public void testComparableArrayComparator()
+	public void testShortArrayComparator()
 	{
 		final ShortArrayComparator comparator =
 				new ShortArrayComparator(
@@ -31,7 +31,7 @@ public class ShortArrayComparatorTest
 	 * Test method for {@link ShortArrayComparator#ShortArrayComparator}.
 	 */
 	@Test( expected = NullPointerException.class )
-	public void testComparableArrayComparator_ArrayNulls_is_null()
+	public void testShortArrayComparator_ArrayNulls_is_null()
 	{
 		new ShortArrayComparator(
 				// arrayNulls

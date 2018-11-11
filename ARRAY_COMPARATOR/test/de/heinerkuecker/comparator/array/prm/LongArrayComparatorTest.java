@@ -17,7 +17,7 @@ public class LongArrayComparatorTest
 	 * Test method for {@link LongArrayComparator#LongArrayComparator}.
 	 */
 	@Test
-	public void testComparableArrayComparator()
+	public void testLongArrayComparator()
 	{
 		final LongArrayComparator comparator =
 				new LongArrayComparator(
@@ -31,7 +31,7 @@ public class LongArrayComparatorTest
 	 * Test method for {@link LongArrayComparator#LongArrayComparator}.
 	 */
 	@Test( expected = NullPointerException.class )
-	public void testComparableArrayComparator_ArrayNulls_is_null()
+	public void testLongArrayComparator_ArrayNulls_is_null()
 	{
 		new LongArrayComparator(
 				// arrayNulls

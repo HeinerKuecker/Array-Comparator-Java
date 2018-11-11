@@ -17,7 +17,7 @@ public class BooleanArrayComparatorTest
 	 * Test method for {@link BooleanArrayComparator#BooleanArrayComparator}.
 	 */
 	@Test
-	public void testComparableArrayComparator()
+	public void testBooleanArrayComparator()
 	{
 		final BooleanArrayComparator comparator =
 				new BooleanArrayComparator(
@@ -31,7 +31,7 @@ public class BooleanArrayComparatorTest
 	 * Test method for {@link BooleanArrayComparator#BooleanArrayComparator}.
 	 */
 	@Test( expected = NullPointerException.class )
-	public void testComparableArrayComparator_ArrayNulls_is_null()
+	public void testBooleanArrayComparator_ArrayNulls_is_null()
 	{
 		new BooleanArrayComparator(
 				// arrayNulls

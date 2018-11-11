@@ -17,7 +17,7 @@ public class ByteArrayComparatorTest
 	 * Test method for {@link ByteArrayComparator#ByteArrayComparator}.
 	 */
 	@Test
-	public void testComparableArrayComparator()
+	public void testByteArrayComparator()
 	{
 		final ByteArrayComparator comparator =
 				new ByteArrayComparator(
@@ -31,7 +31,7 @@ public class ByteArrayComparatorTest
 	 * Test method for {@link ByteArrayComparator#ByteArrayComparator}.
 	 */
 	@Test( expected = NullPointerException.class )
-	public void testComparableArrayComparator_ArrayNulls_is_null()
+	public void testByteArrayComparator_ArrayNulls_is_null()
 	{
 		new ByteArrayComparator(
 				// arrayNulls
