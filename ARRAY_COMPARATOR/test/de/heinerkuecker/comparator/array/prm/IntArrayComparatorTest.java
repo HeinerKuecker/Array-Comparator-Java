@@ -1,10 +1,12 @@
 package de.heinerkuecker.comparator.array.prm;
 
+import java.util.Arrays;
+
 import org.junit.Assert;
 import org.junit.Test;
 
 import de.heinerkuecker.comparator.array.ArrayComparatorTestUtil;
-import de.heinerkuecker.comparator.array.ArrayNulls;
+import de.heinerkuecker.comparator.array.Nulls;
 
 /**
  * JUnit4 test case for class {@link IntArrayComparator}.
@@ -21,7 +23,7 @@ public class IntArrayComparatorTest
 	{
 		final IntArrayComparator comparator =
 				new IntArrayComparator(
-						ArrayNulls.FORBIDDEN );
+						Nulls.FORBIDDEN );
 
 		Assert.assertNotNull(
 				comparator );
@@ -49,7 +51,7 @@ public class IntArrayComparatorTest
 
 		final IntArrayComparator comparator =
 				new IntArrayComparator(
-						ArrayNulls.FORBIDDEN );
+						Nulls.FORBIDDEN );
 
 		ArrayComparatorTestUtil.assertLesser(
 				comparator.compare(
@@ -83,7 +85,7 @@ public class IntArrayComparatorTest
 
 		final IntArrayComparator comparator =
 				new IntArrayComparator(
-						ArrayNulls.FORBIDDEN );
+						Nulls.FORBIDDEN );
 
 		ArrayComparatorTestUtil.assertLesser(
 				comparator.compare(
@@ -117,7 +119,7 @@ public class IntArrayComparatorTest
 
 		final IntArrayComparator comparator =
 				new IntArrayComparator(
-						ArrayNulls.FIRST );
+						Nulls.FIRST );
 
 		ArrayComparatorTestUtil.assertLesser(
 				comparator.compare(
@@ -151,7 +153,7 @@ public class IntArrayComparatorTest
 
 		final IntArrayComparator comparator =
 				new IntArrayComparator(
-						ArrayNulls.FIRST );
+						Nulls.FIRST );
 
 		ArrayComparatorTestUtil.assertLesser(
 				comparator.compare(
@@ -185,7 +187,7 @@ public class IntArrayComparatorTest
 
 		final IntArrayComparator comparator =
 				new IntArrayComparator(
-						ArrayNulls.LAST );
+						Nulls.LAST );
 
 		ArrayComparatorTestUtil.assertLesser(
 				comparator.compare(
@@ -219,7 +221,7 @@ public class IntArrayComparatorTest
 
 		final IntArrayComparator comparator =
 				new IntArrayComparator(
-						ArrayNulls.LAST );
+						Nulls.LAST );
 
 		ArrayComparatorTestUtil.assertLesser(
 				comparator.compare(
@@ -253,7 +255,7 @@ public class IntArrayComparatorTest
 
 		final IntArrayComparator comparator =
 				new IntArrayComparator(
-						ArrayNulls.FORBIDDEN );
+						Nulls.FORBIDDEN );
 
 		comparator.compare(
 				arr1 ,
@@ -271,7 +273,7 @@ public class IntArrayComparatorTest
 
 		final IntArrayComparator comparator =
 				new IntArrayComparator(
-						ArrayNulls.FORBIDDEN );
+						Nulls.FORBIDDEN );
 
 		ArrayComparatorTestUtil.assertLesser(
 				comparator.compare(
@@ -305,7 +307,7 @@ public class IntArrayComparatorTest
 
 		final IntArrayComparator comparator =
 				new IntArrayComparator(
-						ArrayNulls.FORBIDDEN );
+						Nulls.FORBIDDEN );
 
 		ArrayComparatorTestUtil.assertLesser(
 				comparator.compare(
@@ -326,6 +328,33 @@ public class IntArrayComparatorTest
 				comparator.compare(
 						arr2 ,
 						arr2 ) );
+	}
+
+	/**
+	 * Test method for {@link IntArrayComparator#compare}.
+	 */
+	@Test
+	public void testArraysSort()
+	{
+		final int[][] arr = { { 0 , 1 } , { 0 , 0 , 1 } };
+
+		final IntArrayComparator comparator =
+				new IntArrayComparator(
+						Nulls.FORBIDDEN );
+
+		Arrays.sort(
+				arr ,
+				comparator );
+
+		Assert.assertArrayEquals(
+				//expecteds
+				new int[][]
+						{
+							{ 0 , 0 , 1 } ,
+							{ 0 , 1 }
+						} ,
+				//actuals
+				arr );
 	}
 
 }

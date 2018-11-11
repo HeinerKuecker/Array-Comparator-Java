@@ -33,12 +33,12 @@ implements Comparator<T[]>
     /**
 	 * Control handling of null arrays to sort.
 	 */
-	public final ArrayNulls arrayNulls;
+	public final Nulls arrayNulls;
 
 	/**
 	 * Control handling of null elements in arrays to sort.
 	 */
-	public final ElementNulls elementNulls;
+	public final Nulls elementNulls;
 
 	/**
 	 * {@link Comparator} to compare array elements.
@@ -53,8 +53,8 @@ implements Comparator<T[]>
 	 * @param comparator Comparator to compare array elements
 	 */
 	public ComparatorArrayComparator(
-			final ArrayNulls arrayNulls ,
-			final ElementNulls elementNulls ,
+			final Nulls arrayNulls ,
+			final Nulls elementNulls ,
 			final Comparator<T> comparator )
 	{
 		this.arrayNulls =

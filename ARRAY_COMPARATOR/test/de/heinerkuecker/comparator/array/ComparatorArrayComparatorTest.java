@@ -5,9 +5,9 @@ import java.util.Comparator;
 import org.junit.Assert;
 import org.junit.Test;
 
-import de.heinerkuecker.comparator.array.ArrayNulls;
+import de.heinerkuecker.comparator.array.Nulls;
 import de.heinerkuecker.comparator.array.ComparatorArrayComparator;
-import de.heinerkuecker.comparator.array.ElementNulls;
+import de.heinerkuecker.comparator.array.Nulls;
 
 /**
  * JUnit4 test case for class {@link ComparatorArrayComparator}.
@@ -24,8 +24,8 @@ public class ComparatorArrayComparatorTest
 	{
 		final ComparatorArrayComparator<String> comparator =
 				new ComparatorArrayComparator<>(
-						ArrayNulls.FORBIDDEN ,
-						ElementNulls.FORBIDDEN ,
+						Nulls.FORBIDDEN ,
+						Nulls.FORBIDDEN ,
 						Comparator.<String>naturalOrder() );
 
 		Assert.assertNotNull(
@@ -41,7 +41,7 @@ public class ComparatorArrayComparatorTest
 		new ComparatorArrayComparator<>(
 				// arrayNulls
 				null ,
-				ElementNulls.FORBIDDEN ,
+				Nulls.FORBIDDEN ,
 				Comparator.<String>naturalOrder() );
 	}
 
@@ -52,7 +52,7 @@ public class ComparatorArrayComparatorTest
 	public void testComparableArrayComparator_ElementNulls_is_null()
 	{
 		new ComparatorArrayComparator<>(
-				ArrayNulls.FORBIDDEN ,
+				Nulls.FORBIDDEN ,
 				// elementNulls
 				null ,
 				Comparator.<String>naturalOrder() );
@@ -65,8 +65,8 @@ public class ComparatorArrayComparatorTest
 	public void testComparableArrayComparator_Comparator_is_null()
 	{
 		new ComparatorArrayComparator<>(
-				ArrayNulls.FORBIDDEN ,
-				ElementNulls.FORBIDDEN ,
+				Nulls.FORBIDDEN ,
+				Nulls.FORBIDDEN ,
 				// comparator
 				null );
 	}
@@ -82,8 +82,8 @@ public class ComparatorArrayComparatorTest
 
 		final ComparatorArrayComparator<String> comparator =
 				new ComparatorArrayComparator<>(
-						ArrayNulls.FORBIDDEN ,
-						ElementNulls.FORBIDDEN ,
+						Nulls.FORBIDDEN ,
+						Nulls.FORBIDDEN ,
 						Comparator.<String>naturalOrder() );
 
 		ArrayComparatorTestUtil.assertLesser(
@@ -118,8 +118,8 @@ public class ComparatorArrayComparatorTest
 
 		final ComparatorArrayComparator<String> comparator =
 				new ComparatorArrayComparator<>(
-						ArrayNulls.FORBIDDEN ,
-						ElementNulls.FORBIDDEN ,
+						Nulls.FORBIDDEN ,
+						Nulls.FORBIDDEN ,
 						Comparator.<String>naturalOrder() );
 
 		ArrayComparatorTestUtil.assertLesser(
@@ -154,8 +154,8 @@ public class ComparatorArrayComparatorTest
 
 		final ComparatorArrayComparator<String> comparator =
 				new ComparatorArrayComparator<>(
-						ArrayNulls.FIRST ,
-						ElementNulls.FORBIDDEN ,
+						Nulls.FIRST ,
+						Nulls.FORBIDDEN ,
 						Comparator.<String>naturalOrder() );
 
 		ArrayComparatorTestUtil.assertLesser(
@@ -190,8 +190,8 @@ public class ComparatorArrayComparatorTest
 
 		final ComparatorArrayComparator<String> comparator =
 				new ComparatorArrayComparator<>(
-						ArrayNulls.FIRST ,
-						ElementNulls.FORBIDDEN ,
+						Nulls.FIRST ,
+						Nulls.FORBIDDEN ,
 						Comparator.<String>naturalOrder() );
 
 		ArrayComparatorTestUtil.assertLesser(
@@ -226,8 +226,8 @@ public class ComparatorArrayComparatorTest
 
 		final ComparatorArrayComparator<String> comparator =
 				new ComparatorArrayComparator<>(
-						ArrayNulls.LAST ,
-						ElementNulls.FORBIDDEN ,
+						Nulls.LAST ,
+						Nulls.FORBIDDEN ,
 						Comparator.<String>naturalOrder() );
 
 		ArrayComparatorTestUtil.assertLesser(
@@ -262,8 +262,8 @@ public class ComparatorArrayComparatorTest
 
 		final ComparatorArrayComparator<String> comparator =
 				new ComparatorArrayComparator<>(
-						ArrayNulls.LAST ,
-						ElementNulls.FORBIDDEN ,
+						Nulls.LAST ,
+						Nulls.FORBIDDEN ,
 						Comparator.<String>naturalOrder() );
 
 		ArrayComparatorTestUtil.assertLesser(
@@ -298,8 +298,8 @@ public class ComparatorArrayComparatorTest
 
 		final ComparatorArrayComparator<String> comparator =
 				new ComparatorArrayComparator<>(
-						ArrayNulls.FORBIDDEN ,
-						ElementNulls.FIRST ,
+						Nulls.FORBIDDEN ,
+						Nulls.FIRST ,
 						Comparator.<String>naturalOrder() );
 
 		ArrayComparatorTestUtil.assertLesser(
@@ -334,8 +334,8 @@ public class ComparatorArrayComparatorTest
 
 		final ComparatorArrayComparator<String> comparator =
 				new ComparatorArrayComparator<>(
-						ArrayNulls.FORBIDDEN ,
-						ElementNulls.FIRST ,
+						Nulls.FORBIDDEN ,
+						Nulls.FIRST ,
 						Comparator.<String>naturalOrder() );
 
 		ArrayComparatorTestUtil.assertLesser(
@@ -370,8 +370,8 @@ public class ComparatorArrayComparatorTest
 
 		final ComparatorArrayComparator<String> comparator =
 				new ComparatorArrayComparator<>(
-						ArrayNulls.FORBIDDEN ,
-						ElementNulls.LAST ,
+						Nulls.FORBIDDEN ,
+						Nulls.LAST ,
 						Comparator.<String>naturalOrder() );
 
 		ArrayComparatorTestUtil.assertLesser(
@@ -406,8 +406,8 @@ public class ComparatorArrayComparatorTest
 
 		final ComparatorArrayComparator<String> comparator =
 				new ComparatorArrayComparator<>(
-						ArrayNulls.FORBIDDEN ,
-						ElementNulls.LAST ,
+						Nulls.FORBIDDEN ,
+						Nulls.LAST ,
 						Comparator.<String>naturalOrder() );
 
 		ArrayComparatorTestUtil.assertLesser(
@@ -442,8 +442,8 @@ public class ComparatorArrayComparatorTest
 
 		final ComparatorArrayComparator<String> comparator =
 				new ComparatorArrayComparator<>(
-						ArrayNulls.FORBIDDEN ,
-						ElementNulls.FORBIDDEN ,
+						Nulls.FORBIDDEN ,
+						Nulls.FORBIDDEN ,
 						Comparator.<String>naturalOrder() );
 
 		comparator.compare(
@@ -462,8 +462,8 @@ public class ComparatorArrayComparatorTest
 
 		final ComparatorArrayComparator<String> comparator =
 				new ComparatorArrayComparator<>(
-						ArrayNulls.FORBIDDEN ,
-						ElementNulls.FORBIDDEN ,
+						Nulls.FORBIDDEN ,
+						Nulls.FORBIDDEN ,
 						Comparator.<String>naturalOrder() );
 
 		comparator.compare(
@@ -482,8 +482,8 @@ public class ComparatorArrayComparatorTest
 
 		final ComparatorArrayComparator<String> comparator =
 				new ComparatorArrayComparator<>(
-						ArrayNulls.FORBIDDEN ,
-						ElementNulls.FORBIDDEN ,
+						Nulls.FORBIDDEN ,
+						Nulls.FORBIDDEN ,
 						Comparator.<String>naturalOrder() );
 
 		ArrayComparatorTestUtil.assertLesser(
@@ -518,8 +518,8 @@ public class ComparatorArrayComparatorTest
 
 		final ComparatorArrayComparator<String> comparator =
 				new ComparatorArrayComparator<>(
-						ArrayNulls.FORBIDDEN ,
-						ElementNulls.FORBIDDEN ,
+						Nulls.FORBIDDEN ,
+						Nulls.FORBIDDEN ,
 						Comparator.<String>naturalOrder() );
 
 		ArrayComparatorTestUtil.assertLesser(

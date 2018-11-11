@@ -3,7 +3,7 @@ package de.heinerkuecker.comparator.array.prm;
 import java.util.Comparator;
 import java.util.Objects;
 
-import de.heinerkuecker.comparator.array.ArrayNulls;
+import de.heinerkuecker.comparator.array.Nulls;
 
 /**
  * {@link Comparator} for arrays
@@ -35,7 +35,7 @@ implements Comparator<boolean[]>
     /**
 	 * Control handling of null arrays to sort.
 	 */
-	public final ArrayNulls arrayNulls;
+	public final Nulls arrayNulls;
 
 	/**
 	 * Constructor.
@@ -43,7 +43,7 @@ implements Comparator<boolean[]>
 	 * @param arrayNulls Control handling of null arrays to sort
 	 */
 	public BooleanArrayComparator(
-			final ArrayNulls arrayNulls )
+			final Nulls arrayNulls )
 	{
 		this.arrayNulls =
 				Objects.requireNonNull(

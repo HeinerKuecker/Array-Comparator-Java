@@ -32,12 +32,12 @@ implements Comparator<T[]>
     /**
 	 * Control handling of null arrays to sort.
 	 */
-	public final ArrayNulls arrayNulls;
+	public final Nulls arrayNulls;
 
 	/**
 	 * Control handling of null elements in arrays to sort.
 	 */
-	public final ElementNulls elementNulls;
+	public final Nulls elementNulls;
 
 	/**
 	 * Constructor.
@@ -46,8 +46,8 @@ implements Comparator<T[]>
 	 * @param elementNulls Control handling of null elements in arrays to sort
 	 */
 	public ComparableArrayComparator(
-			final ArrayNulls arrayNulls ,
-			final ElementNulls elementNulls )
+			final Nulls arrayNulls ,
+			final Nulls elementNulls )
 	{
 		this.arrayNulls =
 				Objects.requireNonNull(
