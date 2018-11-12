@@ -573,8 +573,6 @@ public class Dim2IntArrayComparatorTest
                         Nulls.FORBIDDEN ,
                         Nulls.FORBIDDEN );
 
-        System.out.println( comparator );
-
         Assert.assertEquals(
                 //expected
                 "Dim2IntArrayComparator[arrayNulls=FORBIDDEN, subArrayNulls=FORBIDDEN]" ,
