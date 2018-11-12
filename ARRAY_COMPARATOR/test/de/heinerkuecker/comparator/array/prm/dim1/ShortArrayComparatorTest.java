@@ -44,6 +44,40 @@ public class ShortArrayComparatorTest
      * Test method for {@link ShortArrayComparator#compare}.
      */
     @Test
+    public void testCompare_0()
+    {
+        final short[] arr1 = { 1 };
+        final short[] arr2 = { 1 };
+
+        final ShortArrayComparator comparator =
+                new ShortArrayComparator(
+                        Nulls.FORBIDDEN );
+
+        ArrayComparatorTestUtil.assertEqual(
+                comparator.compare(
+                        arr1 ,
+                        arr2 ) );
+
+        ArrayComparatorTestUtil.assertEqual(
+                comparator.compare(
+                        arr2 ,
+                        arr1 ) );
+
+        ArrayComparatorTestUtil.assertEqual(
+                comparator.compare(
+                        arr1 ,
+                        arr1 ) );
+
+        ArrayComparatorTestUtil.assertEqual(
+                comparator.compare(
+                        arr2 ,
+                        arr2 ) );
+    }
+
+    /**
+     * Test method for {@link ShortArrayComparator#compare}.
+     */
+    @Test
     public void testCompare_1()
     {
         final short[] arr1 = { 1 };

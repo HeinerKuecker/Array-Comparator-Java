@@ -44,6 +44,40 @@ public class LongArrayComparatorTest
      * Test method for {@link LongArrayComparator#compare}.
      */
     @Test
+    public void testCompare_0()
+    {
+        final long[] arr1 = { 1 };
+        final long[] arr2 = { 1 };
+
+        final LongArrayComparator comparator =
+                new LongArrayComparator(
+                        Nulls.FORBIDDEN );
+
+        ArrayComparatorTestUtil.assertEqual(
+                comparator.compare(
+                        arr1 ,
+                        arr2 ) );
+
+        ArrayComparatorTestUtil.assertEqual(
+                comparator.compare(
+                        arr2 ,
+                        arr1 ) );
+
+        ArrayComparatorTestUtil.assertEqual(
+                comparator.compare(
+                        arr1 ,
+                        arr1 ) );
+
+        ArrayComparatorTestUtil.assertEqual(
+                comparator.compare(
+                        arr2 ,
+                        arr2 ) );
+    }
+
+    /**
+     * Test method for {@link LongArrayComparator#compare}.
+     */
+    @Test
     public void testCompare_1()
     {
         final long[] arr1 = { 1 };

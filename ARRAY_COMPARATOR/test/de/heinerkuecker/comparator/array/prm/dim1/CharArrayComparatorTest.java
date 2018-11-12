@@ -44,6 +44,40 @@ public class CharArrayComparatorTest
      * Test method for {@link CharArrayComparator#compare}.
      */
     @Test
+    public void testCompare_0()
+    {
+        final char[] arr1 = { 'A' };
+        final char[] arr2 = { 'A' };
+
+        final CharArrayComparator comparator =
+                new CharArrayComparator(
+                        Nulls.FORBIDDEN );
+
+        ArrayComparatorTestUtil.assertEqual(
+                comparator.compare(
+                        arr1 ,
+                        arr2 ) );
+
+        ArrayComparatorTestUtil.assertEqual(
+                comparator.compare(
+                        arr2 ,
+                        arr1 ) );
+
+        ArrayComparatorTestUtil.assertEqual(
+                comparator.compare(
+                        arr1 ,
+                        arr1 ) );
+
+        ArrayComparatorTestUtil.assertEqual(
+                comparator.compare(
+                        arr2 ,
+                        arr2 ) );
+    }
+
+    /**
+     * Test method for {@link CharArrayComparator#compare}.
+     */
+    @Test
     public void testCompare_1()
     {
         final char[] arr1 = { 'A' };
