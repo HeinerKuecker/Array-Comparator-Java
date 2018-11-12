@@ -14,7 +14,7 @@ import de.heinerkuecker.comparator.array.Nulls;
  * @author Heiner K&uuml;cker
  */
 public class Dim2ComparableArrayComparator<T extends Comparable<T>>
-extends ComparatorArrayComparator<T[][]>
+extends ComparatorArrayComparator<T[]>
 {
 
 	/**
@@ -29,17 +29,12 @@ extends ComparatorArrayComparator<T[][]>
 			final Nulls subArrayNulls ,
 			final Nulls elementNulls )
 	{
-		// TODO test
-		// TODO null handling params correct???
 		super(
 				arrayNulls ,
 				subArrayNulls ,
-				ComparatorArrayComparator.<T[]>newComparatorArrayComparator(
+				ComparableArrayComparator.<T>newComparableArrayComparator(
 						Nulls.FORBIDDEN ,
-						subArrayNulls ,
-						ComparableArrayComparator.<T>newComparableArrayComparator(
-								Nulls.FORBIDDEN ,
-								elementNulls ) ) );
+						elementNulls ) );
 	}
 
 }

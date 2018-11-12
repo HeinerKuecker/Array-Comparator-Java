@@ -1,5 +1,6 @@
 package de.heinerkuecker.comparator.array;
 
+import java.util.Arrays;
 import java.util.Comparator;
 
 import org.junit.Assert;
@@ -537,6 +538,35 @@ public class ComparatorArrayComparatorTest
 				comparator.compare(
 						arr2 ,
 						arr2 ) );
+	}
+
+	/**
+	 * Test method for {@link ComparatorArrayComparator#compare}.
+	 */
+	@Test
+	public void testArraysSort()
+	{
+		final String[][] arr = { { "a" , "c" } , { "a" , "b" , "c" } };
+
+		final ComparatorArrayComparator<String> comparator =
+				new ComparatorArrayComparator<>(
+						Nulls.FORBIDDEN ,
+						Nulls.FORBIDDEN ,
+						Comparator.<String>naturalOrder() );
+
+		Arrays.sort(
+				arr ,
+				comparator );
+
+		Assert.assertArrayEquals(
+				//expecteds
+				new String[][]
+						{
+							{ "a" , "b" , "c" } ,
+							{ "a" , "c" }
+						} ,
+				//actuals
+				arr );
 	}
 
 }
