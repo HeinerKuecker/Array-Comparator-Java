@@ -1,10 +1,13 @@
-package de.heinerkuecker.comparator.array;
+package de.heinerkuecker.comparator.array.obj;
 
 import java.util.Arrays;
 import java.util.Comparator;
 
 import org.junit.Assert;
 import org.junit.Test;
+
+import de.heinerkuecker.comparator.array.ArrayComparatorTestUtil;
+import de.heinerkuecker.comparator.array.Nulls;
 
 /**
  * JUnit4 test case for class {@link ComparatorArrayComparator}.

@@ -1,7 +1,9 @@
-package de.heinerkuecker.comparator.array;
+package de.heinerkuecker.comparator.array.obj;
 
 import java.util.Comparator;
 import java.util.Objects;
+
+import de.heinerkuecker.comparator.array.Nulls;
 
 /**
  * {@link Comparator} for arrays

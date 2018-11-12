@@ -3,4 +3,4 @@
  *
  * @author Heiner K&uuml;cker
  */
-package de.heinerkuecker.comparator.array.mlt;
+package de.heinerkuecker.comparator.array.obj.mlt;

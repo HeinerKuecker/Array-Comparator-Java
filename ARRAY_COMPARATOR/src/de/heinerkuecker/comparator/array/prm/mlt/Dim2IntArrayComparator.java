@@ -2,8 +2,8 @@ package de.heinerkuecker.comparator.array.prm.mlt;
 
 import java.util.Comparator;
 
-import de.heinerkuecker.comparator.array.ComparatorArrayComparator;
 import de.heinerkuecker.comparator.array.Nulls;
+import de.heinerkuecker.comparator.array.obj.ComparatorArrayComparator;
 import de.heinerkuecker.comparator.array.prm.IntArrayComparator;
 
 /**

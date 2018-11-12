@@ -1,10 +1,10 @@
-package de.heinerkuecker.comparator.array.mlt;
+package de.heinerkuecker.comparator.array.obj.mlt;
 
 import java.util.Comparator;
 
-import de.heinerkuecker.comparator.array.ComparableArrayComparator;
-import de.heinerkuecker.comparator.array.ComparatorArrayComparator;
 import de.heinerkuecker.comparator.array.Nulls;
+import de.heinerkuecker.comparator.array.obj.ComparableArrayComparator;
+import de.heinerkuecker.comparator.array.obj.ComparatorArrayComparator;
 
 /**
  * {@link Comparator} for two dimensional
