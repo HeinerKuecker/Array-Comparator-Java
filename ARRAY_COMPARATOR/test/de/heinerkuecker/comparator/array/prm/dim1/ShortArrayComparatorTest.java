@@ -7,7 +7,6 @@ import org.junit.Test;
 
 import de.heinerkuecker.comparator.array.ArrayComparatorTestUtil;
 import de.heinerkuecker.comparator.array.Nulls;
-import de.heinerkuecker.comparator.array.prm.dim1.ShortArrayComparator;
 
 /**
  * JUnit4 test case for class {@link ShortArrayComparator}.

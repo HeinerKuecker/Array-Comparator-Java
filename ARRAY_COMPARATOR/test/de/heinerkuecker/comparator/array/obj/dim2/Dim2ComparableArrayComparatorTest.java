@@ -8,7 +8,6 @@ import org.junit.Test;
 import de.heinerkuecker.comparator.array.ArrayComparatorTestUtil;
 import de.heinerkuecker.comparator.array.Nulls;
 import de.heinerkuecker.comparator.array.obj.dim1.ComparableArrayComparator;
-import de.heinerkuecker.comparator.array.obj.dim2.Dim2ComparableArrayComparator;
 
 /**
  * JUnit4 test case for class {@link Dim2ComparableArrayComparator}.
