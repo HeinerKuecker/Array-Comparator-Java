@@ -32,62 +32,62 @@ implements Comparator<T[]>
     public static final int EQUAL = 0;
 
     /**
-	 * Control handling of null arrays to sort.
-	 */
-	public final Nulls arrayNulls;
+     * Control handling of null arrays to sort.
+     */
+    public final Nulls arrayNulls;
 
-	/**
-	 * Control handling of null elements in arrays to sort.
-	 */
-	public final Nulls elementNulls;
+    /**
+     * Control handling of null elements in arrays to sort.
+     */
+    public final Nulls elementNulls;
 
-	/**
-	 * Constructor.
-	 *
-	 * @param arrayNulls Control handling of null arrays to sort
-	 * @param elementNulls Control handling of null elements in arrays to sort
-	 */
-	public ComparableArrayComparator(
-			final Nulls arrayNulls ,
-			final Nulls elementNulls )
-	{
-		this.arrayNulls =
-				Objects.requireNonNull(
-						arrayNulls ,
-						"arrayNulls" );
+    /**
+     * Constructor.
+     *
+     * @param arrayNulls Control handling of null arrays to sort
+     * @param elementNulls Control handling of null elements in arrays to sort
+     */
+    public ComparableArrayComparator(
+            final Nulls arrayNulls ,
+            final Nulls elementNulls )
+    {
+        this.arrayNulls =
+                Objects.requireNonNull(
+                        arrayNulls ,
+                        "arrayNulls" );
 
-		this.elementNulls =
-				Objects.requireNonNull(
-						elementNulls ,
-						"elementNulls" );
-	}
+        this.elementNulls =
+                Objects.requireNonNull(
+                        elementNulls ,
+                        "elementNulls" );
+    }
 
-	/**
-	 * Factory method.
-	 *
-	 * @param arrayNulls Control handling of null arrays to sort
-	 * @param elementNulls Control handling of null elements in arrays to sort
-	 * @return new instance
-	 */
-	public static <T extends Comparable<T>> ComparableArrayComparator<T> newComparableArrayComparator(
-			final Nulls arrayNulls ,
-			final Nulls elementNulls )
-	{
-		return new ComparableArrayComparator<T>(
-				arrayNulls ,
-				elementNulls );
-	}
+    /**
+     * Factory method.
+     *
+     * @param arrayNulls Control handling of null arrays to sort
+     * @param elementNulls Control handling of null elements in arrays to sort
+     * @return new instance
+     */
+    public static <T extends Comparable<T>> ComparableArrayComparator<T> newComparableArrayComparator(
+            final Nulls arrayNulls ,
+            final Nulls elementNulls )
+    {
+        return new ComparableArrayComparator<T>(
+                arrayNulls ,
+                elementNulls );
+    }
 
-	/**
-	 * @see Comparator#compare
-	 */
-	@Override
+    /**
+     * @see Comparator#compare
+     */
+    @Override
     @SuppressWarnings( "incomplete-switch" )
-	public int compare(
-			final T[] arr1 ,
-			final T[] arr2 )
-	{
-		// handle null arrays
+    public int compare(
+            final T[] arr1 ,
+            final T[] arr2 )
+    {
+        // handle null arrays
         switch ( this.arrayNulls )
         {
             case FIRST :
@@ -119,16 +119,16 @@ implements Comparator<T[]>
 
         if ( arr1 == arr2 )
         {
-        	return EQUAL;
+            return EQUAL;
         }
 
         final int minArrlength =
                 // Attention, not save for null arrays
-        		Math.min(
-        				arr1.length ,
-        				arr2.length );
+                Math.min(
+                        arr1.length ,
+                        arr2.length );
 
-		for ( int index = 0 ; index < minArrlength ; index++ )
+        for ( int index = 0 ; index < minArrlength ; index++ )
         {
             final T o1 = arr1[ index ];
             final T o2 = arr2[ index ];
@@ -180,7 +180,9 @@ implements Comparator<T[]>
                 }
 
                 default:
+                {
                     throw new IllegalStateException( "unreachable code" );
+                }
             }
 
             if ( indexResult != EQUAL )
@@ -191,9 +193,9 @@ implements Comparator<T[]>
 
         if ( arr1.length != arr2.length )
         {
-        	if ( arr1.length < arr2.length )
+            if ( arr1.length < arr2.length )
                 // the shorter array is lesser
-        	{
+            {
                 return LESSER;
             }
             else
@@ -203,20 +205,20 @@ implements Comparator<T[]>
         }
 
         return EQUAL;
-	}
+    }
 
-	/**
-	 * @see Object#toString()
-	 */
-	@Override
-	public String toString()
-	{
-		return
-				this.getClass().getSimpleName() +
-				"[" +
-				"arrayNulls=" + this.arrayNulls + ", " +
-				"elementNulls=" + this.elementNulls +
-				"]";
-	}
+    /**
+     * @see Object#toString()
+     */
+    @Override
+    public String toString()
+    {
+        return
+                this.getClass().getSimpleName() +
+                "[" +
+                "arrayNulls=" + this.arrayNulls + ", " +
+                "elementNulls=" + this.elementNulls +
+                "]";
+    }
 
 }

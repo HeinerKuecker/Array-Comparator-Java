@@ -17,24 +17,39 @@ public class Dim2ComparableArrayComparator<T extends Comparable<T>>
 extends ComparatorArrayComparator<T[]>
 {
 
-	/**
-	 * Constructor.
-	 *
-	 * @param arrayNulls Control handling of null arrays to sort
-	 * @param subArrayNulls Control handling of null sub arrays to sort
-	 * @param elementNulls Control handling of null elements in arrays to sort
-	 */
-	public Dim2ComparableArrayComparator(
-			final Nulls arrayNulls ,
-			final Nulls subArrayNulls ,
-			final Nulls elementNulls )
-	{
-		super(
-				arrayNulls ,
-				subArrayNulls ,
-				ComparableArrayComparator.<T>newComparableArrayComparator(
-						Nulls.FORBIDDEN ,
-						elementNulls ) );
-	}
+    /**
+     * Constructor.
+     *
+     * @param arrayNulls Control handling of null arrays to sort
+     * @param subArrayNulls Control handling of null sub arrays to sort
+     * @param elementNulls Control handling of null elements in arrays to sort
+     */
+    public Dim2ComparableArrayComparator(
+            final Nulls arrayNulls ,
+            final Nulls subArrayNulls ,
+            final Nulls elementNulls )
+    {
+        super(
+                arrayNulls ,
+                subArrayNulls ,
+                ComparableArrayComparator.<T>newComparableArrayComparator(
+                        Nulls.FORBIDDEN ,
+                        elementNulls ) );
+    }
+
+    /**
+     * @see Object#toString()
+     */
+    @Override
+    public String toString()
+    {
+        return
+                this.getClass().getSimpleName() +
+                "[" +
+                "arrayNulls=" + this.arrayNulls + ", " +
+                "subArrayNulls=" + this.elementNulls + ", " +
+                "elementNulls=" + ( (ComparableArrayComparator<?>) this.comparator ).elementNulls +
+                "]";
+    }
 
 }

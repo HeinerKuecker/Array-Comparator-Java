@@ -540,4 +540,22 @@ public class ComparableArrayComparatorTest
 				arr );
 	}
 
+	/**
+	 * Test method for {@link ComparableArrayComparator#toString}.
+	 */
+	@Test
+	public void testToString()
+	{
+		final ComparableArrayComparator<String> comparator =
+				new ComparableArrayComparator<>(
+						Nulls.FORBIDDEN ,
+						Nulls.FORBIDDEN );
+
+		Assert.assertEquals(
+				//expected
+				"ComparableArrayComparator[arrayNulls=FORBIDDEN, elementNulls=FORBIDDEN]" ,
+				//actual
+				comparator.toString() );
+	}
+
 }

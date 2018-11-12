@@ -15,7 +15,7 @@ public class IntArrayComparator
 implements Comparator<int[]>
 {
 
-	/**
+    /**
      * Result of method {@link #compare} for lesser.
      */
     public static final int LESSER = -1;
@@ -31,34 +31,34 @@ implements Comparator<int[]>
     public static final int EQUAL = 0;
 
     /**
-	 * Control handling of null arrays to sort.
-	 */
-	public final Nulls arrayNulls;
+     * Control handling of null arrays to sort.
+     */
+    public final Nulls arrayNulls;
 
-	/**
-	 * Constructor.
-	 *
-	 * @param arrayNulls Control handling of null arrays to sort
-	 */
-	public IntArrayComparator(
-			final Nulls arrayNulls )
-	{
-		this.arrayNulls =
-				Objects.requireNonNull(
-						arrayNulls ,
-						"arrayNulls" );
-	}
+    /**
+     * Constructor.
+     *
+     * @param arrayNulls Control handling of null arrays to sort
+     */
+    public IntArrayComparator(
+            final Nulls arrayNulls )
+    {
+        this.arrayNulls =
+                Objects.requireNonNull(
+                        arrayNulls ,
+                        "arrayNulls" );
+    }
 
-	/**
-	 * @see Comparator#compare
-	 */
-	@Override
+    /**
+     * @see Comparator#compare
+     */
+    @Override
     @SuppressWarnings( "incomplete-switch" )
-	public int compare(
-			final int[] arr1 ,
-			final int[] arr2 )
-	{
-		// handle null arrays
+    public int compare(
+            final int[] arr1 ,
+            final int[] arr2 )
+    {
+        // handle null arrays
         switch ( this.arrayNulls )
         {
             case FIRST :
@@ -90,16 +90,16 @@ implements Comparator<int[]>
 
         if ( arr1 == arr2 )
         {
-        	return EQUAL;
+            return EQUAL;
         }
 
         final int minArrlength =
                 // Attention, not save for null arrays
-        		Math.min(
-        				arr1.length ,
-        				arr2.length );
+                Math.min(
+                        arr1.length ,
+                        arr2.length );
 
-		for ( int index = 0 ; index < minArrlength ; index++ )
+        for ( int index = 0 ; index < minArrlength ; index++ )
         {
             final int value1 = arr1[ index ];
             final int value2 = arr2[ index ];
@@ -108,15 +108,15 @@ implements Comparator<int[]>
 
             if ( value1 < value2 )
             {
-            	indexResult = LESSER;
+                indexResult = LESSER;
             }
             else if ( value1 > value2 )
             {
-            	indexResult = GREATER;
+                indexResult = GREATER;
             }
             else
             {
-            	indexResult = EQUAL;
+                indexResult = EQUAL;
             }
 
             if ( indexResult != EQUAL )
@@ -127,9 +127,9 @@ implements Comparator<int[]>
 
         if ( arr1.length != arr2.length )
         {
-        	if ( arr1.length < arr2.length )
+            if ( arr1.length < arr2.length )
                 // the shorter array is lesser
-        	{
+            {
                 return LESSER;
             }
             else
@@ -139,19 +139,19 @@ implements Comparator<int[]>
         }
 
         return EQUAL;
-	}
+    }
 
-	/**
-	 * @see Object#toString()
-	 */
-	@Override
-	public String toString()
-	{
-		return
-				this.getClass().getSimpleName() +
-				"[" +
-				"arrayNulls=" + this.arrayNulls + ", " +
-				"]";
-	}
+    /**
+     * @see Object#toString()
+     */
+    @Override
+    public String toString()
+    {
+        return
+                this.getClass().getSimpleName() +
+                "[" +
+                "arrayNulls=" + this.arrayNulls +
+                "]";
+    }
 
 }
