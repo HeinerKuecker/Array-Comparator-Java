@@ -1,5 +1,5 @@
 /**
- * {@link java.util.Comparator} classes for one dimensional object arrays.
+ * {@link java.util.Comparator} classes for one-dimensional object arrays.
  *
  * @author Heiner K&uuml;cker
  */

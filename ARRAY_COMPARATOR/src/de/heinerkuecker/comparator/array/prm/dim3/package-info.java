@@ -1,5 +1,5 @@
 /**
- * {@link java.util.Comparator} classes for multi dimensional primitive arrays.
+ * {@link java.util.Comparator} classes for three-dimensional primitive arrays.
  *
  * @author Heiner K&uuml;cker
  */
