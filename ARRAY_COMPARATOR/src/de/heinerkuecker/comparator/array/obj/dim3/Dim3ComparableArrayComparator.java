@@ -1,4 +1,4 @@
-package de.heinerkuecker.comparator.array.obj.dim2;
+package de.heinerkuecker.comparator.array.obj.dim3;
 
 import java.util.Comparator;
 
