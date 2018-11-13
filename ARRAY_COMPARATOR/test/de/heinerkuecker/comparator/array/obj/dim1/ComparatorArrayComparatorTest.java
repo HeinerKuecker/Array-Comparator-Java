@@ -75,6 +75,42 @@ public class ComparatorArrayComparatorTest
      * Test method for {@link ComparatorArrayComparator#compare}.
      */
     @Test
+    public void testCompare_0()
+    {
+        final String[] arr1 = { "a" };
+        final String[] arr2 = { "a" };
+
+        final ComparatorArrayComparator<String> comparator =
+                new ComparatorArrayComparator<>(
+                        Nulls.FORBIDDEN ,
+                        Nulls.FORBIDDEN ,
+                        Comparator.<String>naturalOrder() );
+
+        ArrayComparatorTestUtil.assertEqual(
+                comparator.compare(
+                        arr1 ,
+                        arr2 ) );
+
+        ArrayComparatorTestUtil.assertEqual(
+                comparator.compare(
+                        arr2 ,
+                        arr1 ) );
+
+        ArrayComparatorTestUtil.assertEqual(
+                comparator.compare(
+                        arr1 ,
+                        arr1 ) );
+
+        ArrayComparatorTestUtil.assertEqual(
+                comparator.compare(
+                        arr2 ,
+                        arr2 ) );
+    }
+
+    /**
+     * Test method for {@link ComparatorArrayComparator#compare}.
+     */
+    @Test
     public void testCompare_1()
     {
         final String[] arr1 = { "a" };
@@ -291,7 +327,43 @@ public class ComparatorArrayComparatorTest
      * Test method for {@link ComparatorArrayComparator#compare}.
      */
     @Test
-    public void testCompare_ElementNulls_FIRST_1()
+    public void testCompare_ElementNulls_FIRST_0_0()
+    {
+        final String[] arr1 = { null , "a" };
+        final String[] arr2 = { null , "b" };
+
+        final ComparatorArrayComparator<String> comparator =
+                new ComparatorArrayComparator<>(
+                        Nulls.FORBIDDEN ,
+                        Nulls.FIRST ,
+                        Comparator.<String>naturalOrder() );
+
+        ArrayComparatorTestUtil.assertLesser(
+                comparator.compare(
+                        arr1 ,
+                        arr2 ) );
+
+        ArrayComparatorTestUtil.assertGreater(
+                comparator.compare(
+                        arr2 ,
+                        arr1 ) );
+
+        ArrayComparatorTestUtil.assertEqual(
+                comparator.compare(
+                        arr1 ,
+                        arr1 ) );
+
+        ArrayComparatorTestUtil.assertEqual(
+                comparator.compare(
+                        arr2 ,
+                        arr2 ) );
+    }
+
+    /**
+     * Test method for {@link ComparatorArrayComparator#compare}.
+     */
+    @Test
+    public void testCompare_ElementNulls_FIRST_1_0()
     {
         final String[] arr1 = { "a" , null };
         final String[] arr2 = { "a" , "c" };
@@ -327,6 +399,42 @@ public class ComparatorArrayComparatorTest
      * Test method for {@link ComparatorArrayComparator#compare}.
      */
     @Test
+    public void testCompare_ElementNulls_FIRST_1_1()
+    {
+        final String[] arr1 = { "a" , "b" };
+        final String[] arr2 = { "a" , null };
+
+        final ComparatorArrayComparator<String> comparator =
+                new ComparatorArrayComparator<>(
+                        Nulls.FORBIDDEN ,
+                        Nulls.FIRST ,
+                        Comparator.<String>naturalOrder() );
+
+        ArrayComparatorTestUtil.assertLesser(
+                comparator.compare(
+                        arr2 ,
+                        arr1 ) );
+
+        ArrayComparatorTestUtil.assertGreater(
+                comparator.compare(
+                        arr1 ,
+                        arr2 ) );
+
+        ArrayComparatorTestUtil.assertEqual(
+                comparator.compare(
+                        arr1 ,
+                        arr1 ) );
+
+        ArrayComparatorTestUtil.assertEqual(
+                comparator.compare(
+                        arr2 ,
+                        arr2 ) );
+    }
+
+    /**
+     * Test method for {@link ComparatorArrayComparator#compare}.
+     */
+    @Test
     public void testCompare_ElementNulls_FIRST_2()
     {
         final String[] arr1 = { "a" , "b" };
@@ -336,6 +444,78 @@ public class ComparatorArrayComparatorTest
                 new ComparatorArrayComparator<>(
                         Nulls.FORBIDDEN ,
                         Nulls.FIRST ,
+                        Comparator.<String>naturalOrder() );
+
+        ArrayComparatorTestUtil.assertLesser(
+                comparator.compare(
+                        arr2 ,
+                        arr1 ) );
+
+        ArrayComparatorTestUtil.assertGreater(
+                comparator.compare(
+                        arr1 ,
+                        arr2 ) );
+
+        ArrayComparatorTestUtil.assertEqual(
+                comparator.compare(
+                        arr1 ,
+                        arr1 ) );
+
+        ArrayComparatorTestUtil.assertEqual(
+                comparator.compare(
+                        arr2 ,
+                        arr2 ) );
+    }
+
+    /**
+     * Test method for {@link ComparatorArrayComparator#compare}.
+     */
+    @Test
+    public void testCompare_ElementNulls_LAST_0_0()
+    {
+        final String[] arr1 = { null , "a" };
+        final String[] arr2 = { null , "b" };
+
+        final ComparatorArrayComparator<String> comparator =
+                new ComparatorArrayComparator<>(
+                        Nulls.FORBIDDEN ,
+                        Nulls.LAST ,
+                        Comparator.<String>naturalOrder() );
+
+        ArrayComparatorTestUtil.assertLesser(
+                comparator.compare(
+                        arr1 ,
+                        arr2 ) );
+
+        ArrayComparatorTestUtil.assertGreater(
+                comparator.compare(
+                        arr2 ,
+                        arr1 ) );
+
+        ArrayComparatorTestUtil.assertEqual(
+                comparator.compare(
+                        arr1 ,
+                        arr1 ) );
+
+        ArrayComparatorTestUtil.assertEqual(
+                comparator.compare(
+                        arr2 ,
+                        arr2 ) );
+    }
+
+    /**
+     * Test method for {@link ComparatorArrayComparator#compare}.
+     */
+    @Test
+    public void testCompare_ElementNulls_LAST_0_1()
+    {
+        final String[] arr1 = { null , "b" };
+        final String[] arr2 = { null , "a" };
+
+        final ComparatorArrayComparator<String> comparator =
+                new ComparatorArrayComparator<>(
+                        Nulls.FORBIDDEN ,
+                        Nulls.LAST ,
                         Comparator.<String>naturalOrder() );
 
         ArrayComparatorTestUtil.assertLesser(

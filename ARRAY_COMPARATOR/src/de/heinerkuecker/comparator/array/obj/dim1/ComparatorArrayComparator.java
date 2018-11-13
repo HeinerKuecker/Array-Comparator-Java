@@ -134,6 +134,7 @@ implements Comparator<T[]>
         }
 
         if ( arr1 == arr2 )
+            // Attention: no check for null
         {
             return EQUAL;
         }
@@ -149,7 +150,7 @@ implements Comparator<T[]>
             final T o1 = arr1[ index ];
             final T o2 = arr2[ index ];
 
-            final int indexResult;
+            final int elementResult;
 
             switch ( this.elementNulls )
             // handle null elements
@@ -158,7 +159,11 @@ implements Comparator<T[]>
                 {
                     if ( o1 == null )
                     {
-                        return ( o2 == null ) ? EQUAL : LESSER;
+                        if ( o2 != null )
+                        {
+                            return LESSER;
+                        }
+                        elementResult = EQUAL;
                     }
                     else if ( o2 == null )
                     {
@@ -166,16 +171,20 @@ implements Comparator<T[]>
                     }
                     else
                     {
-                        indexResult = comparator.compare( o1 , o2 );
+                        elementResult = comparator.compare( o1 , o2 );
                     }
                     break;
                 }
 
                 case LAST :
                 {
-                    if (o1 == null)
+                    if ( o1 == null )
                     {
-                        return ( o2 == null ) ? EQUAL : GREATER;
+                        if ( o2 != null )
+                        {
+                            return GREATER;
+                        }
+                        elementResult = EQUAL;
                     }
                     else if ( o2 == null )
                     {
@@ -183,7 +192,7 @@ implements Comparator<T[]>
                     }
                     else
                     {
-                        indexResult = comparator.compare( o1 , o2 );
+                        elementResult = comparator.compare( o1 , o2 );
                     }
                     break;
                 }
@@ -191,7 +200,7 @@ implements Comparator<T[]>
                 case FORBIDDEN :
                 {
                     // Attention, not save for null array elements
-                    indexResult = comparator.compare( o1 , o2 );
+                    elementResult = comparator.compare( o1 , o2 );
                     break;
                 }
 
@@ -201,9 +210,9 @@ implements Comparator<T[]>
                 }
             }
 
-            if ( indexResult != EQUAL )
+            if ( elementResult != EQUAL )
             {
-                return indexResult;
+                return elementResult;
             }
         }
 
