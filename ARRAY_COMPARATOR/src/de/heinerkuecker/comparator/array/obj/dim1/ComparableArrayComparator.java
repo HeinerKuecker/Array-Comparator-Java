@@ -6,8 +6,10 @@ import java.util.Objects;
 import de.heinerkuecker.comparator.array.Nulls;
 
 /**
- * {@link Comparator} for arrays
- * whose elements are {@link Comparable}.
+ * {@link Comparator} for
+ * one-dimensional arrays
+ * whose elements are
+ * {@link Comparable}.
  *
  * @param <T> Element type of arrays to compare
  * @author Heiner K&uuml;cker
