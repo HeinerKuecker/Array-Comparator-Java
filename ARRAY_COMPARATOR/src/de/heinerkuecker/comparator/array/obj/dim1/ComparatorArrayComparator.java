@@ -131,10 +131,17 @@ implements Comparator<T[]>
                 }
                 break;
             }
+
+            case FORBIDDEN :
+            {
+                if ( arr1 == null || arr2 == null )
+                {
+                    throw new NullPointerException();
+                }
+            }
         }
 
         if ( arr1 == arr2 )
-            // Attention: no check for null
         {
             return EQUAL;
         }
