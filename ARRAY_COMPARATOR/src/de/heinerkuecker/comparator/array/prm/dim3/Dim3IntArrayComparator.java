@@ -7,9 +7,10 @@ import de.heinerkuecker.comparator.array.obj.dim1.ComparatorArrayComparator;
 import de.heinerkuecker.comparator.array.prm.dim2.Dim2IntArrayComparator;
 
 /**
- * {@link Comparator} for three
- * dimensional arrays whose
- * elements are primitive int.
+ * {@link Comparator} for
+ * three-dimensional arrays
+ * whose elements are
+ * primitive int.
  *
  * @author Heiner K&uuml;cker
  */
@@ -23,7 +24,6 @@ extends ComparatorArrayComparator<int[][]>
      * @param arrayNulls Control handling of null arrays to sort
      * @param subArrayNulls Control handling of null sub arrays to sort
      * @param subSubArrayNulls Control handling of null sub sub arrays to sort
-     * @param elementNulls Control handling of null elements in arrays to sort
      */
     public Dim3IntArrayComparator(
             final Nulls arrayNulls ,

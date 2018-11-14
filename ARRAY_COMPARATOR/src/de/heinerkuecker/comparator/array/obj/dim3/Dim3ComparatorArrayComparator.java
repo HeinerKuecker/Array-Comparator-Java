@@ -7,9 +7,11 @@ import de.heinerkuecker.comparator.array.obj.dim1.ComparatorArrayComparator;
 import de.heinerkuecker.comparator.array.obj.dim2.Dim2ComparatorArrayComparator;
 
 /**
- * {@link Comparator} for three dimensional
- * with an dedicated {@link Comparator}
- * for array elements.
+ * {@link Comparator} for
+ * three-dimensional arrays
+ * with an dedicated
+ * {@link Comparator} for
+ * array elements.
  *
  * @param <T> Element type of arrays to compare
  * @author Heiner K&uuml;cker

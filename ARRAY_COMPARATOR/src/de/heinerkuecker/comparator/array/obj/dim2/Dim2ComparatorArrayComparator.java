@@ -6,9 +6,11 @@ import de.heinerkuecker.comparator.array.Nulls;
 import de.heinerkuecker.comparator.array.obj.dim1.ComparatorArrayComparator;
 
 /**
- * {@link Comparator} for two dimensional
- * with an dedicated {@link Comparator}
- * for array elements.
+ * {@link Comparator} for
+ * two-dimensional arrays
+ * with an dedicated
+ * {@link Comparator} for
+ * array elements.
  *
  * @param <T> Element type of arrays to compare
  * @author Heiner K&uuml;cker

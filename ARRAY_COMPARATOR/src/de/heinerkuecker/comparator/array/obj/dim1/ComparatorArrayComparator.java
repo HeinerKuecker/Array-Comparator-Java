@@ -6,9 +6,11 @@ import java.util.Objects;
 import de.heinerkuecker.comparator.array.Nulls;
 
 /**
- * {@link Comparator} for arrays
- * with an dedicated {@link Comparator}
- * for array elements.
+ * {@link Comparator} for
+ * one-dimensional arrays
+ * with an dedicated
+ * {@link Comparator} for
+ * array elements.
  *
  * @param <T> Element type of arrays to compare
  * @author Heiner K&uuml;cker
