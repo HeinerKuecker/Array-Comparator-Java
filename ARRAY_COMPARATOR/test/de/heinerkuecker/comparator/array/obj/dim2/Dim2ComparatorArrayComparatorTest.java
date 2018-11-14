@@ -826,7 +826,7 @@ public class Dim2ComparatorArrayComparatorTest
 
         Assert.assertEquals(
                 //expected
-                "Dim2ComparatorArrayComparator[arrayNulls=FORBIDDEN, subArrayNulls=FORBIDDEN, elementNulls=FORBIDDEN]" ,
+                "Dim2ComparatorArrayComparator[arrayNulls=FORBIDDEN, subArrayNulls=FORBIDDEN, elementNulls=FORBIDDEN, comparator=INSTANCE]" ,
                 //actual
                 comparator.toString() );
     }

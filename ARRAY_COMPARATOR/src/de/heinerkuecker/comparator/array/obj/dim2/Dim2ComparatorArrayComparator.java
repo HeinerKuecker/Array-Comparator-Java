@@ -52,7 +52,8 @@ extends ComparatorArrayComparator<T[]>
                 "[" +
                 "arrayNulls=" + this.arrayNulls + ", " +
                 "subArrayNulls=" + this.elementNulls + ", " +
-                "elementNulls=" + ( (ComparatorArrayComparator<?>) this.comparator ).elementNulls +
+                "elementNulls=" + ( (ComparatorArrayComparator<?>) this.comparator ).elementNulls + ", " +
+                "comparator=" + ( (ComparatorArrayComparator<?>) this.comparator ).comparator +
                 "]";
     }
 
