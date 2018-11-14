@@ -815,7 +815,7 @@ public class Dim2ComparatorArrayComparatorTest
      * Test method for {@link Dim2ComparatorArrayComparator#toString}.
      */
     @Test
-    public void testToString()
+    public void testToString_0()
     {
         final Dim2ComparatorArrayComparator<String> comparator =
                 new Dim2ComparatorArrayComparator<>(
@@ -827,6 +827,46 @@ public class Dim2ComparatorArrayComparatorTest
         Assert.assertEquals(
                 //expected
                 "Dim2ComparatorArrayComparator[arrayNulls=FORBIDDEN, subArrayNulls=FORBIDDEN, elementNulls=FORBIDDEN, comparator=INSTANCE]" ,
+                //actual
+                comparator.toString() );
+    }
+
+    /**
+     * Test method for {@link Dim2ComparatorArrayComparator#toString}.
+     */
+    @Test
+    public void testToString_1()
+    {
+        final Dim2ComparatorArrayComparator<String> comparator =
+                new Dim2ComparatorArrayComparator<>(
+                        Nulls.FORBIDDEN ,
+                        Nulls.FIRST ,
+                        Nulls.LAST ,
+                        Comparator.<String>naturalOrder() );
+
+        Assert.assertEquals(
+                //expected
+                "Dim2ComparatorArrayComparator[arrayNulls=FORBIDDEN, subArrayNulls=FIRST, elementNulls=LAST, comparator=INSTANCE]" ,
+                //actual
+                comparator.toString() );
+    }
+
+    /**
+     * Test method for {@link Dim2ComparatorArrayComparator#toString}.
+     */
+    @Test
+    public void testToString_2()
+    {
+        final Dim2ComparatorArrayComparator<String> comparator =
+                new Dim2ComparatorArrayComparator<>(
+                        Nulls.FIRST ,
+                        Nulls.LAST ,
+                        Nulls.FORBIDDEN ,
+                        Comparator.<String>naturalOrder() );
+
+        Assert.assertEquals(
+                //expected
+                "Dim2ComparatorArrayComparator[arrayNulls=FIRST, subArrayNulls=LAST, elementNulls=FORBIDDEN, comparator=INSTANCE]" ,
                 //actual
                 comparator.toString() );
     }

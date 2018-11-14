@@ -775,7 +775,7 @@ public class Dim2ComparableArrayComparatorTest
      * Test method for {@link Dim2ComparableArrayComparator#toString}.
      */
     @Test
-    public void testToString()
+    public void testToString_0()
     {
         final Dim2ComparableArrayComparator<String> comparator =
                 new Dim2ComparableArrayComparator<>(
@@ -786,6 +786,44 @@ public class Dim2ComparableArrayComparatorTest
         Assert.assertEquals(
                 //expected
                 "Dim2ComparableArrayComparator[arrayNulls=FORBIDDEN, subArrayNulls=FORBIDDEN, elementNulls=FORBIDDEN]" ,
+                //actual
+                comparator.toString() );
+    }
+
+    /**
+     * Test method for {@link Dim2ComparableArrayComparator#toString}.
+     */
+    @Test
+    public void testToString_1()
+    {
+        final Dim2ComparableArrayComparator<String> comparator =
+                new Dim2ComparableArrayComparator<>(
+                        Nulls.FORBIDDEN ,
+                        Nulls.FIRST ,
+                        Nulls.LAST );
+
+        Assert.assertEquals(
+                //expected
+                "Dim2ComparableArrayComparator[arrayNulls=FORBIDDEN, subArrayNulls=FIRST, elementNulls=LAST]" ,
+                //actual
+                comparator.toString() );
+    }
+
+    /**
+     * Test method for {@link Dim2ComparableArrayComparator#toString}.
+     */
+    @Test
+    public void testToString_2()
+    {
+        final Dim2ComparableArrayComparator<String> comparator =
+                new Dim2ComparableArrayComparator<>(
+                        Nulls.FIRST ,
+                        Nulls.LAST ,
+                        Nulls.FORBIDDEN  );
+
+        Assert.assertEquals(
+                //expected
+                "Dim2ComparableArrayComparator[arrayNulls=FIRST, subArrayNulls=LAST, elementNulls=FORBIDDEN]" ,
                 //actual
                 comparator.toString() );
     }

@@ -585,7 +585,7 @@ public class Dim2IntArrayComparatorTest
      * Test method for {@link Dim2IntArrayComparator#toString}.
      */
     @Test
-    public void testToString()
+    public void testToString_0()
     {
         final Dim2IntArrayComparator comparator =
                 new Dim2IntArrayComparator(
@@ -595,6 +595,24 @@ public class Dim2IntArrayComparatorTest
         Assert.assertEquals(
                 //expected
                 "Dim2IntArrayComparator[arrayNulls=FORBIDDEN, subArrayNulls=FORBIDDEN]" ,
+                //actual
+                comparator.toString() );
+    }
+
+    /**
+     * Test method for {@link Dim2IntArrayComparator#toString}.
+     */
+    @Test
+    public void testToString_1()
+    {
+        final Dim2IntArrayComparator comparator =
+                new Dim2IntArrayComparator(
+                        Nulls.FIRST ,
+                        Nulls.LAST );
+
+        Assert.assertEquals(
+                //expected
+                "Dim2IntArrayComparator[arrayNulls=FIRST, subArrayNulls=LAST]" ,
                 //actual
                 comparator.toString() );
     }

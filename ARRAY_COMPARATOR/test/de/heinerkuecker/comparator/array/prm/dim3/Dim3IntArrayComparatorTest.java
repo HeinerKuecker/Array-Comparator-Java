@@ -760,7 +760,7 @@ public class Dim3IntArrayComparatorTest
      * Test method for {@link Dim3IntArrayComparator#toString}.
      */
     @Test
-    public void testToString()
+    public void testToString_0()
     {
         final Dim3IntArrayComparator comparator =
                 new Dim3IntArrayComparator(
@@ -771,6 +771,44 @@ public class Dim3IntArrayComparatorTest
         Assert.assertEquals(
                 //expected
                 "Dim3IntArrayComparator[arrayNulls=FORBIDDEN, subArrayNulls=FORBIDDEN, subSubArrayNulls=FORBIDDEN]" ,
+                //actual
+                comparator.toString() );
+    }
+
+    /**
+     * Test method for {@link Dim3IntArrayComparator#toString}.
+     */
+    @Test
+    public void testToString_1()
+    {
+        final Dim3IntArrayComparator comparator =
+                new Dim3IntArrayComparator(
+                        Nulls.FIRST ,
+                        Nulls.LAST ,
+                        Nulls.FORBIDDEN );
+
+        Assert.assertEquals(
+                //expected
+                "Dim3IntArrayComparator[arrayNulls=FIRST, subArrayNulls=LAST, subSubArrayNulls=FORBIDDEN]" ,
+                //actual
+                comparator.toString() );
+    }
+
+    /**
+     * Test method for {@link Dim3IntArrayComparator#toString}.
+     */
+    @Test
+    public void testToString_2()
+    {
+        final Dim3IntArrayComparator comparator =
+                new Dim3IntArrayComparator(
+                        Nulls.FORBIDDEN ,
+                        Nulls.LAST ,
+                        Nulls.FIRST );
+
+        Assert.assertEquals(
+                //expected
+                "Dim3IntArrayComparator[arrayNulls=FORBIDDEN, subArrayNulls=LAST, subSubArrayNulls=FIRST]" ,
                 //actual
                 comparator.toString() );
     }
