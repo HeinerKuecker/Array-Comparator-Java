@@ -75,7 +75,7 @@ public class ComparatorArrayComparatorTest
      * Test method for {@link ComparatorArrayComparator#compare}.
      */
     @Test
-    public void testCompare_0()
+    public void testCompare_Equal_but_not_self()
     {
         final String[] arr1 = { "a" };
         final String[] arr2 = { "a" };
@@ -95,6 +95,78 @@ public class ComparatorArrayComparatorTest
                 comparator.compare(
                         arr2 ,
                         arr1 ) );
+
+        ArrayComparatorTestUtil.assertEqual(
+                comparator.compare(
+                        arr1 ,
+                        arr1 ) );
+
+        ArrayComparatorTestUtil.assertEqual(
+                comparator.compare(
+                        arr2 ,
+                        arr2 ) );
+    }
+
+    /**
+     * Test method for {@link ComparatorArrayComparator#compare}.
+     */
+    @Test
+    public void testCompare_0_0()
+    {
+        final String[] arr1 = {};
+        final String[] arr2 = { "b" };
+
+        final ComparatorArrayComparator<String> comparator =
+                new ComparatorArrayComparator<>(
+                        Nulls.FORBIDDEN ,
+                        Nulls.FORBIDDEN ,
+                        Comparator.<String>naturalOrder() );
+
+        ArrayComparatorTestUtil.assertLesser(
+                comparator.compare(
+                        arr1 ,
+                        arr2 ) );
+
+        ArrayComparatorTestUtil.assertGreater(
+                comparator.compare(
+                        arr2 ,
+                        arr1 ) );
+
+        ArrayComparatorTestUtil.assertEqual(
+                comparator.compare(
+                        arr1 ,
+                        arr1 ) );
+
+        ArrayComparatorTestUtil.assertEqual(
+                comparator.compare(
+                        arr2 ,
+                        arr2 ) );
+    }
+
+    /**
+     * Test method for {@link ComparatorArrayComparator#compare}.
+     */
+    @Test
+    public void testCompare_0_1()
+    {
+        final String[] arr1 = { "a" };
+        final String[] arr2 = {};
+
+        final ComparatorArrayComparator<String> comparator =
+                new ComparatorArrayComparator<>(
+                        Nulls.FORBIDDEN ,
+                        Nulls.FORBIDDEN ,
+                        Comparator.<String>naturalOrder() );
+
+        ArrayComparatorTestUtil.assertLesser(
+                comparator.compare(
+                        arr2 ,
+                        arr1 ) );
+
+        ArrayComparatorTestUtil.assertGreater(
+                comparator.compare(
+                        arr1 ,
+                        arr2 ) );
 
         ArrayComparatorTestUtil.assertEqual(
                 comparator.compare(
