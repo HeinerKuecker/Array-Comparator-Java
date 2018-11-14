@@ -36,6 +36,7 @@ extends ComparatorArrayComparator<int[][]>
                 arrayNulls ,
                 subArrayNulls ,
                 new Dim2IntArrayComparator(
+                        // null arrays already handled by one level higher
                         Nulls.FORBIDDEN ,
                         subSubArrayNulls ) );
     }
