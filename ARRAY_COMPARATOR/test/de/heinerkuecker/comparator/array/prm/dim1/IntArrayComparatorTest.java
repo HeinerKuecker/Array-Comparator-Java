@@ -44,6 +44,108 @@ public class IntArrayComparatorTest
      * Test method for {@link IntArrayComparator#compare}.
      */
     @Test
+    public void testCompare_Equal_but_not_self()
+    {
+        final int[] arr1 = { 1 };
+        final int[] arr2 = { 1 };
+
+        final IntArrayComparator comparator =
+                new IntArrayComparator(
+                        Nulls.FORBIDDEN );
+
+        ArrayComparatorTestUtil.assertEqual(
+                comparator.compare(
+                        arr1 ,
+                        arr2 ) );
+
+        ArrayComparatorTestUtil.assertEqual(
+                comparator.compare(
+                        arr2 ,
+                        arr1 ) );
+
+        ArrayComparatorTestUtil.assertEqual(
+                comparator.compare(
+                        arr1 ,
+                        arr1 ) );
+
+        ArrayComparatorTestUtil.assertEqual(
+                comparator.compare(
+                        arr2 ,
+                        arr2 ) );
+    }
+
+    /**
+     * Test method for {@link IntArrayComparator#compare}.
+     */
+    @Test
+    public void testCompare_0_0()
+    {
+        final int[] arr1 = {};
+        final int[] arr2 = { 2 };
+
+        final IntArrayComparator comparator =
+                new IntArrayComparator(
+                        Nulls.FORBIDDEN );
+
+        ArrayComparatorTestUtil.assertLesser(
+                comparator.compare(
+                        arr1 ,
+                        arr2 ) );
+
+        ArrayComparatorTestUtil.assertGreater(
+                comparator.compare(
+                        arr2 ,
+                        arr1 ) );
+
+        ArrayComparatorTestUtil.assertEqual(
+                comparator.compare(
+                        arr1 ,
+                        arr1 ) );
+
+        ArrayComparatorTestUtil.assertEqual(
+                comparator.compare(
+                        arr2 ,
+                        arr2 ) );
+    }
+
+    /**
+     * Test method for {@link IntArrayComparator#compare}.
+     */
+    @Test
+    public void testCompare_0_1()
+    {
+        final int[] arr1 = { 1 };
+        final int[] arr2 = {};
+
+        final IntArrayComparator comparator =
+                new IntArrayComparator(
+                        Nulls.FORBIDDEN );
+
+        ArrayComparatorTestUtil.assertLesser(
+                comparator.compare(
+                        arr2 ,
+                        arr1 ) );
+
+        ArrayComparatorTestUtil.assertGreater(
+                comparator.compare(
+                        arr1 ,
+                        arr2 ) );
+
+        ArrayComparatorTestUtil.assertEqual(
+                comparator.compare(
+                        arr1 ,
+                        arr1 ) );
+
+        ArrayComparatorTestUtil.assertEqual(
+                comparator.compare(
+                        arr2 ,
+                        arr2 ) );
+    }
+
+    /**
+     * Test method for {@link IntArrayComparator#compare}.
+     */
+    @Test
     public void testCompare_1()
     {
         final int[] arr1 = { 1 };

@@ -44,7 +44,7 @@ public class LongArrayComparatorTest
      * Test method for {@link LongArrayComparator#compare}.
      */
     @Test
-    public void testCompare_0()
+    public void testCompare_Equal_but_not_self()
     {
         final long[] arr1 = { 1 };
         final long[] arr2 = { 1 };
@@ -62,6 +62,74 @@ public class LongArrayComparatorTest
                 comparator.compare(
                         arr2 ,
                         arr1 ) );
+
+        ArrayComparatorTestUtil.assertEqual(
+                comparator.compare(
+                        arr1 ,
+                        arr1 ) );
+
+        ArrayComparatorTestUtil.assertEqual(
+                comparator.compare(
+                        arr2 ,
+                        arr2 ) );
+    }
+
+    /**
+     * Test method for {@link LongArrayComparator#compare}.
+     */
+    @Test
+    public void testCompare_0_0()
+    {
+        final long[] arr1 = {};
+        final long[] arr2 = { 2 };
+
+        final LongArrayComparator comparator =
+                new LongArrayComparator(
+                        Nulls.FORBIDDEN );
+
+        ArrayComparatorTestUtil.assertLesser(
+                comparator.compare(
+                        arr1 ,
+                        arr2 ) );
+
+        ArrayComparatorTestUtil.assertGreater(
+                comparator.compare(
+                        arr2 ,
+                        arr1 ) );
+
+        ArrayComparatorTestUtil.assertEqual(
+                comparator.compare(
+                        arr1 ,
+                        arr1 ) );
+
+        ArrayComparatorTestUtil.assertEqual(
+                comparator.compare(
+                        arr2 ,
+                        arr2 ) );
+    }
+
+    /**
+     * Test method for {@link LongArrayComparator#compare}.
+     */
+    @Test
+    public void testCompare_0_1()
+    {
+        final long[] arr1 = { 1 };
+        final long[] arr2 = {};
+
+        final LongArrayComparator comparator =
+                new LongArrayComparator(
+                        Nulls.FORBIDDEN );
+
+        ArrayComparatorTestUtil.assertLesser(
+                comparator.compare(
+                        arr2 ,
+                        arr1 ) );
+
+        ArrayComparatorTestUtil.assertGreater(
+                comparator.compare(
+                        arr1 ,
+                        arr2 ) );
 
         ArrayComparatorTestUtil.assertEqual(
                 comparator.compare(

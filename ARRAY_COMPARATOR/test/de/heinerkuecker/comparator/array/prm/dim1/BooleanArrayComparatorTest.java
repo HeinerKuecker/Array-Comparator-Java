@@ -44,7 +44,7 @@ public class BooleanArrayComparatorTest
      * Test method for {@link BooleanArrayComparator#compare}.
      */
     @Test
-    public void testCompare_0_0()
+    public void testCompare_Equal_but_not_self_false()
     {
         final boolean[] arr1 = { false };
         final boolean[] arr2 = { false };
@@ -78,7 +78,7 @@ public class BooleanArrayComparatorTest
      * Test method for {@link BooleanArrayComparator#compare}.
      */
     @Test
-    public void testCompare_0_1()
+    public void testCompare_Equal_but_not_self_true()
     {
         final boolean[] arr1 = { true };
         final boolean[] arr2 = { true };
@@ -96,6 +96,74 @@ public class BooleanArrayComparatorTest
                 comparator.compare(
                         arr2 ,
                         arr1 ) );
+
+        ArrayComparatorTestUtil.assertEqual(
+                comparator.compare(
+                        arr1 ,
+                        arr1 ) );
+
+        ArrayComparatorTestUtil.assertEqual(
+                comparator.compare(
+                        arr2 ,
+                        arr2 ) );
+    }
+
+    /**
+     * Test method for {@link BooleanArrayComparator#compare}.
+     */
+    @Test
+    public void testCompare_0_0()
+    {
+        final boolean[] arr1 = {};
+        final boolean[] arr2 = { true };
+
+        final BooleanArrayComparator comparator =
+                new BooleanArrayComparator(
+                        Nulls.FORBIDDEN );
+
+        ArrayComparatorTestUtil.assertLesser(
+                comparator.compare(
+                        arr1 ,
+                        arr2 ) );
+
+        ArrayComparatorTestUtil.assertGreater(
+                comparator.compare(
+                        arr2 ,
+                        arr1 ) );
+
+        ArrayComparatorTestUtil.assertEqual(
+                comparator.compare(
+                        arr1 ,
+                        arr1 ) );
+
+        ArrayComparatorTestUtil.assertEqual(
+                comparator.compare(
+                        arr2 ,
+                        arr2 ) );
+    }
+
+    /**
+     * Test method for {@link BooleanArrayComparator#compare}.
+     */
+    @Test
+    public void testCompare_0_1()
+    {
+        final boolean[] arr1 = { false };
+        final boolean[] arr2 = {};
+
+        final BooleanArrayComparator comparator =
+                new BooleanArrayComparator(
+                        Nulls.FORBIDDEN );
+
+        ArrayComparatorTestUtil.assertLesser(
+                comparator.compare(
+                        arr2 ,
+                        arr1 ) );
+
+        ArrayComparatorTestUtil.assertGreater(
+                comparator.compare(
+                        arr1 ,
+                        arr2 ) );
 
         ArrayComparatorTestUtil.assertEqual(
                 comparator.compare(
