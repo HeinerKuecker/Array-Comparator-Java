@@ -1,4 +1,4 @@
-package de.heinerkuecker.comparator.array.obj.dim1;
+package de.heinerkuecker.comparator.array.prm.dim3;
 
 import java.util.Arrays;
 
@@ -7,22 +7,24 @@ import org.junit.Test;
 
 import de.heinerkuecker.comparator.array.ArrayComparatorTestUtil;
 import de.heinerkuecker.comparator.array.Nulls;
+import de.heinerkuecker.comparator.array.obj.dim1.ComparableArrayComparator;
 
 /**
- * JUnit4 test case for class {@link ComparableArrayComparator}.
+ * JUnit4 test case for class {@link Dim3IntArrayComparator}.
  *
  * @author Heiner K&uuml;cker
  */
-public class ComparableArrayComparatorTest
+public class Dim3IntArrayComparatorTest
 {
     /**
-     * Test method for {@link ComparableArrayComparator#ComparableArrayComparator}.
+     * Test method for {@link Dim3IntArrayComparator#Dim3IntArrayComparator}.
      */
     @Test
-    public void testComparableArrayComparator()
+    public void testDim3IntArrayComparator()
     {
-        final ComparableArrayComparator<String> comparator =
-                new ComparableArrayComparator<>(
+        final Dim3IntArrayComparator comparator =
+                new Dim3IntArrayComparator(
+                        Nulls.FORBIDDEN ,
                         Nulls.FORBIDDEN ,
                         Nulls.FORBIDDEN );
 
@@ -31,40 +33,56 @@ public class ComparableArrayComparatorTest
     }
 
     /**
-     * Test method for {@link ComparableArrayComparator#ComparableArrayComparator}.
+     * Test method for {@link Dim3IntArrayComparator#Dim3IntArrayComparator}.
      */
     @Test( expected = NullPointerException.class )
-    public void testComparableArrayComparator_arrayNulls_is_null()
+    public void testDim3IntArrayComparator_arrayNulls_is_null()
     {
-        new ComparableArrayComparator<>(
+        new Dim3IntArrayComparator(
                 // arrayNulls
+                null ,
+                Nulls.FORBIDDEN ,
+                Nulls.FORBIDDEN );
+    }
+
+    /**
+     * Test method for {@link Dim3IntArrayComparator#Dim3IntArrayComparator}.
+     */
+    @Test( expected = NullPointerException.class )
+    public void testDim3IntArrayComparator_subArrayNulls_is_null()
+    {
+        new Dim3IntArrayComparator(
+                Nulls.FORBIDDEN ,
+                // subArrayNulls
                 null ,
                 Nulls.FORBIDDEN );
     }
 
     /**
-     * Test method for {@link ComparableArrayComparator#ComparableArrayComparator}.
+     * Test method for {@link Dim3IntArrayComparator#Dim3IntArrayComparator}.
      */
     @Test( expected = NullPointerException.class )
-    public void testComparableArrayComparator_elementNulls_is_null()
+    public void testDim3IntArrayComparator_subSubArrayNulls_is_null()
     {
-        new ComparableArrayComparator<>(
+        new Dim3IntArrayComparator(
                 Nulls.FORBIDDEN ,
-                // elementNulls
+                Nulls.FORBIDDEN ,
+                // subSubArrayNulls
                 null );
     }
 
     /**
-     * Test method for {@link ComparableArrayComparator#compare}.
+     * Test method for {@link Dim3IntArrayComparator#compare}.
      */
     @Test
     public void testCompare_1()
     {
-        final String[] arr1 = { "a" };
-        final String[] arr2 = { "b" };
+        final int[][][] arr1 = { { { 1 } } };
+        final int[][][] arr2 = { { { 2 } } };
 
-        final ComparableArrayComparator<String> comparator =
-                new ComparableArrayComparator<>(
+        final Dim3IntArrayComparator comparator =
+                new Dim3IntArrayComparator(
+                        Nulls.FORBIDDEN ,
                         Nulls.FORBIDDEN ,
                         Nulls.FORBIDDEN );
 
@@ -90,16 +108,17 @@ public class ComparableArrayComparatorTest
     }
 
     /**
-     * Test method for {@link ComparableArrayComparator#compare}.
+     * Test method for {@link Dim3IntArrayComparator#compare}.
      */
     @Test
     public void testCompare_2()
     {
-        final String[] arr1 = { "a" , "b" };
-        final String[] arr2 = { "a" , "c" };
+        final int[][][] arr1 = { { { 1 } } , { { 2 } } };
+        final int[][][] arr2 = { { { 1 } } , { { 3 } } };
 
-        final ComparableArrayComparator<String> comparator =
-                new ComparableArrayComparator<>(
+        final Dim3IntArrayComparator comparator =
+                new Dim3IntArrayComparator(
+                        Nulls.FORBIDDEN ,
                         Nulls.FORBIDDEN ,
                         Nulls.FORBIDDEN );
 
@@ -125,17 +144,54 @@ public class ComparableArrayComparatorTest
     }
 
     /**
-     * Test method for {@link ComparableArrayComparator#compare}.
+     * Test method for {@link Dim3IntArrayComparator#compare}.
+     */
+    @Test
+    public void testCompare_3()
+    {
+        final int[][][] arr1 = { { { 1 , 2 } } };
+        final int[][][] arr2 = { { { 1 , 3 } } };
+
+        final Dim3IntArrayComparator comparator =
+                new Dim3IntArrayComparator(
+                        Nulls.FORBIDDEN ,
+                        Nulls.FORBIDDEN ,
+                        Nulls.FORBIDDEN );
+
+        ArrayComparatorTestUtil.assertLesser(
+                comparator.compare(
+                        arr1 ,
+                        arr2 ) );
+
+        ArrayComparatorTestUtil.assertGreater(
+                comparator.compare(
+                        arr2 ,
+                        arr1 ) );
+
+        ArrayComparatorTestUtil.assertEqual(
+                comparator.compare(
+                        arr1 ,
+                        arr1 ) );
+
+        ArrayComparatorTestUtil.assertEqual(
+                comparator.compare(
+                        arr2 ,
+                        arr2 ) );
+    }
+
+    /**
+     * Test method for {@link Dim3IntArrayComparator#compare}.
      */
     @Test
     public void testCompare_arrayNulls_FIRST_1()
     {
-        final String[] arr1 = null;
-        final String[] arr2 = { "a" , "c" };
+        final int[][][] arr1 = null;
+        final int[][][] arr2 = { { { 1 , 3 } } };
 
-        final ComparableArrayComparator<String> comparator =
-                new ComparableArrayComparator<>(
+        final Dim3IntArrayComparator comparator =
+                new Dim3IntArrayComparator(
                         Nulls.FIRST ,
+                        Nulls.FORBIDDEN ,
                         Nulls.FORBIDDEN );
 
         ArrayComparatorTestUtil.assertLesser(
@@ -160,16 +216,161 @@ public class ComparableArrayComparatorTest
     }
 
     /**
-     * Test method for {@link ComparableArrayComparator#compare}.
+     * Test method for {@link Dim3IntArrayComparator#compare}.
      */
     @Test
     public void testCompare_arrayNulls_FIRST_2()
     {
-        final String[] arr1 = { "a" , "b" };
-        final String[] arr2 = null;
+        final int[][][] arr1 = { { { 1 , 2 } } };
+        final int[][][] arr2 = null;
 
-        final ComparableArrayComparator<String> comparator =
-                new ComparableArrayComparator<>(
+        final Dim3IntArrayComparator comparator =
+                new Dim3IntArrayComparator(
+                        Nulls.FIRST ,
+                        Nulls.FORBIDDEN ,
+                        Nulls.FORBIDDEN );
+
+        ArrayComparatorTestUtil.assertLesser(
+                comparator.compare(
+                        arr2 ,
+                        arr1 ) );
+
+        ArrayComparatorTestUtil.assertGreater(
+                comparator.compare(
+                        arr1 ,
+                        arr2 ) );
+
+        ArrayComparatorTestUtil.assertEqual(
+                comparator.compare(
+                        arr1 ,
+                        arr1 ) );
+
+        ArrayComparatorTestUtil.assertEqual(
+                comparator.compare(
+                        arr2 ,
+                        arr2 ) );
+    }
+
+    /**
+     * Test method for {@link Dim3IntArrayComparator#compare}.
+     */
+    @Test
+    public void testCompare_arrayNulls_LAST_1()
+    {
+        final int[][][] arr1 = { { { 1 , 2 } } };
+        final int[][][] arr2 = null;
+
+        final Dim3IntArrayComparator comparator =
+                new Dim3IntArrayComparator(
+                        Nulls.LAST ,
+                        Nulls.FORBIDDEN ,
+                        Nulls.FORBIDDEN );
+
+        ArrayComparatorTestUtil.assertLesser(
+                comparator.compare(
+                        arr1 ,
+                        arr2 ) );
+
+        ArrayComparatorTestUtil.assertGreater(
+                comparator.compare(
+                        arr2 ,
+                        arr1 ) );
+
+        ArrayComparatorTestUtil.assertEqual(
+                comparator.compare(
+                        arr1 ,
+                        arr1 ) );
+
+        ArrayComparatorTestUtil.assertEqual(
+                comparator.compare(
+                        arr2 ,
+                        arr2 ) );
+    }
+
+    /**
+     * Test method for {@link Dim3IntArrayComparator#compare}.
+     */
+    @Test
+    public void testCompare_arrayNulls_LAST_2()
+    {
+        final int[][][] arr1 = null;
+        final int[][][] arr2 = { { { 1 , 3 } } };
+
+        final Dim3IntArrayComparator comparator =
+                new Dim3IntArrayComparator(
+                        Nulls.LAST ,
+                        Nulls.FORBIDDEN ,
+                        Nulls.FORBIDDEN );
+
+        ArrayComparatorTestUtil.assertLesser(
+                comparator.compare(
+                        arr2 ,
+                        arr1 ) );
+
+        ArrayComparatorTestUtil.assertGreater(
+                comparator.compare(
+                        arr1 ,
+                        arr2 ) );
+
+        ArrayComparatorTestUtil.assertEqual(
+                comparator.compare(
+                        arr1 ,
+                        arr1 ) );
+
+        ArrayComparatorTestUtil.assertEqual(
+                comparator.compare(
+                        arr2 ,
+                        arr2 ) );
+    }
+
+    /**
+     * Test method for {@link ComparableArrayComparator#compare}.
+     */
+    @Test
+    public void testCompare_subArrayNulls_FIRST_1()
+    {
+        final int[][][] arr1 = { { { 1 } } , null };
+        final int[][][] arr2 = { { { 1 } } , { { 3 } } };
+
+        final Dim3IntArrayComparator comparator =
+                new Dim3IntArrayComparator(
+                        Nulls.FORBIDDEN ,
+                        Nulls.FIRST ,
+                        Nulls.FORBIDDEN );
+
+        ArrayComparatorTestUtil.assertLesser(
+                comparator.compare(
+                        arr1 ,
+                        arr2 ) );
+
+        ArrayComparatorTestUtil.assertGreater(
+                comparator.compare(
+                        arr2 ,
+                        arr1 ) );
+
+        ArrayComparatorTestUtil.assertEqual(
+                comparator.compare(
+                        arr1 ,
+                        arr1 ) );
+
+        ArrayComparatorTestUtil.assertEqual(
+                comparator.compare(
+                        arr2 ,
+                        arr2 ) );
+    }
+
+    /**
+     * Test method for {@link ComparableArrayComparator#compare}.
+     */
+    @Test
+    public void testCompare_subArrayNulls_FIRST_2()
+    {
+        final int[][][] arr1 = { { { 1 } } , { { 2 } } };
+        final int[][][] arr2 = { { { 1 } } , null };
+
+        final Dim3IntArrayComparator comparator =
+                new Dim3IntArrayComparator(
+                        Nulls.FORBIDDEN ,
                         Nulls.FIRST ,
                         Nulls.FORBIDDEN );
 
@@ -198,13 +399,14 @@ public class ComparableArrayComparatorTest
      * Test method for {@link ComparableArrayComparator#compare}.
      */
     @Test
-    public void testCompare_arrayNulls_LAST_1()
+    public void testCompare_subArrayNulls_LAST_1()
     {
-        final String[] arr1 = { "a" , "b" };
-        final String[] arr2 = null;
+        final int[][][] arr1 = { { { 1 } } , { { 2 } } };
+        final int[][][] arr2 = { { { 1 } } , null };
 
-        final ComparableArrayComparator<String> comparator =
-                new ComparableArrayComparator<>(
+        final Dim3IntArrayComparator comparator =
+                new Dim3IntArrayComparator(
+                        Nulls.FORBIDDEN ,
                         Nulls.LAST ,
                         Nulls.FORBIDDEN );
 
@@ -233,13 +435,14 @@ public class ComparableArrayComparatorTest
      * Test method for {@link ComparableArrayComparator#compare}.
      */
     @Test
-    public void testCompare_arrayNulls_LAST_2()
+    public void testCompare_subArrayNulls_LAST_2()
     {
-        final String[] arr1 = null;
-        final String[] arr2 = { "a" , "c" };
+        final int[][][] arr1 = { { { 1 } } , null };
+        final int[][][] arr2 = { { { 1 } } , { { 3 } } };
 
-        final ComparableArrayComparator<String> comparator =
-                new ComparableArrayComparator<>(
+        final Dim3IntArrayComparator comparator =
+                new Dim3IntArrayComparator(
+                        Nulls.FORBIDDEN ,
                         Nulls.LAST ,
                         Nulls.FORBIDDEN );
 
@@ -268,13 +471,14 @@ public class ComparableArrayComparatorTest
      * Test method for {@link ComparableArrayComparator#compare}.
      */
     @Test
-    public void testCompare_elementNulls_FIRST_0_0()
+    public void testCompare_subSubArrayNulls_FIRST_1()
     {
-        final String[] arr1 = { null , "a" };
-        final String[] arr2 = { null , "b" };
+        final int[][][] arr1 = { { { 1 } } , { null } };
+        final int[][][] arr2 = { { { 1 } } , { { 3 } } };
 
-        final ComparableArrayComparator<String> comparator =
-                new ComparableArrayComparator<>(
+        final Dim3IntArrayComparator comparator =
+                new Dim3IntArrayComparator(
+                        Nulls.FORBIDDEN ,
                         Nulls.FORBIDDEN ,
                         Nulls.FIRST );
 
@@ -303,48 +507,14 @@ public class ComparableArrayComparatorTest
      * Test method for {@link ComparableArrayComparator#compare}.
      */
     @Test
-    public void testCompare_elementNulls_FIRST_1_0()
+    public void testCompare_subSubArrayNulls_FIRST_2()
     {
-        final String[] arr1 = { "a" , null };
-        final String[] arr2 = { "a" , "b" };
+        final int[][][] arr1 = { { { 1 } } , { { 2 } } };
+        final int[][][] arr2 = { { { 1 } } , { null } };
 
-        final ComparableArrayComparator<String> comparator =
-                new ComparableArrayComparator<>(
+        final Dim3IntArrayComparator comparator =
+                new Dim3IntArrayComparator(
                         Nulls.FORBIDDEN ,
-                        Nulls.FIRST );
-
-        ArrayComparatorTestUtil.assertLesser(
-                comparator.compare(
-                        arr1 ,
-                        arr2 ) );
-
-        ArrayComparatorTestUtil.assertGreater(
-                comparator.compare(
-                        arr2 ,
-                        arr1 ) );
-
-        ArrayComparatorTestUtil.assertEqual(
-                comparator.compare(
-                        arr1 ,
-                        arr1 ) );
-
-        ArrayComparatorTestUtil.assertEqual(
-                comparator.compare(
-                        arr2 ,
-                        arr2 ) );
-    }
-
-    /**
-     * Test method for {@link ComparableArrayComparator#compare}.
-     */
-    @Test
-    public void testCompare_elementNulls_FIRST_1_1()
-    {
-        final String[] arr1 = { "a" , "b" };
-        final String[] arr2 = { "a" , null };
-
-        final ComparableArrayComparator<String> comparator =
-                new ComparableArrayComparator<>(
                         Nulls.FORBIDDEN ,
                         Nulls.FIRST );
 
@@ -373,48 +543,14 @@ public class ComparableArrayComparatorTest
      * Test method for {@link ComparableArrayComparator#compare}.
      */
     @Test
-    public void testCompare_elementNulls_FIRST_2()
+    public void testCompare_subSubArrayNulls_LAST_1()
     {
-        final String[] arr1 = { "a" , "b" };
-        final String[] arr2 = { "a" , null };
+        final int[][][] arr1 = { { { 1 } } , { { 2 } } };
+        final int[][][] arr2 = { { { 1 } } , { null } };
 
-        final ComparableArrayComparator<String> comparator =
-                new ComparableArrayComparator<>(
+        final Dim3IntArrayComparator comparator =
+                new Dim3IntArrayComparator(
                         Nulls.FORBIDDEN ,
-                        Nulls.FIRST );
-
-        ArrayComparatorTestUtil.assertLesser(
-                comparator.compare(
-                        arr2 ,
-                        arr1 ) );
-
-        ArrayComparatorTestUtil.assertGreater(
-                comparator.compare(
-                        arr1 ,
-                        arr2 ) );
-
-        ArrayComparatorTestUtil.assertEqual(
-                comparator.compare(
-                        arr1 ,
-                        arr1 ) );
-
-        ArrayComparatorTestUtil.assertEqual(
-                comparator.compare(
-                        arr2 ,
-                        arr2 ) );
-    }
-
-    /**
-     * Test method for {@link ComparableArrayComparator#compare}.
-     */
-    @Test
-    public void testCompare_elementNulls_LAST_0_0()
-    {
-        final String[] arr1 = { null , "a" };
-        final String[] arr2 = { null , "b" };
-
-        final ComparableArrayComparator<String> comparator =
-                new ComparableArrayComparator<>(
                         Nulls.FORBIDDEN ,
                         Nulls.LAST );
 
@@ -443,13 +579,14 @@ public class ComparableArrayComparatorTest
      * Test method for {@link ComparableArrayComparator#compare}.
      */
     @Test
-    public void testCompare_elementNulls_LAST_0_1()
+    public void testCompare_subSubArrayNulls_LAST_2()
     {
-        final String[] arr1 = { null , "b" };
-        final String[] arr2 = { null , "a" };
+        final int[][][] arr1 = { { { 1 } } , { null } };
+        final int[][][] arr2 = { { { 1 } } , { { 3 } } };
 
-        final ComparableArrayComparator<String> comparator =
-                new ComparableArrayComparator<>(
+        final Dim3IntArrayComparator comparator =
+                new Dim3IntArrayComparator(
+                        Nulls.FORBIDDEN ,
                         Nulls.FORBIDDEN ,
                         Nulls.LAST );
 
@@ -475,86 +612,17 @@ public class ComparableArrayComparatorTest
     }
 
     /**
-     * Test method for {@link ComparableArrayComparator#compare}.
-     */
-    @Test
-    public void testCompare_elementNulls_LAST_1()
-    {
-        final String[] arr1 = { "a" , "b" };
-        final String[] arr2 = { "a" , null };
-
-        final ComparableArrayComparator<String> comparator =
-                new ComparableArrayComparator<>(
-                        Nulls.FORBIDDEN ,
-                        Nulls.LAST );
-
-        ArrayComparatorTestUtil.assertLesser(
-                comparator.compare(
-                        arr1 ,
-                        arr2 ) );
-
-        ArrayComparatorTestUtil.assertGreater(
-                comparator.compare(
-                        arr2 ,
-                        arr1 ) );
-
-        ArrayComparatorTestUtil.assertEqual(
-                comparator.compare(
-                        arr1 ,
-                        arr1 ) );
-
-        ArrayComparatorTestUtil.assertEqual(
-                comparator.compare(
-                        arr2 ,
-                        arr2 ) );
-    }
-
-    /**
-     * Test method for {@link ComparableArrayComparator#compare}.
-     */
-    @Test
-    public void testCompare_elementNulls_LAST_2()
-    {
-        final String[] arr1 = { "a" , null };
-        final String[] arr2 = { "a" , "b" };
-
-        final ComparableArrayComparator<String> comparator =
-                new ComparableArrayComparator<>(
-                        Nulls.FORBIDDEN ,
-                        Nulls.LAST );
-
-        ArrayComparatorTestUtil.assertLesser(
-                comparator.compare(
-                        arr2 ,
-                        arr1 ) );
-
-        ArrayComparatorTestUtil.assertGreater(
-                comparator.compare(
-                        arr1 ,
-                        arr2 ) );
-
-        ArrayComparatorTestUtil.assertEqual(
-                comparator.compare(
-                        arr1 ,
-                        arr1 ) );
-
-        ArrayComparatorTestUtil.assertEqual(
-                comparator.compare(
-                        arr2 ,
-                        arr2 ) );
-    }
-
-    /**
-     * Test method for {@link ComparableArrayComparator#compare}.
+     * Test method for {@link Dim3IntArrayComparator#compare}.
      */
     @Test( expected = NullPointerException.class )
     public void testCompare_Negative_Array_is_null()
     {
-        final String[] arr1 = null;
-        final String[] arr2 = { "a" , "c" };
+        final int[][][] arr1 = null;
+        final int[][][] arr2 = { { { 1 } } , { { 3 } } };
 
-        final ComparableArrayComparator<String> comparator =
-                new ComparableArrayComparator<>(
+        final Dim3IntArrayComparator comparator =
+                new Dim3IntArrayComparator(
+                        Nulls.FORBIDDEN ,
                         Nulls.FORBIDDEN ,
                         Nulls.FORBIDDEN );
 
@@ -564,16 +632,17 @@ public class ComparableArrayComparatorTest
     }
 
     /**
-     * Test method for {@link ComparableArrayComparator#compare}.
+     * Test method for {@link Dim3IntArrayComparator#compare}.
      */
     @Test( expected = NullPointerException.class )
-    public void testCompare_Negative_Array_element_is_null()
+    public void testCompare_Negative_subArray_is_null()
     {
-        final String[] arr1 = { "a" , null };
-        final String[] arr2 = { "a" , "c" };
+        final int[][][] arr1 = { null };
+        final int[][][] arr2 = { { { 1 } } , { { 3 } } };
 
-        final ComparableArrayComparator<String> comparator =
-                new ComparableArrayComparator<>(
+        final Dim3IntArrayComparator comparator =
+                new Dim3IntArrayComparator(
+                        Nulls.FORBIDDEN ,
                         Nulls.FORBIDDEN ,
                         Nulls.FORBIDDEN );
 
@@ -583,16 +652,17 @@ public class ComparableArrayComparatorTest
     }
 
     /**
-     * Test method for {@link ComparableArrayComparator#compare}.
+     * Test method for {@link Dim3IntArrayComparator#compare}.
      */
     @Test
     public void testCompare_Different_array_length_1()
     {
-        final String[] arr1 = { "a" , "b" };
-        final String[] arr2 = { "a" , "b" , "c" };
+        final int[][][] arr1 = { { { 1 } } , { { 2 } } };
+        final int[][][] arr2 = { { { 1 } } , { { 2 } } , { { 3 } } };
 
-        final ComparableArrayComparator<String> comparator =
-                new ComparableArrayComparator<>(
+        final Dim3IntArrayComparator comparator =
+                new Dim3IntArrayComparator(
+                        Nulls.FORBIDDEN ,
                         Nulls.FORBIDDEN ,
                         Nulls.FORBIDDEN );
 
@@ -618,16 +688,17 @@ public class ComparableArrayComparatorTest
     }
 
     /**
-     * Test method for {@link ComparableArrayComparator#compare}.
+     * Test method for {@link Dim3IntArrayComparator#compare}.
      */
     @Test
     public void testCompare_Different_array_length_2()
     {
-        final String[] arr1 = { "a" , "b" , "c" };
-        final String[] arr2 = { "a" , "c" };
+        final int[][][] arr1 = { { { 1 } } , { { 2 } } , { { 3 } } };
+        final int[][][] arr2 = { { { 1 } } , { { 3 } } };
 
-        final ComparableArrayComparator<String> comparator =
-                new ComparableArrayComparator<>(
+        final Dim3IntArrayComparator comparator =
+                new Dim3IntArrayComparator(
+                        Nulls.FORBIDDEN ,
                         Nulls.FORBIDDEN ,
                         Nulls.FORBIDDEN );
 
@@ -653,15 +724,20 @@ public class ComparableArrayComparatorTest
     }
 
     /**
-     * Test method for {@link ComparableArrayComparator#compare}.
+     * Test method for {@link Dim3IntArrayComparator#compare}.
      */
     @Test
     public void testArraysSort()
     {
-        final String[][] arr = { { "a" , "c" } , { "a" , "b" , "c" } };
+        final int[][][][] arr =
+            {
+                { { { 1 } , { 2 } } , { { 1 , 1 , 2 } } } ,
+                { { { 0 } , { 1 } } , { { 0 , 0 , 1 } } }
+            };
 
-        final ComparableArrayComparator<String> comparator =
-                new ComparableArrayComparator<>(
+        final Dim3IntArrayComparator comparator =
+                new Dim3IntArrayComparator(
+                        Nulls.FORBIDDEN ,
                         Nulls.FORBIDDEN ,
                         Nulls.FORBIDDEN );
 
@@ -671,29 +747,30 @@ public class ComparableArrayComparatorTest
 
         Assert.assertArrayEquals(
                 //expecteds
-                new String[][]
+                new int[][][][]
                         {
-                            { "a" , "b" , "c" } ,
-                            { "a" , "c" }
+                            { { { 0 } , { 1 } } , { { 0 , 0 , 1 } } } ,
+                            { { { 1 } , { 2 } } , { { 1 , 1 , 2 } } }
                         } ,
                 //actuals
                 arr );
     }
 
     /**
-     * Test method for {@link ComparableArrayComparator#toString}.
+     * Test method for {@link Dim3IntArrayComparator#toString}.
      */
     @Test
     public void testToString()
     {
-        final ComparableArrayComparator<String> comparator =
-                new ComparableArrayComparator<>(
+        final Dim3IntArrayComparator comparator =
+                new Dim3IntArrayComparator(
+                        Nulls.FORBIDDEN ,
                         Nulls.FORBIDDEN ,
                         Nulls.FORBIDDEN );
 
         Assert.assertEquals(
                 //expected
-                "ComparableArrayComparator[arrayNulls=FORBIDDEN, elementNulls=FORBIDDEN]" ,
+                "Dim3IntArrayComparator[arrayNulls=FORBIDDEN, subArrayNulls=FORBIDDEN, subSubArrayNulls=FORBIDDEN]" ,
                 //actual
                 comparator.toString() );
     }

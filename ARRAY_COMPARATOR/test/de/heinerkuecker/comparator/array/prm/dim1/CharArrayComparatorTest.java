@@ -33,7 +33,7 @@ public class CharArrayComparatorTest
      * Test method for {@link CharArrayComparator#CharArrayComparator}.
      */
     @Test( expected = NullPointerException.class )
-    public void testCharArrayComparator_ArrayNulls_is_null()
+    public void testCharArrayComparator_arrayNulls_is_null()
     {
         new CharArrayComparator(
                 // arrayNulls
@@ -146,7 +146,7 @@ public class CharArrayComparatorTest
      * Test method for {@link CharArrayComparator#compare}.
      */
     @Test
-    public void testCompare_ArrayNulls_FIRST_1()
+    public void testCompare_arrayNulls_FIRST_1()
     {
         final char[] arr1 = null;
         final char[] arr2 = { 'A' , 'C' };
@@ -180,7 +180,7 @@ public class CharArrayComparatorTest
      * Test method for {@link CharArrayComparator#compare}.
      */
     @Test
-    public void testCompare_ArrayNulls_FIRST_2()
+    public void testCompare_arrayNulls_FIRST_2()
     {
         final char[] arr1 = { 'A' , 'B' };
         final char[] arr2 = null;
@@ -214,7 +214,7 @@ public class CharArrayComparatorTest
      * Test method for {@link CharArrayComparator#compare}.
      */
     @Test
-    public void testCompare_ArrayNulls_LAST_1()
+    public void testCompare_arrayNulls_LAST_1()
     {
         final char[] arr1 = { 'A' , 'B' };
         final char[] arr2 = null;
@@ -248,7 +248,7 @@ public class CharArrayComparatorTest
      * Test method for {@link CharArrayComparator#compare}.
      */
     @Test
-    public void testCompare_ArrayNulls_LAST_2()
+    public void testCompare_arrayNulls_LAST_2()
     {
         final char[] arr1 = null;
         final char[] arr2 = { 'A' , 'C' };

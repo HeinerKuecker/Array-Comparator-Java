@@ -33,7 +33,7 @@ public class BooleanArrayComparatorTest
      * Test method for {@link BooleanArrayComparator#BooleanArrayComparator}.
      */
     @Test( expected = NullPointerException.class )
-    public void testBooleanArrayComparator_ArrayNulls_is_null()
+    public void testBooleanArrayComparator_arrayNulls_is_null()
     {
         new BooleanArrayComparator(
                 // arrayNulls
@@ -180,7 +180,7 @@ public class BooleanArrayComparatorTest
      * Test method for {@link BooleanArrayComparator#compare}.
      */
     @Test
-    public void testCompare_ArrayNulls_FIRST_1()
+    public void testCompare_arrayNulls_FIRST_1()
     {
         final boolean[] arr1 = null;
         final boolean[] arr2 = { false , true };
@@ -214,7 +214,7 @@ public class BooleanArrayComparatorTest
      * Test method for {@link BooleanArrayComparator#compare}.
      */
     @Test
-    public void testCompare_ArrayNulls_FIRST_2()
+    public void testCompare_arrayNulls_FIRST_2()
     {
         final boolean[] arr1 = { false , true };
         final boolean[] arr2 = null;
@@ -248,7 +248,7 @@ public class BooleanArrayComparatorTest
      * Test method for {@link BooleanArrayComparator#compare}.
      */
     @Test
-    public void testCompare_ArrayNulls_LAST_1()
+    public void testCompare_arrayNulls_LAST_1()
     {
         final boolean[] arr1 = { false , true };
         final boolean[] arr2 = null;
@@ -282,7 +282,7 @@ public class BooleanArrayComparatorTest
      * Test method for {@link BooleanArrayComparator#compare}.
      */
     @Test
-    public void testCompare_ArrayNulls_LAST_2()
+    public void testCompare_arrayNulls_LAST_2()
     {
         final boolean[] arr1 = null;
         final boolean[] arr2 = { false , true };

@@ -33,7 +33,7 @@ public class ShortArrayComparatorTest
      * Test method for {@link ShortArrayComparator#ShortArrayComparator}.
      */
     @Test( expected = NullPointerException.class )
-    public void testShortArrayComparator_ArrayNulls_is_null()
+    public void testShortArrayComparator_arrayNulls_is_null()
     {
         new ShortArrayComparator(
                 // arrayNulls
@@ -146,7 +146,7 @@ public class ShortArrayComparatorTest
      * Test method for {@link ShortArrayComparator#compare}.
      */
     @Test
-    public void testCompare_ArrayNulls_FIRST_1()
+    public void testCompare_arrayNulls_FIRST_1()
     {
         final short[] arr1 = null;
         final short[] arr2 = { 1 , 3 };
@@ -180,7 +180,7 @@ public class ShortArrayComparatorTest
      * Test method for {@link ShortArrayComparator#compare}.
      */
     @Test
-    public void testCompare_ArrayNulls_FIRST_2()
+    public void testCompare_arrayNulls_FIRST_2()
     {
         final short[] arr1 = { 1 , 2 };
         final short[] arr2 = null;
@@ -214,7 +214,7 @@ public class ShortArrayComparatorTest
      * Test method for {@link ShortArrayComparator#compare}.
      */
     @Test
-    public void testCompare_ArrayNulls_LAST_1()
+    public void testCompare_arrayNulls_LAST_1()
     {
         final short[] arr1 = { 1 , 2 };
         final short[] arr2 = null;
@@ -248,7 +248,7 @@ public class ShortArrayComparatorTest
      * Test method for {@link ShortArrayComparator#compare}.
      */
     @Test
-    public void testCompare_ArrayNulls_LAST_2()
+    public void testCompare_arrayNulls_LAST_2()
     {
         final short[] arr1 = null;
         final short[] arr2 = { 1 , 3 };

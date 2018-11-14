@@ -33,7 +33,7 @@ public class IntArrayComparatorTest
      * Test method for {@link IntArrayComparator#IntArrayComparator}.
      */
     @Test( expected = NullPointerException.class )
-    public void testIntArrayComparator_ArrayNulls_is_null()
+    public void testIntArrayComparator_arrayNulls_is_null()
     {
         new IntArrayComparator(
                 // arrayNulls
@@ -112,7 +112,7 @@ public class IntArrayComparatorTest
      * Test method for {@link IntArrayComparator#compare}.
      */
     @Test
-    public void testCompare_ArrayNulls_FIRST_1()
+    public void testCompare_arrayNulls_FIRST_1()
     {
         final int[] arr1 = null;
         final int[] arr2 = { 1 , 3 };
@@ -146,7 +146,7 @@ public class IntArrayComparatorTest
      * Test method for {@link IntArrayComparator#compare}.
      */
     @Test
-    public void testCompare_ArrayNulls_FIRST_2()
+    public void testCompare_arrayNulls_FIRST_2()
     {
         final int[] arr1 = { 1 , 2 };
         final int[] arr2 = null;
@@ -180,7 +180,7 @@ public class IntArrayComparatorTest
      * Test method for {@link IntArrayComparator#compare}.
      */
     @Test
-    public void testCompare_ArrayNulls_LAST_1()
+    public void testCompare_arrayNulls_LAST_1()
     {
         final int[] arr1 = { 1 , 2 };
         final int[] arr2 = null;
@@ -214,7 +214,7 @@ public class IntArrayComparatorTest
      * Test method for {@link IntArrayComparator#compare}.
      */
     @Test
-    public void testCompare_ArrayNulls_LAST_2()
+    public void testCompare_arrayNulls_LAST_2()
     {
         final int[] arr1 = null;
         final int[] arr2 = { 1 , 3 };

@@ -183,7 +183,7 @@ public class Dim2ComparableArrayComparatorTest
      * Test method for {@link Dim2ComparableArrayComparator#compare}.
      */
     @Test
-    public void testCompare_ArrayNulls_FIRST_1()
+    public void testCompare_arrayNulls_FIRST_1()
     {
         final String[][] arr1 = null;
         final String[][] arr2 = { { "a" , "c" } };
@@ -219,7 +219,7 @@ public class Dim2ComparableArrayComparatorTest
      * Test method for {@link Dim2ComparableArrayComparator#compare}.
      */
     @Test
-    public void testCompare_ArrayNulls_FIRST_2()
+    public void testCompare_arrayNulls_FIRST_2()
     {
         final String[][] arr1 = { { "a" , "b" } };
         final String[][] arr2 = null;
@@ -255,7 +255,7 @@ public class Dim2ComparableArrayComparatorTest
      * Test method for {@link Dim2ComparableArrayComparator#compare}.
      */
     @Test
-    public void testCompare_ArrayNulls_LAST_1()
+    public void testCompare_arrayNulls_LAST_1()
     {
         final String[][] arr1 = { { "a" , "b" } };
         final String[][] arr2 = null;
@@ -291,7 +291,7 @@ public class Dim2ComparableArrayComparatorTest
      * Test method for {@link Dim2ComparableArrayComparator#compare}.
      */
     @Test
-    public void testCompare_ArrayNulls_LAST_2()
+    public void testCompare_arrayNulls_LAST_2()
     {
         final String[][] arr1 = null;
         final String[][] arr2 = { { "a" , "c" } };
@@ -471,7 +471,7 @@ public class Dim2ComparableArrayComparatorTest
      * Test method for {@link Dim2ComparableArrayComparator#compare}.
      */
     @Test
-    public void testCompare_ElementNulls_FIRST_1()
+    public void testCompare_elementNulls_FIRST_1()
     {
         final String[][] arr1 = { { "a" , null } };
         final String[][] arr2 = { { "a" , "c" } };
@@ -507,7 +507,7 @@ public class Dim2ComparableArrayComparatorTest
      * Test method for {@link Dim2ComparableArrayComparator#compare}.
      */
     @Test
-    public void testCompare_ElementNulls_FIRST_2()
+    public void testCompare_elementNulls_FIRST_2()
     {
         final String[][] arr1 = { { "a" , "b" } };
         final String[][] arr2 = { { "a" , null } };
@@ -543,7 +543,7 @@ public class Dim2ComparableArrayComparatorTest
      * Test method for {@link Dim2ComparableArrayComparator#compare}.
      */
     @Test
-    public void testCompare_ElementNulls_LAST_1()
+    public void testCompare_elementNulls_LAST_1()
     {
         final String[][] arr1 = { { "a" , "b" } };
         final String[][] arr2 = { { "a" , null } };
@@ -579,7 +579,7 @@ public class Dim2ComparableArrayComparatorTest
      * Test method for {@link Dim2ComparableArrayComparator#compare}.
      */
     @Test
-    public void testCompare_ElementNulls_LAST_2()
+    public void testCompare_elementNulls_LAST_2()
     {
         final String[][] arr1 = { { "a" , null } };
         final String[][] arr2 = { { "a" , "c" } };

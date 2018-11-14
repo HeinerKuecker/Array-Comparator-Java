@@ -33,7 +33,7 @@ public class LongArrayComparatorTest
      * Test method for {@link LongArrayComparator#LongArrayComparator}.
      */
     @Test( expected = NullPointerException.class )
-    public void testLongArrayComparator_ArrayNulls_is_null()
+    public void testLongArrayComparator_arrayNulls_is_null()
     {
         new LongArrayComparator(
                 // arrayNulls
@@ -146,7 +146,7 @@ public class LongArrayComparatorTest
      * Test method for {@link LongArrayComparator#compare}.
      */
     @Test
-    public void testCompare_ArrayNulls_FIRST_1()
+    public void testCompare_arrayNulls_FIRST_1()
     {
         final long[] arr1 = null;
         final long[] arr2 = { 1 , 3 };
@@ -180,7 +180,7 @@ public class LongArrayComparatorTest
      * Test method for {@link LongArrayComparator#compare}.
      */
     @Test
-    public void testCompare_ArrayNulls_FIRST_2()
+    public void testCompare_arrayNulls_FIRST_2()
     {
         final long[] arr1 = { 1 , 2 };
         final long[] arr2 = null;
@@ -214,7 +214,7 @@ public class LongArrayComparatorTest
      * Test method for {@link LongArrayComparator#compare}.
      */
     @Test
-    public void testCompare_ArrayNulls_LAST_1()
+    public void testCompare_arrayNulls_LAST_1()
     {
         final long[] arr1 = { 1 , 2 };
         final long[] arr2 = null;
@@ -248,7 +248,7 @@ public class LongArrayComparatorTest
      * Test method for {@link LongArrayComparator#compare}.
      */
     @Test
-    public void testCompare_ArrayNulls_LAST_2()
+    public void testCompare_arrayNulls_LAST_2()
     {
         final long[] arr1 = null;
         final long[] arr2 = { 1 , 3 };

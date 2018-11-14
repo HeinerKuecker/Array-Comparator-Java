@@ -36,7 +36,7 @@ public class ComparatorArrayComparatorTest
      * Test method for {@link ComparatorArrayComparator#ComparatorArrayComparator}.
      */
     @Test( expected = NullPointerException.class )
-    public void testComparableArrayComparator_ArrayNulls_is_null()
+    public void testComparableArrayComparator_arrayNulls_is_null()
     {
         new ComparatorArrayComparator<>(
                 // arrayNulls
@@ -49,7 +49,7 @@ public class ComparatorArrayComparatorTest
      * Test method for {@link ComparatorArrayComparator#ComparatorArrayComparator}.
      */
     @Test( expected = NullPointerException.class )
-    public void testComparableArrayComparator_ElementNulls_is_null()
+    public void testComparableArrayComparator_elementNulls_is_null()
     {
         new ComparatorArrayComparator<>(
                 Nulls.FORBIDDEN ,
@@ -183,7 +183,7 @@ public class ComparatorArrayComparatorTest
      * Test method for {@link ComparatorArrayComparator#compare}.
      */
     @Test
-    public void testCompare_ArrayNulls_FIRST_1()
+    public void testCompare_arrayNulls_FIRST_1()
     {
         final String[] arr1 = null;
         final String[] arr2 = { "a" , "c" };
@@ -219,7 +219,7 @@ public class ComparatorArrayComparatorTest
      * Test method for {@link ComparatorArrayComparator#compare}.
      */
     @Test
-    public void testCompare_ArrayNulls_FIRST_2()
+    public void testCompare_arrayNulls_FIRST_2()
     {
         final String[] arr1 = { "a" , "b" };
         final String[] arr2 = null;
@@ -255,7 +255,7 @@ public class ComparatorArrayComparatorTest
      * Test method for {@link ComparatorArrayComparator#compare}.
      */
     @Test
-    public void testCompare_ArrayNulls_LAST_1()
+    public void testCompare_arrayNulls_LAST_1()
     {
         final String[] arr1 = { "a" , "b" };
         final String[] arr2 = null;
@@ -291,7 +291,7 @@ public class ComparatorArrayComparatorTest
      * Test method for {@link ComparatorArrayComparator#compare}.
      */
     @Test
-    public void testCompare_ArrayNulls_LAST_2()
+    public void testCompare_arrayNulls_LAST_2()
     {
         final String[] arr1 = null;
         final String[] arr2 = { "a" , "c" };
@@ -327,7 +327,7 @@ public class ComparatorArrayComparatorTest
      * Test method for {@link ComparatorArrayComparator#compare}.
      */
     @Test
-    public void testCompare_ElementNulls_FIRST_0_0()
+    public void testCompare_elementNulls_FIRST_0_0()
     {
         final String[] arr1 = { null , "a" };
         final String[] arr2 = { null , "b" };
@@ -363,7 +363,7 @@ public class ComparatorArrayComparatorTest
      * Test method for {@link ComparatorArrayComparator#compare}.
      */
     @Test
-    public void testCompare_ElementNulls_FIRST_1_0()
+    public void testCompare_elementNulls_FIRST_1_0()
     {
         final String[] arr1 = { "a" , null };
         final String[] arr2 = { "a" , "c" };
@@ -399,7 +399,7 @@ public class ComparatorArrayComparatorTest
      * Test method for {@link ComparatorArrayComparator#compare}.
      */
     @Test
-    public void testCompare_ElementNulls_FIRST_1_1()
+    public void testCompare_elementNulls_FIRST_1_1()
     {
         final String[] arr1 = { "a" , "b" };
         final String[] arr2 = { "a" , null };
@@ -435,7 +435,7 @@ public class ComparatorArrayComparatorTest
      * Test method for {@link ComparatorArrayComparator#compare}.
      */
     @Test
-    public void testCompare_ElementNulls_FIRST_2()
+    public void testCompare_elementNulls_FIRST_2()
     {
         final String[] arr1 = { "a" , "b" };
         final String[] arr2 = { "a" , null };
@@ -471,7 +471,7 @@ public class ComparatorArrayComparatorTest
      * Test method for {@link ComparatorArrayComparator#compare}.
      */
     @Test
-    public void testCompare_ElementNulls_LAST_0_0()
+    public void testCompare_elementNulls_LAST_0_0()
     {
         final String[] arr1 = { null , "a" };
         final String[] arr2 = { null , "b" };
@@ -507,7 +507,7 @@ public class ComparatorArrayComparatorTest
      * Test method for {@link ComparatorArrayComparator#compare}.
      */
     @Test
-    public void testCompare_ElementNulls_LAST_0_1()
+    public void testCompare_elementNulls_LAST_0_1()
     {
         final String[] arr1 = { null , "b" };
         final String[] arr2 = { null , "a" };
@@ -543,7 +543,7 @@ public class ComparatorArrayComparatorTest
      * Test method for {@link ComparatorArrayComparator#compare}.
      */
     @Test
-    public void testCompare_ElementNulls_LAST_1()
+    public void testCompare_elementNulls_LAST_1()
     {
         final String[] arr1 = { "a" , "b" };
         final String[] arr2 = { "a" , null };
@@ -579,7 +579,7 @@ public class ComparatorArrayComparatorTest
      * Test method for {@link ComparatorArrayComparator#compare}.
      */
     @Test
-    public void testCompare_ElementNulls_LAST_2()
+    public void testCompare_elementNulls_LAST_2()
     {
         final String[] arr1 = { "a" , null };
         final String[] arr2 = { "a" , "c" };
