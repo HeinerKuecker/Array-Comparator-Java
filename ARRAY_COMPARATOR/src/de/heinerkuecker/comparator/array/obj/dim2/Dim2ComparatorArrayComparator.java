@@ -35,6 +35,7 @@ extends ComparatorArrayComparator<T[]>
                 arrayNulls ,
                 subArrayNulls ,
                 ComparatorArrayComparator.<T>newComparatorArrayComparator(
+                        // null arrays already handled by one level higher
                         Nulls.FORBIDDEN ,
                         elementNulls ,
                         comparator ) );
