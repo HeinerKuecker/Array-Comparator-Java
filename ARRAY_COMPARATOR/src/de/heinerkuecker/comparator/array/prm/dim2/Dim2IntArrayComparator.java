@@ -31,7 +31,7 @@ extends ComparatorArrayComparator<int[]>
                 arrayNulls ,
                 subArrayNulls ,
                 new IntArrayComparator(
-                        // hier sollte FORBIDDEN stehen, weil null Arrays bereits eine Ebene höher abgehandelt werden
+                        // null arrays already handled by one level higher
                         Nulls.FORBIDDEN ) );
     }
 
