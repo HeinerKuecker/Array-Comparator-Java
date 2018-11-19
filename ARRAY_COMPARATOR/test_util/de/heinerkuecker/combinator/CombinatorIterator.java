@@ -14,6 +14,8 @@ import de.heinerkuecker.iterator.CartesianProductIterable;
  * <a href="https://de.wikipedia.org/wiki/Kombination_(Kombinatorik)">Wikipedia Kombination (Kombinatorik)</a>
  * <a href="https://en.wikipedia.org/wiki/Combination">Wikipedia Combination</a>
  *
+ * TODO better implementation based on counter
+ *
  * @author Heiner K&uuml;cker
  */
 public class CombinatorIterator<T>
