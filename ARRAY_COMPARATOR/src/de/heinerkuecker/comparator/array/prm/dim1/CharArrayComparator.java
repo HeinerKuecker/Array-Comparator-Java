@@ -53,7 +53,6 @@ implements Comparator<char[]>
      * @see Comparator#compare
      */
     @Override
-    @SuppressWarnings( "incomplete-switch" )
     public int compare(
             final char[] arr1 ,
             final char[] arr2 )

@@ -53,7 +53,6 @@ implements Comparator<byte[]>
      * @see Comparator#compare
      */
     @Override
-    @SuppressWarnings( "incomplete-switch" )
     public int compare(
             final byte[] arr1 ,
             final byte[] arr2 )

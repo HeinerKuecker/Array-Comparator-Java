@@ -53,7 +53,6 @@ implements Comparator<int[]>
      * @see Comparator#compare
      */
     @Override
-    @SuppressWarnings( "incomplete-switch" )
     public int compare(
             final int[] arr1 ,
             final int[] arr2 )

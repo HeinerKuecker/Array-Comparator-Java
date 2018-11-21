@@ -53,7 +53,6 @@ implements Comparator<short[]>
      * @see Comparator#compare
      */
     @Override
-    @SuppressWarnings( "incomplete-switch" )
     public int compare(
             final short[] arr1 ,
             final short[] arr2 )

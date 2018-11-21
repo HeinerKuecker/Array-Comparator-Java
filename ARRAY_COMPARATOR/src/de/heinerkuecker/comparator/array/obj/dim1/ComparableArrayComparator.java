@@ -84,7 +84,6 @@ implements Comparator<T[]>
      * @see Comparator#compare
      */
     @Override
-    @SuppressWarnings( "incomplete-switch" )
     public int compare(
             final T[] arr1 ,
             final T[] arr2 )

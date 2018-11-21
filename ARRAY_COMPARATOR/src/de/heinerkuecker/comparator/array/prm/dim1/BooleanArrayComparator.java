@@ -55,7 +55,6 @@ implements Comparator<boolean[]>
      * @see Comparator#compare
      */
     @Override
-    @SuppressWarnings( "incomplete-switch" )
     public int compare(
             final boolean[] arr1 ,
             final boolean[] arr2 )
