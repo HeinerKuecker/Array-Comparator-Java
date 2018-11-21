@@ -119,14 +119,14 @@ public class Dim2IntArrayComparatorTest
      * Test method for {@link Dim2IntArrayComparator#compare}.
      */
     @Test
-    public void testCompare_arrayNulls_FIRST_1()
+    public void testCompare_arrayNulls_LESSER_1()
     {
         final int[][] arr1 = null;
         final int[][] arr2 = { { 1 , 3 } };
 
         final Dim2IntArrayComparator comparator =
                 new Dim2IntArrayComparator(
-                        Nulls.FIRST ,
+                        Nulls.LESSER ,
                         Nulls.FORBIDDEN );
 
         ArrayComparatorTestUtil.assertLesserAndViceVersa(
@@ -139,14 +139,14 @@ public class Dim2IntArrayComparatorTest
      * Test method for {@link Dim2IntArrayComparator#compare}.
      */
     @Test
-    public void testCompare_arrayNulls_FIRST_2()
+    public void testCompare_arrayNulls_LESSER_2()
     {
         final int[][] arr1 = { { 1 , 2 } };
         final int[][] arr2 = null;
 
         final Dim2IntArrayComparator comparator =
                 new Dim2IntArrayComparator(
-                        Nulls.FIRST ,
+                        Nulls.LESSER ,
                         Nulls.FORBIDDEN );
 
         ArrayComparatorTestUtil.assertGreaterAndViceVersa(
@@ -159,14 +159,14 @@ public class Dim2IntArrayComparatorTest
      * Test method for {@link Dim2IntArrayComparator#compare}.
      */
     @Test
-    public void testCompare_arrayNulls_LAST_1()
+    public void testCompare_arrayNulls_GREATER_1()
     {
         final int[][] arr1 = { { 1 , 2 } };
         final int[][] arr2 = null;
 
         final Dim2IntArrayComparator comparator =
                 new Dim2IntArrayComparator(
-                        Nulls.LAST ,
+                        Nulls.GREATER ,
                         Nulls.FORBIDDEN );
 
         ArrayComparatorTestUtil.assertLesserAndViceVersa(
@@ -179,14 +179,14 @@ public class Dim2IntArrayComparatorTest
      * Test method for {@link Dim2IntArrayComparator#compare}.
      */
     @Test
-    public void testCompare_arrayNulls_LAST_2()
+    public void testCompare_arrayNulls_GREATER_2()
     {
         final int[][] arr1 = null;
         final int[][] arr2 = { { 1 , 3 } };
 
         final Dim2IntArrayComparator comparator =
                 new Dim2IntArrayComparator(
-                        Nulls.LAST ,
+                        Nulls.GREATER ,
                         Nulls.FORBIDDEN );
 
         ArrayComparatorTestUtil.assertGreaterAndViceVersa(
@@ -200,7 +200,7 @@ public class Dim2IntArrayComparatorTest
      * Test method for {@link ComparableArrayComparator#compare}.
      */
     @Test
-    public void testCompare_subArrayNulls_FIRST_1()
+    public void testCompare_subArrayNulls_LESSER_1()
     {
         final int[][] arr1 = { { 1 } , null };
         final int[][] arr2 = { { 1 } , { 3 } };
@@ -208,7 +208,7 @@ public class Dim2IntArrayComparatorTest
         final Dim2IntArrayComparator comparator =
                 new Dim2IntArrayComparator(
                         Nulls.FORBIDDEN ,
-                        Nulls.FIRST );
+                        Nulls.LESSER );
 
         ArrayComparatorTestUtil.assertLesserAndViceVersa(
                 comparator ,
@@ -220,7 +220,7 @@ public class Dim2IntArrayComparatorTest
      * Test method for {@link ComparableArrayComparator#compare}.
      */
     @Test
-    public void testCompare_subArrayNulls_FIRST_2()
+    public void testCompare_subArrayNulls_LESSER_2()
     {
         final int[][] arr1 = { { 1 } , { 2 } };
         final int[][] arr2 = { { 1 } , null };
@@ -228,7 +228,7 @@ public class Dim2IntArrayComparatorTest
         final Dim2IntArrayComparator comparator =
                 new Dim2IntArrayComparator(
                         Nulls.FORBIDDEN ,
-                        Nulls.FIRST );
+                        Nulls.LESSER );
 
         ArrayComparatorTestUtil.assertGreaterAndViceVersa(
                 comparator ,
@@ -240,7 +240,7 @@ public class Dim2IntArrayComparatorTest
      * Test method for {@link ComparableArrayComparator#compare}.
      */
     @Test
-    public void testCompare_subArrayNulls_LAST_1()
+    public void testCompare_subArrayNulls_GREATER_1()
     {
         final int[][] arr1 = { { 1 } , { 2 } };
         final int[][] arr2 = { { 1 } , null };
@@ -248,7 +248,7 @@ public class Dim2IntArrayComparatorTest
         final Dim2IntArrayComparator comparator =
                 new Dim2IntArrayComparator(
                         Nulls.FORBIDDEN ,
-                        Nulls.LAST );
+                        Nulls.GREATER );
 
         ArrayComparatorTestUtil.assertLesserAndViceVersa(
                 comparator ,
@@ -260,7 +260,7 @@ public class Dim2IntArrayComparatorTest
      * Test method for {@link ComparableArrayComparator#compare}.
      */
     @Test
-    public void testCompare_subArrayNulls_LAST_2()
+    public void testCompare_subArrayNulls_GREATER_2()
     {
         final int[][] arr1 = { { 1 } , null };
         final int[][] arr2 = { { 1 } , { 3 } };
@@ -268,7 +268,7 @@ public class Dim2IntArrayComparatorTest
         final Dim2IntArrayComparator comparator =
                 new Dim2IntArrayComparator(
                         Nulls.FORBIDDEN ,
-                        Nulls.LAST );
+                        Nulls.GREATER );
 
         ArrayComparatorTestUtil.assertGreaterAndViceVersa(
                 comparator ,
@@ -412,12 +412,12 @@ public class Dim2IntArrayComparatorTest
     {
         final Dim2IntArrayComparator comparator =
                 new Dim2IntArrayComparator(
-                        Nulls.FIRST ,
-                        Nulls.LAST );
+                        Nulls.LESSER ,
+                        Nulls.GREATER );
 
         Assert.assertEquals(
                 //expected
-                "Dim2IntArrayComparator[arrayNulls=FIRST, subArrayNulls=LAST]" ,
+                "Dim2IntArrayComparator[arrayNulls=LESSER, subArrayNulls=GREATER]" ,
                 //actual
                 comparator.toString() );
     }

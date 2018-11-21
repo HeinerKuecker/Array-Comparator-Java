@@ -161,14 +161,14 @@ public class Dim2ComparatorArrayComparatorTest
      * Test method for {@link Dim2ComparatorArrayComparator#compare}.
      */
     @Test
-    public void testCompare_arrayNulls_FIRST_1()
+    public void testCompare_arrayNulls_LESSER_1()
     {
         final String[][] arr1 = null;
         final String[][] arr2 = { { "a" , "c" } };
 
         final Dim2ComparatorArrayComparator<String> comparator =
                 new Dim2ComparatorArrayComparator<>(
-                        Nulls.FIRST ,
+                        Nulls.LESSER ,
                         Nulls.FORBIDDEN ,
                         Nulls.FORBIDDEN ,
                         Comparator.<String>naturalOrder() );
@@ -183,14 +183,14 @@ public class Dim2ComparatorArrayComparatorTest
      * Test method for {@link Dim2ComparatorArrayComparator#compare}.
      */
     @Test
-    public void testCompare_arrayNulls_FIRST_2()
+    public void testCompare_arrayNulls_LESSER_2()
     {
         final String[][] arr1 = { { "a" , "b" } };
         final String[][] arr2 = null;
 
         final Dim2ComparatorArrayComparator<String> comparator =
                 new Dim2ComparatorArrayComparator<>(
-                        Nulls.FIRST ,
+                        Nulls.LESSER ,
                         Nulls.FORBIDDEN ,
                         Nulls.FORBIDDEN ,
                         Comparator.<String>naturalOrder() );
@@ -205,14 +205,14 @@ public class Dim2ComparatorArrayComparatorTest
      * Test method for {@link Dim2ComparatorArrayComparator#compare}.
      */
     @Test
-    public void testCompare_arrayNulls_LAST_1()
+    public void testCompare_arrayNulls_GREATER_1()
     {
         final String[][] arr1 = { { "a" , "b" } };
         final String[][] arr2 = null;
 
         final Dim2ComparatorArrayComparator<String> comparator =
                 new Dim2ComparatorArrayComparator<>(
-                        Nulls.LAST ,
+                        Nulls.GREATER ,
                         Nulls.FORBIDDEN ,
                         Nulls.FORBIDDEN ,
                         Comparator.<String>naturalOrder() );
@@ -227,14 +227,14 @@ public class Dim2ComparatorArrayComparatorTest
      * Test method for {@link Dim2ComparatorArrayComparator#compare}.
      */
     @Test
-    public void testCompare_arrayNulls_LAST_2()
+    public void testCompare_arrayNulls_GREATER_2()
     {
         final String[][] arr1 = null;
         final String[][] arr2 = { { "a" , "c" } };
 
         final Dim2ComparatorArrayComparator<String> comparator =
                 new Dim2ComparatorArrayComparator<>(
-                        Nulls.LAST ,
+                        Nulls.GREATER ,
                         Nulls.FORBIDDEN ,
                         Nulls.FORBIDDEN ,
                         Comparator.<String>naturalOrder() );
@@ -249,7 +249,7 @@ public class Dim2ComparatorArrayComparatorTest
      * Test method for {@link Dim2ComparatorArrayComparator#compare}.
      */
     @Test
-    public void testCompare_subArrayNulls_FIRST_1()
+    public void testCompare_subArrayNulls_LESSER_1()
     {
         final String[][] arr1 = { null };
         final String[][] arr2 = { { "a" , "c" } };
@@ -257,7 +257,7 @@ public class Dim2ComparatorArrayComparatorTest
         final Dim2ComparatorArrayComparator<String> comparator =
                 new Dim2ComparatorArrayComparator<>(
                         Nulls.FORBIDDEN ,
-                        Nulls.FIRST ,
+                        Nulls.LESSER ,
                         Nulls.FORBIDDEN ,
                         Comparator.<String>naturalOrder() );
 
@@ -271,7 +271,7 @@ public class Dim2ComparatorArrayComparatorTest
      * Test method for {@link Dim2ComparatorArrayComparator#compare}.
      */
     @Test
-    public void testCompare_subArrayNulls_FIRST_2()
+    public void testCompare_subArrayNulls_LESSER_2()
     {
         final String[][] arr1 = { { "a" , "b" } };
         final String[][] arr2 = { null };
@@ -279,7 +279,7 @@ public class Dim2ComparatorArrayComparatorTest
         final Dim2ComparatorArrayComparator<String> comparator =
                 new Dim2ComparatorArrayComparator<>(
                         Nulls.FORBIDDEN ,
-                        Nulls.FIRST ,
+                        Nulls.LESSER ,
                         Nulls.FORBIDDEN ,
                         Comparator.<String>naturalOrder() );
 
@@ -293,7 +293,7 @@ public class Dim2ComparatorArrayComparatorTest
      * Test method for {@link Dim2ComparatorArrayComparator#compare}.
      */
     @Test
-    public void testCompare_subArrayNulls_LAST_1()
+    public void testCompare_subArrayNulls_GREATER_1()
     {
         final String[][] arr1 = { { "a" , "b" } };
         final String[][] arr2 = { null };
@@ -301,7 +301,7 @@ public class Dim2ComparatorArrayComparatorTest
         final Dim2ComparatorArrayComparator<String> comparator =
                 new Dim2ComparatorArrayComparator<>(
                         Nulls.FORBIDDEN ,
-                        Nulls.LAST ,
+                        Nulls.GREATER ,
                         Nulls.FORBIDDEN ,
                         Comparator.<String>naturalOrder() );
 
@@ -315,7 +315,7 @@ public class Dim2ComparatorArrayComparatorTest
      * Test method for {@link Dim2ComparatorArrayComparator#compare}.
      */
     @Test
-    public void testCompare_subArrayNulls_LAST_2()
+    public void testCompare_subArrayNulls_GREATER_2()
     {
         final String[][] arr1 = { null };
         final String[][] arr2 = { { "a" , "c" } };
@@ -323,7 +323,7 @@ public class Dim2ComparatorArrayComparatorTest
         final Dim2ComparatorArrayComparator<String> comparator =
                 new Dim2ComparatorArrayComparator<>(
                         Nulls.FORBIDDEN ,
-                        Nulls.LAST ,
+                        Nulls.GREATER ,
                         Nulls.FORBIDDEN ,
                         Comparator.<String>naturalOrder() );
 
@@ -337,7 +337,7 @@ public class Dim2ComparatorArrayComparatorTest
      * Test method for {@link Dim2ComparatorArrayComparator#compare}.
      */
     @Test
-    public void testCompare_elementNulls_FIRST_1()
+    public void testCompare_elementNulls_LESSER_1()
     {
         final String[][] arr1 = { { "a" , null } };
         final String[][] arr2 = { { "a" , "c" } };
@@ -346,7 +346,7 @@ public class Dim2ComparatorArrayComparatorTest
                 new Dim2ComparatorArrayComparator<>(
                         Nulls.FORBIDDEN ,
                         Nulls.FORBIDDEN ,
-                        Nulls.FIRST ,
+                        Nulls.LESSER ,
                         Comparator.<String>naturalOrder() );
 
         ArrayComparatorTestUtil.assertLesserAndViceVersa(
@@ -359,7 +359,7 @@ public class Dim2ComparatorArrayComparatorTest
      * Test method for {@link Dim2ComparatorArrayComparator#compare}.
      */
     @Test
-    public void testCompare_elementNulls_FIRST_2()
+    public void testCompare_elementNulls_LESSER_2()
     {
         final String[][] arr1 = { { "a" , "b" } };
         final String[][] arr2 = { { "a" , null } };
@@ -368,7 +368,7 @@ public class Dim2ComparatorArrayComparatorTest
                 new Dim2ComparatorArrayComparator<>(
                         Nulls.FORBIDDEN ,
                         Nulls.FORBIDDEN ,
-                        Nulls.FIRST ,
+                        Nulls.LESSER ,
                         Comparator.<String>naturalOrder() );
 
         ArrayComparatorTestUtil.assertGreaterAndViceVersa(
@@ -381,7 +381,7 @@ public class Dim2ComparatorArrayComparatorTest
      * Test method for {@link Dim2ComparatorArrayComparator#compare}.
      */
     @Test
-    public void testCompare_elementNulls_LAST_1()
+    public void testCompare_elementNulls_GREATER_1()
     {
         final String[][] arr1 = { { "a" , "b" } };
         final String[][] arr2 = { { "a" , null } };
@@ -390,7 +390,7 @@ public class Dim2ComparatorArrayComparatorTest
                 new Dim2ComparatorArrayComparator<>(
                         Nulls.FORBIDDEN ,
                         Nulls.FORBIDDEN ,
-                        Nulls.LAST ,
+                        Nulls.GREATER ,
                         Comparator.<String>naturalOrder() );
 
         ArrayComparatorTestUtil.assertLesserAndViceVersa(
@@ -403,7 +403,7 @@ public class Dim2ComparatorArrayComparatorTest
      * Test method for {@link Dim2ComparatorArrayComparator#compare}.
      */
     @Test
-    public void testCompare_elementNulls_LAST_2()
+    public void testCompare_elementNulls_GREATER_2()
     {
         final String[][] arr1 = { { "a" , null } };
         final String[][] arr2 = { { "a" , "c" } };
@@ -412,7 +412,7 @@ public class Dim2ComparatorArrayComparatorTest
                 new Dim2ComparatorArrayComparator<>(
                         Nulls.FORBIDDEN ,
                         Nulls.FORBIDDEN ,
-                        Nulls.LAST ,
+                        Nulls.GREATER ,
                         Comparator.<String>naturalOrder() );
 
         ArrayComparatorTestUtil.assertGreaterAndViceVersa(
@@ -585,13 +585,13 @@ public class Dim2ComparatorArrayComparatorTest
         final Dim2ComparatorArrayComparator<String> comparator =
                 new Dim2ComparatorArrayComparator<>(
                         Nulls.FORBIDDEN ,
-                        Nulls.FIRST ,
-                        Nulls.LAST ,
+                        Nulls.LESSER ,
+                        Nulls.GREATER ,
                         Comparator.<String>naturalOrder() );
 
         Assert.assertEquals(
                 //expected
-                "Dim2ComparatorArrayComparator[arrayNulls=FORBIDDEN, subArrayNulls=FIRST, elementNulls=LAST, comparator=INSTANCE]" ,
+                "Dim2ComparatorArrayComparator[arrayNulls=FORBIDDEN, subArrayNulls=LESSER, elementNulls=GREATER, comparator=INSTANCE]" ,
                 //actual
                 comparator.toString() );
     }
@@ -604,14 +604,14 @@ public class Dim2ComparatorArrayComparatorTest
     {
         final Dim2ComparatorArrayComparator<String> comparator =
                 new Dim2ComparatorArrayComparator<>(
-                        Nulls.FIRST ,
-                        Nulls.LAST ,
+                        Nulls.LESSER ,
+                        Nulls.GREATER ,
                         Nulls.FORBIDDEN ,
                         Comparator.<String>naturalOrder() );
 
         Assert.assertEquals(
                 //expected
-                "Dim2ComparatorArrayComparator[arrayNulls=FIRST, subArrayNulls=LAST, elementNulls=FORBIDDEN, comparator=INSTANCE]" ,
+                "Dim2ComparatorArrayComparator[arrayNulls=LESSER, subArrayNulls=GREATER, elementNulls=FORBIDDEN, comparator=INSTANCE]" ,
                 //actual
                 comparator.toString() );
     }

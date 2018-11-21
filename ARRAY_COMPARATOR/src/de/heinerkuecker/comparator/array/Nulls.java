@@ -10,15 +10,17 @@ package de.heinerkuecker.comparator.array;
  */
 public enum Nulls
 {
-	/**
-	 * Order null arrays or elements first.
-	 */
-    FIRST ,
+    /**
+     * Handle null arrays or
+     * null elements as lesser.
+     */
+    LESSER ,
 
-	/**
-	 * Order null arrays or elements last.
-	 */
-    LAST ,
+    /**
+     * Handle null arrays or
+     * null elements as greater.
+     */
+    GREATER ,
 
     /**
      * Null arrays or elements forbidden,

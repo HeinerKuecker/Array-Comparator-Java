@@ -62,7 +62,7 @@ implements Comparator<boolean[]>
         // handle null arrays
         switch ( this.arrayNulls )
         {
-            case FIRST :
+            case LESSER :
             {
                 if ( arr1 == null )
                 {
@@ -75,7 +75,7 @@ implements Comparator<boolean[]>
                 break;
             }
 
-            case LAST :
+            case GREATER :
             {
                 if ( arr1 == null )
                 {

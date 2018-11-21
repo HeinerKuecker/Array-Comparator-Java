@@ -107,7 +107,7 @@ implements Comparator<T[]>
         // handle null arrays
         switch ( this.arrayNulls )
         {
-            case FIRST :
+            case LESSER :
             {
                 if ( arr1 == null )
                 {
@@ -120,7 +120,7 @@ implements Comparator<T[]>
                 break;
             }
 
-            case LAST :
+            case GREATER :
             {
                 if ( arr1 == null )
                 {
@@ -163,7 +163,7 @@ implements Comparator<T[]>
             switch ( this.elementNulls )
             // handle null elements
             {
-                case FIRST :
+                case LESSER :
                 {
                     if ( o1 == null )
                     {
@@ -184,7 +184,7 @@ implements Comparator<T[]>
                     break;
                 }
 
-                case LAST :
+                case GREATER :
                 {
                     if ( o1 == null )
                     {

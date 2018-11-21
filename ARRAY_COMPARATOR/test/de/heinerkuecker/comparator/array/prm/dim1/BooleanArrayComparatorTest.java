@@ -158,14 +158,14 @@ public class BooleanArrayComparatorTest
      * Test method for {@link BooleanArrayComparator#compare}.
      */
     @Test
-    public void testCompare_arrayNulls_FIRST_1()
+    public void testCompare_arrayNulls_LESSER_1()
     {
         final boolean[] arr1 = null;
         final boolean[] arr2 = { false , true };
 
         final BooleanArrayComparator comparator =
                 new BooleanArrayComparator(
-                        Nulls.FIRST );
+                        Nulls.LESSER );
 
         ArrayComparatorTestUtil.assertLesserAndViceVersa(
                 comparator ,
@@ -177,14 +177,14 @@ public class BooleanArrayComparatorTest
      * Test method for {@link BooleanArrayComparator#compare}.
      */
     @Test
-    public void testCompare_arrayNulls_FIRST_2()
+    public void testCompare_arrayNulls_LESSER_2()
     {
         final boolean[] arr1 = { false , true };
         final boolean[] arr2 = null;
 
         final BooleanArrayComparator comparator =
                 new BooleanArrayComparator(
-                        Nulls.FIRST );
+                        Nulls.LESSER );
 
         ArrayComparatorTestUtil.assertGreaterAndViceVersa(
                 comparator ,
@@ -196,14 +196,14 @@ public class BooleanArrayComparatorTest
      * Test method for {@link BooleanArrayComparator#compare}.
      */
     @Test
-    public void testCompare_arrayNulls_LAST_1()
+    public void testCompare_arrayNulls_GREATER_1()
     {
         final boolean[] arr1 = { false , true };
         final boolean[] arr2 = null;
 
         final BooleanArrayComparator comparator =
                 new BooleanArrayComparator(
-                        Nulls.LAST );
+                        Nulls.GREATER );
 
         ArrayComparatorTestUtil.assertLesserAndViceVersa(
                 comparator ,
@@ -215,14 +215,14 @@ public class BooleanArrayComparatorTest
      * Test method for {@link BooleanArrayComparator#compare}.
      */
     @Test
-    public void testCompare_arrayNulls_LAST_2()
+    public void testCompare_arrayNulls_GREATER_2()
     {
         final boolean[] arr1 = null;
         final boolean[] arr2 = { false , true };
 
         final BooleanArrayComparator comparator =
                 new BooleanArrayComparator(
-                        Nulls.LAST );
+                        Nulls.GREATER );
 
         ArrayComparatorTestUtil.assertGreaterAndViceVersa(
                 comparator ,

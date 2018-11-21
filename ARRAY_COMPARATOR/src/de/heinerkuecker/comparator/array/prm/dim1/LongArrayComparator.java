@@ -60,7 +60,7 @@ implements Comparator<long[]>
         // handle null arrays
         switch ( this.arrayNulls )
         {
-            case FIRST :
+            case LESSER :
             {
                 if ( arr1 == null )
                 {
@@ -73,7 +73,7 @@ implements Comparator<long[]>
                 break;
             }
 
-            case LAST :
+            case GREATER :
             {
                 if ( arr1 == null )
                 {

@@ -139,14 +139,14 @@ public class CharArrayComparatorTest
      * Test method for {@link CharArrayComparator#compare}.
      */
     @Test
-    public void testCompare_arrayNulls_FIRST_1()
+    public void testCompare_arrayNulls_LESSER_1()
     {
         final char[] arr1 = null;
         final char[] arr2 = { 'A' , 'C' };
 
         final CharArrayComparator comparator =
                 new CharArrayComparator(
-                        Nulls.FIRST );
+                        Nulls.LESSER );
 
         ArrayComparatorTestUtil.assertLesserAndViceVersa(
                 comparator ,
@@ -158,14 +158,14 @@ public class CharArrayComparatorTest
      * Test method for {@link CharArrayComparator#compare}.
      */
     @Test
-    public void testCompare_arrayNulls_FIRST_2()
+    public void testCompare_arrayNulls_LESSER_2()
     {
         final char[] arr1 = { 'A' , 'B' };
         final char[] arr2 = null;
 
         final CharArrayComparator comparator =
                 new CharArrayComparator(
-                        Nulls.FIRST );
+                        Nulls.LESSER );
 
         ArrayComparatorTestUtil.assertGreaterAndViceVersa(
                 comparator ,
@@ -177,14 +177,14 @@ public class CharArrayComparatorTest
      * Test method for {@link CharArrayComparator#compare}.
      */
     @Test
-    public void testCompare_arrayNulls_LAST_1()
+    public void testCompare_arrayNulls_GREATER_1()
     {
         final char[] arr1 = { 'A' , 'B' };
         final char[] arr2 = null;
 
         final CharArrayComparator comparator =
                 new CharArrayComparator(
-                        Nulls.LAST );
+                        Nulls.GREATER );
 
         ArrayComparatorTestUtil.assertLesserAndViceVersa(
                 comparator ,
@@ -196,14 +196,14 @@ public class CharArrayComparatorTest
      * Test method for {@link CharArrayComparator#compare}.
      */
     @Test
-    public void testCompare_arrayNulls_LAST_2()
+    public void testCompare_arrayNulls_GREATER_2()
     {
         final char[] arr1 = null;
         final char[] arr2 = { 'A' , 'C' };
 
         final CharArrayComparator comparator =
                 new CharArrayComparator(
-                        Nulls.LAST );
+                        Nulls.GREATER );
 
         ArrayComparatorTestUtil.assertGreaterAndViceVersa(
                 comparator ,

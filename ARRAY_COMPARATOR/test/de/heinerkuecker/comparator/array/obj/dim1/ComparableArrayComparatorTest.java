@@ -158,14 +158,14 @@ public class ComparableArrayComparatorTest
      * Test method for {@link ComparableArrayComparator#compare}.
      */
     @Test
-    public void testCompare_arrayNulls_FIRST_1()
+    public void testCompare_arrayNulls_LESSER_1()
     {
         final String[] arr1 = null;
         final String[] arr2 = { "a" , "c" };
 
         final ComparableArrayComparator<String> comparator =
                 new ComparableArrayComparator<>(
-                        Nulls.FIRST ,
+                        Nulls.LESSER ,
                         Nulls.FORBIDDEN );
 
         ArrayComparatorTestUtil.assertLesserAndViceVersa(
@@ -178,14 +178,14 @@ public class ComparableArrayComparatorTest
      * Test method for {@link ComparableArrayComparator#compare}.
      */
     @Test
-    public void testCompare_arrayNulls_FIRST_2()
+    public void testCompare_arrayNulls_LESSER_2()
     {
         final String[] arr1 = { "a" , "b" };
         final String[] arr2 = null;
 
         final ComparableArrayComparator<String> comparator =
                 new ComparableArrayComparator<>(
-                        Nulls.FIRST ,
+                        Nulls.LESSER ,
                         Nulls.FORBIDDEN );
 
         ArrayComparatorTestUtil.assertGreaterAndViceVersa(
@@ -198,14 +198,14 @@ public class ComparableArrayComparatorTest
      * Test method for {@link ComparableArrayComparator#compare}.
      */
     @Test
-    public void testCompare_arrayNulls_LAST_1()
+    public void testCompare_arrayNulls_GREATER_1()
     {
         final String[] arr1 = { "a" , "b" };
         final String[] arr2 = null;
 
         final ComparableArrayComparator<String> comparator =
                 new ComparableArrayComparator<>(
-                        Nulls.LAST ,
+                        Nulls.GREATER ,
                         Nulls.FORBIDDEN );
 
         ArrayComparatorTestUtil.assertLesserAndViceVersa(
@@ -218,14 +218,14 @@ public class ComparableArrayComparatorTest
      * Test method for {@link ComparableArrayComparator#compare}.
      */
     @Test
-    public void testCompare_arrayNulls_LAST_2()
+    public void testCompare_arrayNulls_GREATER_2()
     {
         final String[] arr1 = null;
         final String[] arr2 = { "a" , "c" };
 
         final ComparableArrayComparator<String> comparator =
                 new ComparableArrayComparator<>(
-                        Nulls.LAST ,
+                        Nulls.GREATER ,
                         Nulls.FORBIDDEN );
 
         ArrayComparatorTestUtil.assertGreaterAndViceVersa(
@@ -238,7 +238,7 @@ public class ComparableArrayComparatorTest
      * Test method for {@link ComparableArrayComparator#compare}.
      */
     @Test
-    public void testCompare_elementNulls_FIRST_0_0()
+    public void testCompare_elementNulls_LESSER_0_0()
     {
         final String[] arr1 = { null , "a" };
         final String[] arr2 = { null , "b" };
@@ -246,7 +246,7 @@ public class ComparableArrayComparatorTest
         final ComparableArrayComparator<String> comparator =
                 new ComparableArrayComparator<>(
                         Nulls.FORBIDDEN ,
-                        Nulls.FIRST );
+                        Nulls.LESSER );
 
         ArrayComparatorTestUtil.assertLesserAndViceVersa(
                 comparator ,
@@ -258,7 +258,7 @@ public class ComparableArrayComparatorTest
      * Test method for {@link ComparableArrayComparator#compare}.
      */
     @Test
-    public void testCompare_elementNulls_FIRST_1_0()
+    public void testCompare_elementNulls_LESSER_1_0()
     {
         final String[] arr1 = { "a" , null };
         final String[] arr2 = { "a" , "b" };
@@ -266,7 +266,7 @@ public class ComparableArrayComparatorTest
         final ComparableArrayComparator<String> comparator =
                 new ComparableArrayComparator<>(
                         Nulls.FORBIDDEN ,
-                        Nulls.FIRST );
+                        Nulls.LESSER );
 
         ArrayComparatorTestUtil.assertLesserAndViceVersa(
                 comparator ,
@@ -278,7 +278,7 @@ public class ComparableArrayComparatorTest
      * Test method for {@link ComparableArrayComparator#compare}.
      */
     @Test
-    public void testCompare_elementNulls_FIRST_1_1()
+    public void testCompare_elementNulls_LESSER_1_1()
     {
         final String[] arr1 = { "a" , "b" };
         final String[] arr2 = { "a" , null };
@@ -286,7 +286,7 @@ public class ComparableArrayComparatorTest
         final ComparableArrayComparator<String> comparator =
                 new ComparableArrayComparator<>(
                         Nulls.FORBIDDEN ,
-                        Nulls.FIRST );
+                        Nulls.LESSER );
 
         ArrayComparatorTestUtil.assertGreaterAndViceVersa(
                 comparator ,
@@ -298,7 +298,7 @@ public class ComparableArrayComparatorTest
      * Test method for {@link ComparableArrayComparator#compare}.
      */
     @Test
-    public void testCompare_elementNulls_FIRST_2()
+    public void testCompare_elementNulls_LESSER_2()
     {
         final String[] arr1 = { "a" , "b" };
         final String[] arr2 = { "a" , null };
@@ -306,7 +306,7 @@ public class ComparableArrayComparatorTest
         final ComparableArrayComparator<String> comparator =
                 new ComparableArrayComparator<>(
                         Nulls.FORBIDDEN ,
-                        Nulls.FIRST );
+                        Nulls.LESSER );
 
         ArrayComparatorTestUtil.assertGreaterAndViceVersa(
                 comparator ,
@@ -318,7 +318,7 @@ public class ComparableArrayComparatorTest
      * Test method for {@link ComparableArrayComparator#compare}.
      */
     @Test
-    public void testCompare_elementNulls_LAST_0_0()
+    public void testCompare_elementNulls_GREATER_0_0()
     {
         final String[] arr1 = { null , "a" };
         final String[] arr2 = { null , "b" };
@@ -326,7 +326,7 @@ public class ComparableArrayComparatorTest
         final ComparableArrayComparator<String> comparator =
                 new ComparableArrayComparator<>(
                         Nulls.FORBIDDEN ,
-                        Nulls.LAST );
+                        Nulls.GREATER );
 
         ArrayComparatorTestUtil.assertLesserAndViceVersa(
                 comparator ,
@@ -338,7 +338,7 @@ public class ComparableArrayComparatorTest
      * Test method for {@link ComparableArrayComparator#compare}.
      */
     @Test
-    public void testCompare_elementNulls_LAST_0_1()
+    public void testCompare_elementNulls_GREATER_0_1()
     {
         final String[] arr1 = { null , "b" };
         final String[] arr2 = { null , "a" };
@@ -346,7 +346,7 @@ public class ComparableArrayComparatorTest
         final ComparableArrayComparator<String> comparator =
                 new ComparableArrayComparator<>(
                         Nulls.FORBIDDEN ,
-                        Nulls.LAST );
+                        Nulls.GREATER );
 
         ArrayComparatorTestUtil.assertGreaterAndViceVersa(
                 comparator ,
@@ -358,7 +358,7 @@ public class ComparableArrayComparatorTest
      * Test method for {@link ComparableArrayComparator#compare}.
      */
     @Test
-    public void testCompare_elementNulls_LAST_1()
+    public void testCompare_elementNulls_GREATER_1()
     {
         final String[] arr1 = { "a" , "b" };
         final String[] arr2 = { "a" , null };
@@ -366,7 +366,7 @@ public class ComparableArrayComparatorTest
         final ComparableArrayComparator<String> comparator =
                 new ComparableArrayComparator<>(
                         Nulls.FORBIDDEN ,
-                        Nulls.LAST );
+                        Nulls.GREATER );
 
         ArrayComparatorTestUtil.assertLesserAndViceVersa(
                 comparator ,
@@ -378,7 +378,7 @@ public class ComparableArrayComparatorTest
      * Test method for {@link ComparableArrayComparator#compare}.
      */
     @Test
-    public void testCompare_elementNulls_LAST_2()
+    public void testCompare_elementNulls_GREATER_2()
     {
         final String[] arr1 = { "a" , null };
         final String[] arr2 = { "a" , "b" };
@@ -386,7 +386,7 @@ public class ComparableArrayComparatorTest
         final ComparableArrayComparator<String> comparator =
                 new ComparableArrayComparator<>(
                         Nulls.FORBIDDEN ,
-                        Nulls.LAST );
+                        Nulls.GREATER );
 
         ArrayComparatorTestUtil.assertGreaterAndViceVersa(
                 comparator ,

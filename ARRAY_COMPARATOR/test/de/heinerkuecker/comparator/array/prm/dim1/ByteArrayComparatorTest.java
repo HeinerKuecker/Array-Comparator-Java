@@ -139,14 +139,14 @@ public class ByteArrayComparatorTest
      * Test method for {@link ByteArrayComparator#compare}.
      */
     @Test
-    public void testCompare_arrayNulls_FIRST_1()
+    public void testCompare_arrayNulls_LESSER_1()
     {
         final byte[] arr1 = null;
         final byte[] arr2 = { 1 , 3 };
 
         final ByteArrayComparator comparator =
                 new ByteArrayComparator(
-                        Nulls.FIRST );
+                        Nulls.LESSER );
 
         ArrayComparatorTestUtil.assertLesserAndViceVersa(
                 comparator ,
@@ -158,14 +158,14 @@ public class ByteArrayComparatorTest
      * Test method for {@link ByteArrayComparator#compare}.
      */
     @Test
-    public void testCompare_arrayNulls_FIRST_2()
+    public void testCompare_arrayNulls_LESSER_2()
     {
         final byte[] arr1 = { 1 , 2 };
         final byte[] arr2 = null;
 
         final ByteArrayComparator comparator =
                 new ByteArrayComparator(
-                        Nulls.FIRST );
+                        Nulls.LESSER );
 
         ArrayComparatorTestUtil.assertGreaterAndViceVersa(
                 comparator ,
@@ -177,14 +177,14 @@ public class ByteArrayComparatorTest
      * Test method for {@link ByteArrayComparator#compare}.
      */
     @Test
-    public void testCompare_arrayNulls_LAST_1()
+    public void testCompare_arrayNulls_GREATER_1()
     {
         final byte[] arr1 = { 1 , 2 };
         final byte[] arr2 = null;
 
         final ByteArrayComparator comparator =
                 new ByteArrayComparator(
-                        Nulls.LAST );
+                        Nulls.GREATER );
 
         ArrayComparatorTestUtil.assertLesserAndViceVersa(
                 comparator ,
@@ -196,14 +196,14 @@ public class ByteArrayComparatorTest
      * Test method for {@link ByteArrayComparator#compare}.
      */
     @Test
-    public void testCompare_arrayNulls_LAST_2()
+    public void testCompare_arrayNulls_GREATER_2()
     {
         final byte[] arr1 = null;
         final byte[] arr2 = { 1 , 3 };
 
         final ByteArrayComparator comparator =
                 new ByteArrayComparator(
-                        Nulls.LAST );
+                        Nulls.GREATER );
 
         ArrayComparatorTestUtil.assertGreaterAndViceVersa(
                 comparator ,

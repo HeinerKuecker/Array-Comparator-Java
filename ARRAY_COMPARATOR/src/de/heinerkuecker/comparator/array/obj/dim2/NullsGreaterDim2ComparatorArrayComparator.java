@@ -13,12 +13,12 @@ import de.heinerkuecker.comparator.array.obj.dim1.ComparatorArrayComparator;
  * array elements
  * with sorting null
  * arrays and null
- * elements at first.
+ * elements at last.
  *
  * @param <T> Element type of arrays to compare
  * @author Heiner K&uuml;cker
  */
-public class NullsFirstDim2ComparatorArrayComparator<T>
+public class NullsGreaterDim2ComparatorArrayComparator<T>
 extends ComparatorArrayComparator<T[]>
 {
     // TODO singleton
@@ -28,16 +28,16 @@ extends ComparatorArrayComparator<T[]>
      *
      * @param comparator Comparator to compare array elements
      */
-    public NullsFirstDim2ComparatorArrayComparator(
+    public NullsGreaterDim2ComparatorArrayComparator(
             final Comparator<? super T> comparator )
     {
         super(
-                Nulls.FIRST ,
-                Nulls.FIRST ,
+                Nulls.GREATER ,
+                Nulls.GREATER ,
                 ComparatorArrayComparator.<T>newComparatorArrayComparator(
                         // null arrays already handled by one level higher
                         Nulls.FORBIDDEN ,
-                        Nulls.FIRST ,
+                        Nulls.GREATER ,
                         comparator ) );
     }
 

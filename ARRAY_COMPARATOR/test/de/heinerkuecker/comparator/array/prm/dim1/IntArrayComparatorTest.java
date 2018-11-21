@@ -139,14 +139,14 @@ public class IntArrayComparatorTest
      * Test method for {@link IntArrayComparator#compare}.
      */
     @Test
-    public void testCompare_arrayNulls_FIRST_1()
+    public void testCompare_arrayNulls_LESSER_1()
     {
         final int[] arr1 = null;
         final int[] arr2 = { 1 , 3 };
 
         final IntArrayComparator comparator =
                 new IntArrayComparator(
-                        Nulls.FIRST );
+                        Nulls.LESSER );
 
         ArrayComparatorTestUtil.assertLesserAndViceVersa(
                 comparator ,
@@ -158,14 +158,14 @@ public class IntArrayComparatorTest
      * Test method for {@link IntArrayComparator#compare}.
      */
     @Test
-    public void testCompare_arrayNulls_FIRST_2()
+    public void testCompare_arrayNulls_LESSER_2()
     {
         final int[] arr1 = { 1 , 2 };
         final int[] arr2 = null;
 
         final IntArrayComparator comparator =
                 new IntArrayComparator(
-                        Nulls.FIRST );
+                        Nulls.LESSER );
 
         ArrayComparatorTestUtil.assertGreaterAndViceVersa(
                 comparator ,
@@ -177,14 +177,14 @@ public class IntArrayComparatorTest
      * Test method for {@link IntArrayComparator#compare}.
      */
     @Test
-    public void testCompare_arrayNulls_LAST_1()
+    public void testCompare_arrayNulls_GREATER_1()
     {
         final int[] arr1 = { 1 , 2 };
         final int[] arr2 = null;
 
         final IntArrayComparator comparator =
                 new IntArrayComparator(
-                        Nulls.LAST );
+                        Nulls.GREATER );
 
         ArrayComparatorTestUtil.assertLesserAndViceVersa(
                 comparator ,
@@ -196,14 +196,14 @@ public class IntArrayComparatorTest
      * Test method for {@link IntArrayComparator#compare}.
      */
     @Test
-    public void testCompare_arrayNulls_LAST_2()
+    public void testCompare_arrayNulls_GREATER_2()
     {
         final int[] arr1 = null;
         final int[] arr2 = { 1 , 3 };
 
         final IntArrayComparator comparator =
                 new IntArrayComparator(
-                        Nulls.LAST );
+                        Nulls.GREATER );
 
         ArrayComparatorTestUtil.assertGreaterAndViceVersa(
                 comparator ,
