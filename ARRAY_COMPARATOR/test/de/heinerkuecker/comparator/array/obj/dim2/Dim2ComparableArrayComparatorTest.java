@@ -75,6 +75,27 @@ public class Dim2ComparableArrayComparatorTest
      * Test method for {@link Dim2ComparableArrayComparator#compare}.
      */
     @Test
+    public void testCompare_Equal_but_not_self()
+    {
+        final String[][] arr1 = { { "a" } };
+        final String[][] arr2 = { { "a" } };
+
+        final Dim2ComparableArrayComparator<String> comparator =
+                new Dim2ComparableArrayComparator<>(
+                        Nulls.FORBIDDEN ,
+                        Nulls.FORBIDDEN ,
+                        Nulls.FORBIDDEN );
+
+        ArrayComparatorTestUtil.assertEqualAndViceVersa(
+                comparator,
+                arr1 ,
+                arr2 );
+    }
+
+    /**
+     * Test method for {@link Dim2ComparableArrayComparator#compare}.
+     */
+    @Test
     public void testCompare_1()
     {
         final String[][] arr1 = { { "a" } };
