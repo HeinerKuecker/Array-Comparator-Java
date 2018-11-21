@@ -53,25 +53,10 @@ public class BooleanArrayComparatorTest
                 new BooleanArrayComparator(
                         Nulls.FORBIDDEN );
 
-        ArrayComparatorTestUtil.assertEqual(
-                comparator.compare(
-                        arr1 ,
-                        arr2 ) );
-
-        ArrayComparatorTestUtil.assertEqual(
-                comparator.compare(
-                        arr2 ,
-                        arr1 ) );
-
-        ArrayComparatorTestUtil.assertEqual(
-                comparator.compare(
-                        arr1 ,
-                        arr1 ) );
-
-        ArrayComparatorTestUtil.assertEqual(
-                comparator.compare(
-                        arr2 ,
-                        arr2 ) );
+        ArrayComparatorTestUtil.assertEqualAndViceVersa(
+                comparator,
+                arr1 ,
+                arr2 );
     }
 
     /**
@@ -87,25 +72,10 @@ public class BooleanArrayComparatorTest
                 new BooleanArrayComparator(
                         Nulls.FORBIDDEN );
 
-        ArrayComparatorTestUtil.assertEqual(
-                comparator.compare(
-                        arr1 ,
-                        arr2 ) );
-
-        ArrayComparatorTestUtil.assertEqual(
-                comparator.compare(
-                        arr2 ,
-                        arr1 ) );
-
-        ArrayComparatorTestUtil.assertEqual(
-                comparator.compare(
-                        arr1 ,
-                        arr1 ) );
-
-        ArrayComparatorTestUtil.assertEqual(
-                comparator.compare(
-                        arr2 ,
-                        arr2 ) );
+        ArrayComparatorTestUtil.assertEqualAndViceVersa(
+                comparator,
+                arr1 ,
+                arr2 );
     }
 
     /**
@@ -121,25 +91,10 @@ public class BooleanArrayComparatorTest
                 new BooleanArrayComparator(
                         Nulls.FORBIDDEN );
 
-        ArrayComparatorTestUtil.assertLesser(
-                comparator.compare(
-                        arr1 ,
-                        arr2 ) );
-
-        ArrayComparatorTestUtil.assertGreater(
-                comparator.compare(
-                        arr2 ,
-                        arr1 ) );
-
-        ArrayComparatorTestUtil.assertEqual(
-                comparator.compare(
-                        arr1 ,
-                        arr1 ) );
-
-        ArrayComparatorTestUtil.assertEqual(
-                comparator.compare(
-                        arr2 ,
-                        arr2 ) );
+        ArrayComparatorTestUtil.assertLesserAndViceVersa(
+                comparator ,
+                arr1 ,
+                arr2 );
     }
 
     /**
@@ -155,25 +110,10 @@ public class BooleanArrayComparatorTest
                 new BooleanArrayComparator(
                         Nulls.FORBIDDEN );
 
-        ArrayComparatorTestUtil.assertLesser(
-                comparator.compare(
-                        arr2 ,
-                        arr1 ) );
-
-        ArrayComparatorTestUtil.assertGreater(
-                comparator.compare(
-                        arr1 ,
-                        arr2 ) );
-
-        ArrayComparatorTestUtil.assertEqual(
-                comparator.compare(
-                        arr1 ,
-                        arr1 ) );
-
-        ArrayComparatorTestUtil.assertEqual(
-                comparator.compare(
-                        arr2 ,
-                        arr2 ) );
+        ArrayComparatorTestUtil.assertGreaterAndViceVersa(
+                comparator ,
+                arr1 ,
+                arr2 );
     }
 
     /**
@@ -189,25 +129,10 @@ public class BooleanArrayComparatorTest
                 new BooleanArrayComparator(
                         Nulls.FORBIDDEN );
 
-        ArrayComparatorTestUtil.assertLesser(
-                comparator.compare(
-                        arr1 ,
-                        arr2 ) );
-
-        ArrayComparatorTestUtil.assertGreater(
-                comparator.compare(
-                        arr2 ,
-                        arr1 ) );
-
-        ArrayComparatorTestUtil.assertEqual(
-                comparator.compare(
-                        arr1 ,
-                        arr1 ) );
-
-        ArrayComparatorTestUtil.assertEqual(
-                comparator.compare(
-                        arr2 ,
-                        arr2 ) );
+        ArrayComparatorTestUtil.assertLesserAndViceVersa(
+                comparator ,
+                arr1 ,
+                arr2 );
     }
 
     /**
@@ -223,25 +148,10 @@ public class BooleanArrayComparatorTest
                 new BooleanArrayComparator(
                         Nulls.FORBIDDEN );
 
-        ArrayComparatorTestUtil.assertLesser(
-                comparator.compare(
-                        arr1 ,
-                        arr2 ) );
-
-        ArrayComparatorTestUtil.assertGreater(
-                comparator.compare(
-                        arr2 ,
-                        arr1 ) );
-
-        ArrayComparatorTestUtil.assertEqual(
-                comparator.compare(
-                        arr1 ,
-                        arr1 ) );
-
-        ArrayComparatorTestUtil.assertEqual(
-                comparator.compare(
-                        arr2 ,
-                        arr2 ) );
+        ArrayComparatorTestUtil.assertLesserAndViceVersa(
+                comparator ,
+                arr1 ,
+                arr2 );
     }
 
     /**
@@ -257,25 +167,10 @@ public class BooleanArrayComparatorTest
                 new BooleanArrayComparator(
                         Nulls.FIRST );
 
-        ArrayComparatorTestUtil.assertLesser(
-                comparator.compare(
-                        arr1 ,
-                        arr2 ) );
-
-        ArrayComparatorTestUtil.assertGreater(
-                comparator.compare(
-                        arr2 ,
-                        arr1 ) );
-
-        ArrayComparatorTestUtil.assertEqual(
-                comparator.compare(
-                        arr1 ,
-                        arr1 ) );
-
-        ArrayComparatorTestUtil.assertEqual(
-                comparator.compare(
-                        arr2 ,
-                        arr2 ) );
+        ArrayComparatorTestUtil.assertLesserAndViceVersa(
+                comparator ,
+                arr1 ,
+                arr2 );
     }
 
     /**
@@ -291,25 +186,10 @@ public class BooleanArrayComparatorTest
                 new BooleanArrayComparator(
                         Nulls.FIRST );
 
-        ArrayComparatorTestUtil.assertLesser(
-                comparator.compare(
-                        arr2 ,
-                        arr1 ) );
-
-        ArrayComparatorTestUtil.assertGreater(
-                comparator.compare(
-                        arr1 ,
-                        arr2 ) );
-
-        ArrayComparatorTestUtil.assertEqual(
-                comparator.compare(
-                        arr1 ,
-                        arr1 ) );
-
-        ArrayComparatorTestUtil.assertEqual(
-                comparator.compare(
-                        arr2 ,
-                        arr2 ) );
+        ArrayComparatorTestUtil.assertGreaterAndViceVersa(
+                comparator ,
+                arr1 ,
+                arr2 );
     }
 
     /**
@@ -325,25 +205,10 @@ public class BooleanArrayComparatorTest
                 new BooleanArrayComparator(
                         Nulls.LAST );
 
-        ArrayComparatorTestUtil.assertLesser(
-                comparator.compare(
-                        arr1 ,
-                        arr2 ) );
-
-        ArrayComparatorTestUtil.assertGreater(
-                comparator.compare(
-                        arr2 ,
-                        arr1 ) );
-
-        ArrayComparatorTestUtil.assertEqual(
-                comparator.compare(
-                        arr1 ,
-                        arr1 ) );
-
-        ArrayComparatorTestUtil.assertEqual(
-                comparator.compare(
-                        arr2 ,
-                        arr2 ) );
+        ArrayComparatorTestUtil.assertLesserAndViceVersa(
+                comparator ,
+                arr1 ,
+                arr2 );
     }
 
     /**
@@ -359,25 +224,10 @@ public class BooleanArrayComparatorTest
                 new BooleanArrayComparator(
                         Nulls.LAST );
 
-        ArrayComparatorTestUtil.assertLesser(
-                comparator.compare(
-                        arr2 ,
-                        arr1 ) );
-
-        ArrayComparatorTestUtil.assertGreater(
-                comparator.compare(
-                        arr1 ,
-                        arr2 ) );
-
-        ArrayComparatorTestUtil.assertEqual(
-                comparator.compare(
-                        arr1 ,
-                        arr1 ) );
-
-        ArrayComparatorTestUtil.assertEqual(
-                comparator.compare(
-                        arr2 ,
-                        arr2 ) );
+        ArrayComparatorTestUtil.assertGreaterAndViceVersa(
+                comparator ,
+                arr1 ,
+                arr2 );
     }
 
     /**
@@ -411,25 +261,10 @@ public class BooleanArrayComparatorTest
                 new BooleanArrayComparator(
                         Nulls.FORBIDDEN );
 
-        ArrayComparatorTestUtil.assertLesser(
-                comparator.compare(
-                        arr1 ,
-                        arr2 ) );
-
-        ArrayComparatorTestUtil.assertGreater(
-                comparator.compare(
-                        arr2 ,
-                        arr1 ) );
-
-        ArrayComparatorTestUtil.assertEqual(
-                comparator.compare(
-                        arr1 ,
-                        arr1 ) );
-
-        ArrayComparatorTestUtil.assertEqual(
-                comparator.compare(
-                        arr2 ,
-                        arr2 ) );
+        ArrayComparatorTestUtil.assertLesserAndViceVersa(
+                comparator ,
+                arr1 ,
+                arr2 );
     }
 
     /**
@@ -445,25 +280,10 @@ public class BooleanArrayComparatorTest
                 new BooleanArrayComparator(
                         Nulls.FORBIDDEN );
 
-        ArrayComparatorTestUtil.assertLesser(
-                comparator.compare(
-                        arr1 ,
-                        arr2 ) );
-
-        ArrayComparatorTestUtil.assertGreater(
-                comparator.compare(
-                        arr2 ,
-                        arr1 ) );
-
-        ArrayComparatorTestUtil.assertEqual(
-                comparator.compare(
-                        arr1 ,
-                        arr1 ) );
-
-        ArrayComparatorTestUtil.assertEqual(
-                comparator.compare(
-                        arr2 ,
-                        arr2 ) );
+        ArrayComparatorTestUtil.assertLesserAndViceVersa(
+                comparator ,
+                arr1 ,
+                arr2 );
     }
 
     /**
