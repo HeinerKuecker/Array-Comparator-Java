@@ -86,6 +86,14 @@ implements Comparator<long[]>
                 }
                 break;
             }
+
+            case FORBIDDEN :
+            {
+                if ( arr1 == null || arr2 == null )
+                {
+                    throw new NullPointerException();
+                }
+            }
         }
 
         if ( arr1 == arr2 )
