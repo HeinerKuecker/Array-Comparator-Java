@@ -49,7 +49,7 @@ public class Dim3IntArrayComparatorTest
      * Test method for {@link Dim3IntArrayComparator#Dim3IntArrayComparator}.
      */
     @Test( expected = NullPointerException.class )
-    public void testDim3IntArrayComparator_subArrayNulls_is_null()
+    public void testDim3IntArrayComparator_sub1ArrayNulls_is_null()
     {
         new Dim3IntArrayComparator(
                 Nulls.FORBIDDEN ,
@@ -62,7 +62,7 @@ public class Dim3IntArrayComparatorTest
      * Test method for {@link Dim3IntArrayComparator#Dim3IntArrayComparator}.
      */
     @Test( expected = NullPointerException.class )
-    public void testDim3IntArrayComparator_subSubArrayNulls_is_null()
+    public void testDim3IntArrayComparator_sub2ArrayNulls_is_null()
     {
         new Dim3IntArrayComparator(
                 Nulls.FORBIDDEN ,
@@ -243,7 +243,7 @@ public class Dim3IntArrayComparatorTest
      * Test method for {@link ComparableArrayComparator#compare}.
      */
     @Test
-    public void testCompare_subArrayNulls_LESSER_1()
+    public void testCompare_sub1ArrayNulls_LESSER_1()
     {
         final int[][][] arr1 = { { { 1 } } , null };
         final int[][][] arr2 = { { { 1 } } , { { 3 } } };
@@ -264,7 +264,7 @@ public class Dim3IntArrayComparatorTest
      * Test method for {@link ComparableArrayComparator#compare}.
      */
     @Test
-    public void testCompare_subArrayNulls_LESSER_2()
+    public void testCompare_sub1ArrayNulls_LESSER_2()
     {
         final int[][][] arr1 = { { { 1 } } , { { 2 } } };
         final int[][][] arr2 = { { { 1 } } , null };
@@ -285,7 +285,7 @@ public class Dim3IntArrayComparatorTest
      * Test method for {@link ComparableArrayComparator#compare}.
      */
     @Test
-    public void testCompare_subArrayNulls_GREATER_1()
+    public void testCompare_sub1ArrayNulls_GREATER_1()
     {
         final int[][][] arr1 = { { { 1 } } , { { 2 } } };
         final int[][][] arr2 = { { { 1 } } , null };
@@ -306,7 +306,7 @@ public class Dim3IntArrayComparatorTest
      * Test method for {@link ComparableArrayComparator#compare}.
      */
     @Test
-    public void testCompare_subArrayNulls_GREATER_2()
+    public void testCompare_sub1ArrayNulls_GREATER_2()
     {
         final int[][][] arr1 = { { { 1 } } , null };
         final int[][][] arr2 = { { { 1 } } , { { 3 } } };
@@ -327,7 +327,7 @@ public class Dim3IntArrayComparatorTest
      * Test method for {@link ComparableArrayComparator#compare}.
      */
     @Test
-    public void testCompare_subSubArrayNulls_LESSER_1()
+    public void testCompare_sub2ArrayNulls_LESSER_1()
     {
         final int[][][] arr1 = { { { 1 } } , { null } };
         final int[][][] arr2 = { { { 1 } } , { { 3 } } };
@@ -348,7 +348,7 @@ public class Dim3IntArrayComparatorTest
      * Test method for {@link ComparableArrayComparator#compare}.
      */
     @Test
-    public void testCompare_subSubArrayNulls_LESSER_2()
+    public void testCompare_sub2ArrayNulls_LESSER_2()
     {
         final int[][][] arr1 = { { { 1 } } , { { 2 } } };
         final int[][][] arr2 = { { { 1 } } , { null } };
@@ -369,7 +369,7 @@ public class Dim3IntArrayComparatorTest
      * Test method for {@link ComparableArrayComparator#compare}.
      */
     @Test
-    public void testCompare_subSubArrayNulls_GREATER_1()
+    public void testCompare_sub2ArrayNulls_GREATER_1()
     {
         final int[][][] arr1 = { { { 1 } } , { { 2 } } };
         final int[][][] arr2 = { { { 1 } } , { null } };
@@ -390,7 +390,7 @@ public class Dim3IntArrayComparatorTest
      * Test method for {@link ComparableArrayComparator#compare}.
      */
     @Test
-    public void testCompare_subSubArrayNulls_GREATER_2()
+    public void testCompare_sub2ArrayNulls_GREATER_2()
     {
         final int[][][] arr1 = { { { 1 } } , { null } };
         final int[][][] arr2 = { { { 1 } } , { { 3 } } };

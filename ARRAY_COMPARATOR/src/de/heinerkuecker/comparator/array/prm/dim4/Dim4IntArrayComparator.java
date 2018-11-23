@@ -23,26 +23,26 @@ extends ComparatorArrayComparator<int[][][]>
      * Constructor.
      *
      * @param arrayNulls Control handling of null arrays to sort
-     * @param subArrayNulls Control handling of null sub arrays to sort
-     * @param subSubArrayNulls Control handling of null sub sub arrays to sort
-     * @param subSubSubArrayNulls Control handling of null sub sub sub arrays to sort
+     * @param sub1ArrayNulls Control handling of null sub arrays to sort
+     * @param sub2ArrayNulls Control handling of null sub sub arrays to sort
+     * @param sub3ArrayNulls Control handling of null sub sub sub arrays to sort
      */
     public Dim4IntArrayComparator(
             final Nulls arrayNulls ,
-            final Nulls subArrayNulls ,
-            final Nulls subSubArrayNulls ,
-            final Nulls subSubSubArrayNulls )
+            final Nulls sub1ArrayNulls ,
+            final Nulls sub2ArrayNulls ,
+            final Nulls sub3ArrayNulls )
     {
         // TODO test
         // TODO null handling params correct???
         super(
                 arrayNulls ,
-                subArrayNulls ,
+                sub1ArrayNulls ,
                 new Dim3IntArrayComparator(
                         // null arrays already handled by one level higher
                         Nulls.FORBIDDEN ,
-                        subSubArrayNulls ,
-                        subSubSubArrayNulls ) );
+                        sub2ArrayNulls ,
+                        sub3ArrayNulls ) );
     }
 
     /**
