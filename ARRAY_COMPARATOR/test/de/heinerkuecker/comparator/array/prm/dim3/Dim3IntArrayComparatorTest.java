@@ -53,7 +53,7 @@ public class Dim3IntArrayComparatorTest
     {
         new Dim3IntArrayComparator(
                 Nulls.FORBIDDEN ,
-                // subArrayNulls
+                // sub1ArrayNulls
                 null ,
                 Nulls.FORBIDDEN );
     }
@@ -67,7 +67,7 @@ public class Dim3IntArrayComparatorTest
         new Dim3IntArrayComparator(
                 Nulls.FORBIDDEN ,
                 Nulls.FORBIDDEN ,
-                // subSubArrayNulls
+                // sub2ArrayNulls
                 null );
     }
 
@@ -411,15 +411,135 @@ public class Dim3IntArrayComparatorTest
      * Test method for {@link Dim3IntArrayComparator#compare}.
      */
     @Test( expected = NullPointerException.class )
-    public void testCompare_Negative_Array_is_null()
+    public void testCompare_Negative_Array_is_null_0()
     {
         final int[][][] arr1 = null;
-        final int[][][] arr2 = { { { 1 } } , { { 3 } } };
+        final int[][][] arr2 = { { { 1 } } };
 
         final Dim3IntArrayComparator comparator =
                 new Dim3IntArrayComparator(
                         Nulls.FORBIDDEN ,
+                        Nulls.LESSER ,
+                        Nulls.LESSER );
+
+        comparator.compare(
+                arr1 ,
+                arr2 );
+    }
+
+    /**
+     * Test method for {@link Dim3IntArrayComparator#compare}.
+     */
+    @Test( expected = NullPointerException.class )
+    public void testCompare_Negative_Array_is_null_1()
+    {
+        final int[][][] arr1 = { { { 1 } } };
+        final int[][][] arr2 = null;
+
+        final Dim3IntArrayComparator comparator =
+                new Dim3IntArrayComparator(
                         Nulls.FORBIDDEN ,
+                        Nulls.LESSER ,
+                        Nulls.LESSER );
+
+        comparator.compare(
+                arr1 ,
+                arr2 );
+    }
+
+    /**
+     * Test method for {@link Dim3IntArrayComparator#compare}.
+     */
+    @Test( expected = NullPointerException.class )
+    public void testCompare_Negative_Array_is_null_2()
+    {
+        final int[][][] arr1 = null;
+        final int[][][] arr2 = null;
+
+        final Dim3IntArrayComparator comparator =
+                new Dim3IntArrayComparator(
+                        Nulls.FORBIDDEN ,
+                        Nulls.LESSER ,
+                        Nulls.LESSER );
+
+        comparator.compare(
+                arr1 ,
+                arr2 );
+    }
+
+    /**
+     * Test method for {@link Dim3IntArrayComparator#compare}.
+     */
+    @Test( expected = NullPointerException.class )
+    public void testCompare_Negative_sub1Array_is_null_0()
+    {
+        final int[][][] arr1 = { null };
+        final int[][][] arr2 = { { { 1 } } , { { 3 } } };
+
+        final Dim3IntArrayComparator comparator =
+                new Dim3IntArrayComparator(
+                        Nulls.GREATER ,
+                        Nulls.FORBIDDEN ,
+                        Nulls.GREATER );
+
+        comparator.compare(
+                arr1 ,
+                arr2 );
+    }
+
+    /**
+     * Test method for {@link Dim3IntArrayComparator#compare}.
+     */
+    @Test( expected = NullPointerException.class )
+    public void testCompare_Negative_sub1Array_is_null_1()
+    {
+        final int[][][] arr1 = { { { 1 } } , { { 2 } } };
+        final int[][][] arr2 = { null };
+
+        final Dim3IntArrayComparator comparator =
+                new Dim3IntArrayComparator(
+                        Nulls.GREATER ,
+                        Nulls.FORBIDDEN ,
+                        Nulls.GREATER );
+
+        comparator.compare(
+                arr1 ,
+                arr2 );
+    }
+
+    /**
+     * Test method for {@link Dim3IntArrayComparator#compare}.
+     */
+    @Test( expected = NullPointerException.class )
+    public void testCompare_Negative_sub1Array_is_null_2()
+    {
+        final int[][][] arr1 = { null };
+        final int[][][] arr2 = { null };
+
+        final Dim3IntArrayComparator comparator =
+                new Dim3IntArrayComparator(
+                        Nulls.GREATER ,
+                        Nulls.FORBIDDEN ,
+                        Nulls.GREATER );
+
+        comparator.compare(
+                arr1 ,
+                arr2 );
+    }
+
+    /**
+     * Test method for {@link Dim3IntArrayComparator#compare}.
+     */
+    @Test( expected = NullPointerException.class )
+    public void testCompare_Negative_sub2Array_is_null_0()
+    {
+        final int[][][] arr1 = { { null } };
+        final int[][][] arr2 = { { { 1 } } , { { 3 } } };
+
+        final Dim3IntArrayComparator comparator =
+                new Dim3IntArrayComparator(
+                        Nulls.GREATER ,
+                        Nulls.LESSER ,
                         Nulls.FORBIDDEN );
 
         comparator.compare(
@@ -431,15 +551,35 @@ public class Dim3IntArrayComparatorTest
      * Test method for {@link Dim3IntArrayComparator#compare}.
      */
     @Test( expected = NullPointerException.class )
-    public void testCompare_Negative_subArray_is_null()
+    public void testCompare_Negative_sub2Array_is_null_1()
     {
-        final int[][][] arr1 = { null };
-        final int[][][] arr2 = { { { 1 } } , { { 3 } } };
+        final int[][][] arr1 = { { { 1 } } , { { 2 } } };
+        final int[][][] arr2 = { { null } };
 
         final Dim3IntArrayComparator comparator =
                 new Dim3IntArrayComparator(
-                        Nulls.FORBIDDEN ,
-                        Nulls.FORBIDDEN ,
+                        Nulls.GREATER ,
+                        Nulls.LESSER ,
+                        Nulls.FORBIDDEN );
+
+        comparator.compare(
+                arr1 ,
+                arr2 );
+    }
+
+    /**
+     * Test method for {@link Dim3IntArrayComparator#compare}.
+     */
+    @Test( expected = NullPointerException.class )
+    public void testCompare_Negative_sub2Array_is_null_2()
+    {
+        final int[][][] arr1 = { { null } };
+        final int[][][] arr2 = { { null } };
+
+        final Dim3IntArrayComparator comparator =
+                new Dim3IntArrayComparator(
+                        Nulls.GREATER ,
+                        Nulls.LESSER ,
                         Nulls.FORBIDDEN );
 
         comparator.compare(

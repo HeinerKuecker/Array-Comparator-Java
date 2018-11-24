@@ -234,10 +234,46 @@ public class BooleanArrayComparatorTest
      * Test method for {@link BooleanArrayComparator#compare}.
      */
     @Test( expected = NullPointerException.class )
-    public void testCompare_Negative_Array_is_null()
+    public void testCompare_Negative_Array_is_null_0()
     {
         final boolean[] arr1 = null;
         final boolean[] arr2 = { false , true };
+
+        final BooleanArrayComparator comparator =
+                new BooleanArrayComparator(
+                        Nulls.FORBIDDEN );
+
+        comparator.compare(
+                arr1 ,
+                arr2 );
+    }
+
+    /**
+     * Test method for {@link BooleanArrayComparator#compare}.
+     */
+    @Test( expected = NullPointerException.class )
+    public void testCompare_Negative_Array_is_null_1()
+    {
+        final boolean[] arr1 = { false , true };
+        final boolean[] arr2 = null;
+
+        final BooleanArrayComparator comparator =
+                new BooleanArrayComparator(
+                        Nulls.FORBIDDEN );
+
+        comparator.compare(
+                arr1 ,
+                arr2 );
+    }
+
+    /**
+     * Test method for {@link BooleanArrayComparator#compare}.
+     */
+    @Test( expected = NullPointerException.class )
+    public void testCompare_Negative_Array_is_null_2()
+    {
+        final boolean[] arr1 = null;
+        final boolean[] arr2 = null;
 
         final BooleanArrayComparator comparator =
                 new BooleanArrayComparator(

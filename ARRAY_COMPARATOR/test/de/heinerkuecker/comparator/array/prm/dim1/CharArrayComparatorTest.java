@@ -215,10 +215,46 @@ public class CharArrayComparatorTest
      * Test method for {@link CharArrayComparator#compare}.
      */
     @Test( expected = NullPointerException.class )
-    public void testCompare_Negative_Array_is_null()
+    public void testCompare_Negative_Array_is_null_0()
     {
         final char[] arr1 = null;
         final char[] arr2 = { 'A' , 'C' };
+
+        final CharArrayComparator comparator =
+                new CharArrayComparator(
+                        Nulls.FORBIDDEN );
+
+        comparator.compare(
+                arr1 ,
+                arr2 );
+    }
+
+    /**
+     * Test method for {@link CharArrayComparator#compare}.
+     */
+    @Test( expected = NullPointerException.class )
+    public void testCompare_Negative_Array_is_null_1()
+    {
+        final char[] arr1 = { 'A' , 'B' };
+        final char[] arr2 = null;
+
+        final CharArrayComparator comparator =
+                new CharArrayComparator(
+                        Nulls.FORBIDDEN );
+
+        comparator.compare(
+                arr1 ,
+                arr2 );
+    }
+
+    /**
+     * Test method for {@link CharArrayComparator#compare}.
+     */
+    @Test( expected = NullPointerException.class )
+    public void testCompare_Negative_Array_is_null_2()
+    {
+        final char[] arr1 = null;
+        final char[] arr2 = null;
 
         final CharArrayComparator comparator =
                 new CharArrayComparator(

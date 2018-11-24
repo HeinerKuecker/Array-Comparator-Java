@@ -215,10 +215,46 @@ public class IntArrayComparatorTest
      * Test method for {@link IntArrayComparator#compare}.
      */
     @Test( expected = NullPointerException.class )
-    public void testCompare_Negative_Array_is_null()
+    public void testCompare_Negative_Array_is_null_0()
     {
         final int[] arr1 = null;
         final int[] arr2 = { 1 , 3 };
+
+        final IntArrayComparator comparator =
+                new IntArrayComparator(
+                        Nulls.FORBIDDEN );
+
+        comparator.compare(
+                arr1 ,
+                arr2 );
+    }
+
+    /**
+     * Test method for {@link IntArrayComparator#compare}.
+     */
+    @Test( expected = NullPointerException.class )
+    public void testCompare_Negative_Array_is_null_1()
+    {
+        final int[] arr1 = { 1 , 2 };
+        final int[] arr2 = null;
+
+        final IntArrayComparator comparator =
+                new IntArrayComparator(
+                        Nulls.FORBIDDEN );
+
+        comparator.compare(
+                arr1 ,
+                arr2 );
+    }
+
+    /**
+     * Test method for {@link IntArrayComparator#compare}.
+     */
+    @Test( expected = NullPointerException.class )
+    public void testCompare_Negative_Array_is_null_2()
+    {
+        final int[] arr1 = null;
+        final int[] arr2 = null;
 
         final IntArrayComparator comparator =
                 new IntArrayComparator(

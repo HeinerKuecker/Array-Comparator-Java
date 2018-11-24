@@ -447,7 +447,7 @@ public class Dim2ComparatorArrayComparatorTest
      * Test method for {@link Dim2ComparatorArrayComparator#compare}.
      */
     @Test( expected = NullPointerException.class )
-    public void testCompare_Negative_Array_is_null()
+    public void testCompare_Negative_Array_is_null_0()
     {
         final String[][] arr1 = null;
         final String[][] arr2 = { { "a" , "c" } };
@@ -455,8 +455,8 @@ public class Dim2ComparatorArrayComparatorTest
         final Dim2ComparatorArrayComparator<String> comparator =
                 new Dim2ComparatorArrayComparator<>(
                         Nulls.FORBIDDEN ,
-                        Nulls.FORBIDDEN ,
-                        Nulls.FORBIDDEN ,
+                        Nulls.LESSER ,
+                        Nulls.LESSER ,
                         Comparator.<String>naturalOrder() );
 
         comparator.compare(
@@ -468,16 +468,16 @@ public class Dim2ComparatorArrayComparatorTest
      * Test method for {@link Dim2ComparatorArrayComparator#compare}.
      */
     @Test( expected = NullPointerException.class )
-    public void testCompare_Negative_subArray_is_null()
+    public void testCompare_Negative_Array_is_null_1()
     {
-        final String[][] arr1 = null;
-        final String[][] arr2 = { { "a" , "c" } };
+        final String[][] arr1 = { { "a" , "c" } };
+        final String[][] arr2 = null;
 
         final Dim2ComparatorArrayComparator<String> comparator =
                 new Dim2ComparatorArrayComparator<>(
                         Nulls.FORBIDDEN ,
-                        Nulls.FORBIDDEN ,
-                        Nulls.FORBIDDEN ,
+                        Nulls.LESSER ,
+                        Nulls.LESSER ,
                         Comparator.<String>naturalOrder() );
 
         comparator.compare(
@@ -489,15 +489,120 @@ public class Dim2ComparatorArrayComparatorTest
      * Test method for {@link Dim2ComparatorArrayComparator#compare}.
      */
     @Test( expected = NullPointerException.class )
-    public void testCompare_Negative_Array_element_is_null()
+    public void testCompare_Negative_Array_is_null_2()
+    {
+        final String[][] arr1 = null;
+        final String[][] arr2 = null;
+
+        final Dim2ComparatorArrayComparator<String> comparator =
+                new Dim2ComparatorArrayComparator<>(
+                        Nulls.FORBIDDEN ,
+                        Nulls.LESSER ,
+                        Nulls.LESSER ,
+                        Comparator.<String>naturalOrder() );
+
+        comparator.compare(
+                arr1 ,
+                arr2 );
+    }
+
+    /**
+     * Test method for {@link Dim2ComparatorArrayComparator#compare}.
+     */
+    @Test( expected = NullPointerException.class )
+    public void testCompare_Negative_subArray_is_null_0()
+    {
+        final String[][] arr1 = { null };
+        final String[][] arr2 = { { "a" , "c" } };
+
+        final Dim2ComparatorArrayComparator<String> comparator =
+                new Dim2ComparatorArrayComparator<>(
+                        Nulls.LESSER ,
+                        Nulls.FORBIDDEN ,
+                        Nulls.LESSER ,
+                        Comparator.<String>naturalOrder() );
+
+        comparator.compare(
+                arr1 ,
+                arr2 );
+    }
+
+    /**
+     * Test method for {@link Dim2ComparatorArrayComparator#compare}.
+     */
+    @Test( expected = NullPointerException.class )
+    public void testCompare_Negative_subArray_is_null_1()
+    {
+        final String[][] arr1 = { { "a" , "b" } };
+        final String[][] arr2 = { null };
+
+        final Dim2ComparatorArrayComparator<String> comparator =
+                new Dim2ComparatorArrayComparator<>(
+                        Nulls.LESSER ,
+                        Nulls.FORBIDDEN ,
+                        Nulls.LESSER ,
+                        Comparator.<String>naturalOrder() );
+
+        comparator.compare(
+                arr1 ,
+                arr2 );
+    }
+
+    /**
+     * Test method for {@link Dim2ComparatorArrayComparator#compare}.
+     */
+    @Test( expected = NullPointerException.class )
+    public void testCompare_Negative_subArray_is_null_2()
+    {
+        final String[][] arr1 = { null };
+        final String[][] arr2 = { null };
+
+        final Dim2ComparatorArrayComparator<String> comparator =
+                new Dim2ComparatorArrayComparator<>(
+                        Nulls.LESSER ,
+                        Nulls.FORBIDDEN ,
+                        Nulls.LESSER ,
+                        Comparator.<String>naturalOrder() );
+
+        comparator.compare(
+                arr1 ,
+                arr2 );
+    }
+
+    /**
+     * Test method for {@link Dim2ComparatorArrayComparator#compare}.
+     */
+    @Test( expected = NullPointerException.class )
+    public void testCompare_Negative_Element_is_null_0()
     {
         final String[][] arr1 = { { "a" , null } };
         final String[][] arr2 = { { "a" , "c" } };
 
         final Dim2ComparatorArrayComparator<String> comparator =
                 new Dim2ComparatorArrayComparator<>(
+                        Nulls.LESSER ,
+                        Nulls.LESSER ,
                         Nulls.FORBIDDEN ,
-                        Nulls.FORBIDDEN ,
+                        Comparator.<String>naturalOrder() );
+
+        comparator.compare(
+                arr1 ,
+                arr2 );
+    }
+
+    /**
+     * Test method for {@link Dim2ComparatorArrayComparator#compare}.
+     */
+    @Test( expected = NullPointerException.class )
+    public void testCompare_Negative_Element_is_null_1()
+    {
+        final String[][] arr1 = { { "a" , "b" } };
+        final String[][] arr2 = { { "a" , null } };
+
+        final Dim2ComparatorArrayComparator<String> comparator =
+                new Dim2ComparatorArrayComparator<>(
+                        Nulls.LESSER ,
+                        Nulls.LESSER ,
                         Nulls.FORBIDDEN ,
                         Comparator.<String>naturalOrder() );
 

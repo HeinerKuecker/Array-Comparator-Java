@@ -398,7 +398,7 @@ public class ComparableArrayComparatorTest
      * Test method for {@link ComparableArrayComparator#compare}.
      */
     @Test( expected = NullPointerException.class )
-    public void testCompare_Negative_Array_is_null()
+    public void testCompare_Negative_Array_is_null_0()
     {
         final String[] arr1 = null;
         final String[] arr2 = { "a" , "c" };
@@ -406,6 +406,63 @@ public class ComparableArrayComparatorTest
         final ComparableArrayComparator<String> comparator =
                 new ComparableArrayComparator<>(
                         Nulls.FORBIDDEN ,
+                        Nulls.LESSER );
+
+        comparator.compare(
+                arr1 ,
+                arr2 );
+    }
+
+    /**
+     * Test method for {@link ComparableArrayComparator#compare}.
+     */
+    @Test( expected = NullPointerException.class )
+    public void testCompare_Negative_Array_is_null_1()
+    {
+        final String[] arr1 = { "a" , "b" };
+        final String[] arr2 = null;
+
+        final ComparableArrayComparator<String> comparator =
+                new ComparableArrayComparator<>(
+                        Nulls.FORBIDDEN ,
+                        Nulls.LESSER );
+
+        comparator.compare(
+                arr1 ,
+                arr2 );
+    }
+
+    /**
+     * Test method for {@link ComparableArrayComparator#compare}.
+     */
+    @Test( expected = NullPointerException.class )
+    public void testCompare_Negative_Array_is_null_2()
+    {
+        final String[] arr1 = null;
+        final String[] arr2 = null;
+
+        final ComparableArrayComparator<String> comparator =
+                new ComparableArrayComparator<>(
+                        Nulls.FORBIDDEN ,
+                        Nulls.LESSER );
+
+        comparator.compare(
+                arr1 ,
+                arr2 );
+    }
+
+    /**
+     * Test method for {@link ComparableArrayComparator#compare}.
+     */
+    @Test( expected = NullPointerException.class )
+    public void testCompare_Negative_Element_is_null_0()
+    {
+        final String[] arr1 = { "a" , null };
+        final String[] arr2 = { "a" , "c" };
+
+        final ComparableArrayComparator<String> comparator =
+                new ComparableArrayComparator<>(
+                        Nulls.LESSER ,
                         Nulls.FORBIDDEN );
 
         comparator.compare(
@@ -417,14 +474,33 @@ public class ComparableArrayComparatorTest
      * Test method for {@link ComparableArrayComparator#compare}.
      */
     @Test( expected = NullPointerException.class )
-    public void testCompare_Negative_Array_element_is_null()
+    public void testCompare_Negative_Element_is_null_1()
     {
-        final String[] arr1 = { "a" , null };
-        final String[] arr2 = { "a" , "c" };
+        final String[] arr1 = { "a" , "b" };
+        final String[] arr2 = { "a" , null };
 
         final ComparableArrayComparator<String> comparator =
                 new ComparableArrayComparator<>(
-                        Nulls.FORBIDDEN ,
+                        Nulls.LESSER ,
+                        Nulls.FORBIDDEN );
+
+        comparator.compare(
+                arr1 ,
+                arr2 );
+    }
+
+    /**
+     * Test method for {@link ComparableArrayComparator#compare}.
+     */
+    @Test( expected = NullPointerException.class )
+    public void testCompare_Negative_Element_is_null_2()
+    {
+        final String[] arr1 = { "a" , null };
+        final String[] arr2 = { "a" , null };
+
+        final ComparableArrayComparator<String> comparator =
+                new ComparableArrayComparator<>(
+                        Nulls.LESSER ,
                         Nulls.FORBIDDEN );
 
         comparator.compare(

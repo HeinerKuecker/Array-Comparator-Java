@@ -215,10 +215,46 @@ public class LongArrayComparatorTest
      * Test method for {@link LongArrayComparator#compare}.
      */
     @Test( expected = NullPointerException.class )
-    public void testCompare_Negative_Array_is_null()
+    public void testCompare_Negative_Array_is_null_0()
     {
         final long[] arr1 = null;
         final long[] arr2 = { 1 , 3 };
+
+        final LongArrayComparator comparator =
+                new LongArrayComparator(
+                        Nulls.FORBIDDEN );
+
+        comparator.compare(
+                arr1 ,
+                arr2 );
+    }
+
+    /**
+     * Test method for {@link LongArrayComparator#compare}.
+     */
+    @Test( expected = NullPointerException.class )
+    public void testCompare_Negative_Array_is_null_1()
+    {
+        final long[] arr1 = { 1 , 2 };
+        final long[] arr2 = null;
+
+        final LongArrayComparator comparator =
+                new LongArrayComparator(
+                        Nulls.FORBIDDEN );
+
+        comparator.compare(
+                arr1 ,
+                arr2 );
+    }
+
+    /**
+     * Test method for {@link LongArrayComparator#compare}.
+     */
+    @Test( expected = NullPointerException.class )
+    public void testCompare_Negative_Array_is_null_2()
+    {
+        final long[] arr1 = null;
+        final long[] arr2 = null;
 
         final LongArrayComparator comparator =
                 new LongArrayComparator(

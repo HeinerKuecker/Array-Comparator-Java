@@ -47,11 +47,11 @@ public class Dim2IntArrayComparatorTest
      * Test method for {@link Dim2IntArrayComparator#Dim2IntArrayComparator}.
      */
     @Test( expected = NullPointerException.class )
-    public void testDim2IntArrayComparator_elementNulls_is_null()
+    public void testDim2IntArrayComparator_subArrayNulls_is_null()
     {
         new Dim2IntArrayComparator(
                 Nulls.FORBIDDEN ,
-                // elementNulls
+                // subArrayNulls
                 null );
     }
 
@@ -300,10 +300,10 @@ public class Dim2IntArrayComparatorTest
      * Test method for {@link Dim2IntArrayComparator#compare}.
      */
     @Test( expected = NullPointerException.class )
-    public void testCompare_Negative_Array_is_null()
+    public void testCompare_Negative_Array_is_null_0()
     {
         final int[][] arr1 = null;
-        final int[][] arr2 = { { 1 } , { 3 } };
+        final int[][] arr2 = { { 1 } };
 
         final Dim2IntArrayComparator comparator =
                 new Dim2IntArrayComparator(
@@ -319,10 +319,86 @@ public class Dim2IntArrayComparatorTest
      * Test method for {@link Dim2IntArrayComparator#compare}.
      */
     @Test( expected = NullPointerException.class )
-    public void testCompare_Negative_subArray_is_null()
+    public void testCompare_Negative_Array_is_null_1()
+    {
+        final int[][] arr1 = { { 1 } };
+        final int[][] arr2 = null;
+
+        final Dim2IntArrayComparator comparator =
+                new Dim2IntArrayComparator(
+                        Nulls.FORBIDDEN ,
+                        Nulls.FORBIDDEN );
+
+        comparator.compare(
+                arr1 ,
+                arr2 );
+    }
+
+    /**
+     * Test method for {@link Dim2IntArrayComparator#compare}.
+     */
+    @Test( expected = NullPointerException.class )
+    public void testCompare_Negative_Array_is_null_2()
+    {
+        final int[][] arr1 = null;
+        final int[][] arr2 = null;
+
+        final Dim2IntArrayComparator comparator =
+                new Dim2IntArrayComparator(
+                        Nulls.FORBIDDEN ,
+                        Nulls.FORBIDDEN );
+
+        comparator.compare(
+                arr1 ,
+                arr2 );
+    }
+
+    /**
+     * Test method for {@link Dim2IntArrayComparator#compare}.
+     */
+    @Test( expected = NullPointerException.class )
+    public void testCompare_Negative_subArray_is_null_0()
     {
         final int[][] arr1 = { null };
-        final int[][] arr2 = { { 1 } , { 3 } };
+        final int[][] arr2 = { { 1 } };
+
+        final Dim2IntArrayComparator comparator =
+                new Dim2IntArrayComparator(
+                        Nulls.FORBIDDEN ,
+                        Nulls.FORBIDDEN );
+
+        comparator.compare(
+                arr1 ,
+                arr2 );
+    }
+
+    /**
+     * Test method for {@link Dim2IntArrayComparator#compare}.
+     */
+    @Test( expected = NullPointerException.class )
+    public void testCompare_Negative_subArray_is_null_1()
+    {
+        final int[][] arr1 = { { 1 } };
+        final int[][] arr2 = { null };
+
+        final Dim2IntArrayComparator comparator =
+                new Dim2IntArrayComparator(
+                        Nulls.FORBIDDEN ,
+                        Nulls.FORBIDDEN );
+
+        comparator.compare(
+                arr1 ,
+                arr2 );
+    }
+
+    /**
+     * Test method for {@link Dim2IntArrayComparator#compare}.
+     */
+    @Test( expected = NullPointerException.class )
+    public void testCompare_Negative_subArray_is_null_2()
+    {
+        final int[][] arr1 = { null };
+        final int[][] arr2 = { null };
 
         final Dim2IntArrayComparator comparator =
                 new Dim2IntArrayComparator(

@@ -215,10 +215,46 @@ public class ShortArrayComparatorTest
      * Test method for {@link ShortArrayComparator#compare}.
      */
     @Test( expected = NullPointerException.class )
-    public void testCompare_Negative_Array_is_null()
+    public void testCompare_Negative_Array_is_null_0()
     {
         final short[] arr1 = null;
         final short[] arr2 = { 1 , 3 };
+
+        final ShortArrayComparator comparator =
+                new ShortArrayComparator(
+                        Nulls.FORBIDDEN );
+
+        comparator.compare(
+                arr1 ,
+                arr2 );
+    }
+
+    /**
+     * Test method for {@link ShortArrayComparator#compare}.
+     */
+    @Test( expected = NullPointerException.class )
+    public void testCompare_Negative_Array_is_null_1()
+    {
+        final short[] arr1 = { 1 , 2 };
+        final short[] arr2 = null;
+
+        final ShortArrayComparator comparator =
+                new ShortArrayComparator(
+                        Nulls.FORBIDDEN );
+
+        comparator.compare(
+                arr1 ,
+                arr2 );
+    }
+
+    /**
+     * Test method for {@link ShortArrayComparator#compare}.
+     */
+    @Test( expected = NullPointerException.class )
+    public void testCompare_Negative_Array_is_null_2()
+    {
+        final short[] arr1 = null;
+        final short[] arr2 = null;
 
         final ShortArrayComparator comparator =
                 new ShortArrayComparator(
