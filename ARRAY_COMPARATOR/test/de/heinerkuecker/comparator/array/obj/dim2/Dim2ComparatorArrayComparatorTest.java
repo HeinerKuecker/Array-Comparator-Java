@@ -21,7 +21,7 @@ public class Dim2ComparatorArrayComparatorTest
      * Test method for {@link Dim2ComparatorArrayComparator#Dim2ComparatorArrayComparator}.
      */
     @Test
-    public void testDim2ComparableArrayComparator()
+    public void testDim2ComparatorArrayComparator()
     {
         final Dim2ComparatorArrayComparator<String> comparator =
                 new Dim2ComparatorArrayComparator<>(
@@ -38,7 +38,7 @@ public class Dim2ComparatorArrayComparatorTest
      * Test method for {@link Dim2ComparatorArrayComparator#Dim2ComparatorArrayComparator}.
      */
     @Test( expected = NullPointerException.class )
-    public void testDim2ComparableArrayComparator_arrayNulls_is_null()
+    public void testDim2ComparatorArrayComparator_arrayNulls_is_null()
     {
         new Dim2ComparatorArrayComparator<>(
                 // arrayNulls
@@ -52,7 +52,7 @@ public class Dim2ComparatorArrayComparatorTest
      * Test method for {@link Dim2ComparatorArrayComparator#Dim2ComparatorArrayComparator}.
      */
     @Test( expected = NullPointerException.class )
-    public void testDim2ComparableArrayComparator_subArrayNulls_is_null()
+    public void testDim2ComparatorArrayComparator_subArrayNulls_is_null()
     {
         new Dim2ComparatorArrayComparator<>(
                 Nulls.FORBIDDEN ,
@@ -66,7 +66,7 @@ public class Dim2ComparatorArrayComparatorTest
      * Test method for {@link Dim2ComparatorArrayComparator#Dim2ComparatorArrayComparator}.
      */
     @Test( expected = NullPointerException.class )
-    public void testDim2ComparableArrayComparator_elementNulls_is_null()
+    public void testDim2ComparatorArrayComparator_elementNulls_is_null()
     {
         new Dim2ComparatorArrayComparator<>(
                 Nulls.FORBIDDEN ,
@@ -109,6 +109,72 @@ public class Dim2ComparatorArrayComparatorTest
 
         ArrayComparatorTestUtil.assertEqualAndViceVersa(
                 comparator,
+                arr1 ,
+                arr2 );
+    }
+
+    /**
+     * Test method for {@link Dim2ComparatorArrayComparator#compare}.
+     */
+    @Test
+    public void testCompare_EmptyArray_Lesser()
+    {
+        final String[][] arr1 = {};
+        final String[][] arr2 = { { "b" } };
+
+        final Dim2ComparatorArrayComparator<String> comparator =
+                new Dim2ComparatorArrayComparator<>(
+                        Nulls.FORBIDDEN ,
+                        Nulls.FORBIDDEN ,
+                        Nulls.FORBIDDEN ,
+                        Comparator.<String>naturalOrder() );
+
+        ArrayComparatorTestUtil.assertLesserAndViceVersa(
+                comparator ,
+                arr1 ,
+                arr2 );
+    }
+
+    /**
+     * Test method for {@link Dim2ComparatorArrayComparator#compare}.
+     */
+    @Test
+    public void testCompare_notEmptyArray_Greater()
+    {
+        final String[][] arr1 = { { "a" } };
+        final String[][] arr2 = {};
+
+        final Dim2ComparatorArrayComparator<String> comparator =
+                new Dim2ComparatorArrayComparator<>(
+                        Nulls.FORBIDDEN ,
+                        Nulls.FORBIDDEN ,
+                        Nulls.FORBIDDEN ,
+                        Comparator.<String>naturalOrder() );
+
+        ArrayComparatorTestUtil.assertGreaterAndViceVersa(
+                comparator ,
+                arr1 ,
+                arr2 );
+    }
+
+    /**
+     * Test method for {@link Dim2ComparatorArrayComparator#compare}.
+     */
+    @Test
+    public void testCompare_EmptyArray_Equal()
+    {
+        final String[][] arr1 = {};
+        final String[][] arr2 = {};
+
+        final Dim2ComparatorArrayComparator<String> comparator =
+                new Dim2ComparatorArrayComparator<>(
+                        Nulls.FORBIDDEN ,
+                        Nulls.FORBIDDEN ,
+                        Nulls.FORBIDDEN ,
+                        Comparator.<String>naturalOrder() );
+
+        ArrayComparatorTestUtil.assertEqualAndViceVersa(
+                comparator ,
                 arr1 ,
                 arr2 );
     }

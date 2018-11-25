@@ -78,7 +78,7 @@ public class ComparableArrayComparatorTest
      * Test method for {@link ComparableArrayComparator#compare}.
      */
     @Test
-    public void testCompare_0_0()
+    public void testCompare_EmptyArray_Lesser()
     {
         final String[] arr1 = {};
         final String[] arr2 = { "b" };
@@ -98,7 +98,7 @@ public class ComparableArrayComparatorTest
      * Test method for {@link ComparableArrayComparator#compare}.
      */
     @Test
-    public void testCompare_0_1()
+    public void testCompare_notEmptyArray_Greater()
     {
         final String[] arr1 = { "a" };
         final String[] arr2 = {};
@@ -109,6 +109,26 @@ public class ComparableArrayComparatorTest
                         Nulls.FORBIDDEN );
 
         ArrayComparatorTestUtil.assertGreaterAndViceVersa(
+                comparator ,
+                arr1 ,
+                arr2 );
+    }
+
+    /**
+     * Test method for {@link ComparableArrayComparator#compare}.
+     */
+    @Test
+    public void testCompare_EmptyArray_Equal()
+    {
+        final String[] arr1 = {};
+        final String[] arr2 = {};
+
+        final ComparableArrayComparator<String> comparator =
+                new ComparableArrayComparator<>(
+                        Nulls.FORBIDDEN ,
+                        Nulls.FORBIDDEN );
+
+        ArrayComparatorTestUtil.assertEqualAndViceVersa(
                 comparator ,
                 arr1 ,
                 arr2 );

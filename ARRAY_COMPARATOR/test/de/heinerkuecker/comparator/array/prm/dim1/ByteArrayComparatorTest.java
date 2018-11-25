@@ -63,7 +63,7 @@ public class ByteArrayComparatorTest
      * Test method for {@link ByteArrayComparator#compare}.
      */
     @Test
-    public void testCompare_0_0()
+    public void testCompare_EmptyArray_Lesser()
     {
         final byte[] arr1 = {};
         final byte[] arr2 = { 2 };
@@ -82,7 +82,7 @@ public class ByteArrayComparatorTest
      * Test method for {@link ByteArrayComparator#compare}.
      */
     @Test
-    public void testCompare_0_1()
+    public void testCompare_notEmptyArray_Greater()
     {
         final byte[] arr1 = { 1 };
         final byte[] arr2 = {};
@@ -92,6 +92,25 @@ public class ByteArrayComparatorTest
                         Nulls.FORBIDDEN );
 
         ArrayComparatorTestUtil.assertGreaterAndViceVersa(
+                comparator ,
+                arr1 ,
+                arr2 );
+    }
+
+    /**
+     * Test method for {@link ByteArrayComparator#compare}.
+     */
+    @Test
+    public void testCompare_EmptyArray_Equal()
+    {
+        final byte[] arr1 = {};
+        final byte[] arr2 = {};
+
+        final ByteArrayComparator comparator =
+                new ByteArrayComparator(
+                        Nulls.FORBIDDEN );
+
+        ArrayComparatorTestUtil.assertEqualAndViceVersa(
                 comparator ,
                 arr1 ,
                 arr2 );

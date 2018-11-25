@@ -82,7 +82,7 @@ public class BooleanArrayComparatorTest
      * Test method for {@link BooleanArrayComparator#compare}.
      */
     @Test
-    public void testCompare_0_0()
+    public void testCompare_EmptyArray_Lesser()
     {
         final boolean[] arr1 = {};
         final boolean[] arr2 = { true };
@@ -101,7 +101,7 @@ public class BooleanArrayComparatorTest
      * Test method for {@link BooleanArrayComparator#compare}.
      */
     @Test
-    public void testCompare_0_1()
+    public void testCompare_notEmptyArray_Greater()
     {
         final boolean[] arr1 = { false };
         final boolean[] arr2 = {};
@@ -111,6 +111,25 @@ public class BooleanArrayComparatorTest
                         Nulls.FORBIDDEN );
 
         ArrayComparatorTestUtil.assertGreaterAndViceVersa(
+                comparator ,
+                arr1 ,
+                arr2 );
+    }
+
+    /**
+     * Test method for {@link BooleanArrayComparator#compare}.
+     */
+    @Test
+    public void testCompare_EmptyArray_Equal()
+    {
+        final boolean[] arr1 = {};
+        final boolean[] arr2 = {};
+
+        final BooleanArrayComparator comparator =
+                new BooleanArrayComparator(
+                        Nulls.FORBIDDEN );
+
+        ArrayComparatorTestUtil.assertEqualAndViceVersa(
                 comparator ,
                 arr1 ,
                 arr2 );

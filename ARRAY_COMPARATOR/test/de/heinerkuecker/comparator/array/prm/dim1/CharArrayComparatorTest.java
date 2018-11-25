@@ -63,7 +63,7 @@ public class CharArrayComparatorTest
      * Test method for {@link CharArrayComparator#compare}.
      */
     @Test
-    public void testCompare_0_0()
+    public void testCompare_EmptyArray_Lesser()
     {
         final char[] arr1 = {};
         final char[] arr2 = { 'B' };
@@ -82,7 +82,7 @@ public class CharArrayComparatorTest
      * Test method for {@link CharArrayComparator#compare}.
      */
     @Test
-    public void testCompare_0_1()
+    public void testCompare_notEmptyArray_Greater()
     {
         final char[] arr1 = { 'A' };
         final char[] arr2 = {};
@@ -92,6 +92,25 @@ public class CharArrayComparatorTest
                         Nulls.FORBIDDEN );
 
         ArrayComparatorTestUtil.assertGreaterAndViceVersa(
+                comparator ,
+                arr1 ,
+                arr2 );
+    }
+
+    /**
+     * Test method for {@link CharArrayComparator#compare}.
+     */
+    @Test
+    public void testCompare_EmptyArray_Equal()
+    {
+        final char[] arr1 = {};
+        final char[] arr2 = {};
+
+        final CharArrayComparator comparator =
+                new CharArrayComparator(
+                        Nulls.FORBIDDEN );
+
+        ArrayComparatorTestUtil.assertEqualAndViceVersa(
                 comparator ,
                 arr1 ,
                 arr2 );

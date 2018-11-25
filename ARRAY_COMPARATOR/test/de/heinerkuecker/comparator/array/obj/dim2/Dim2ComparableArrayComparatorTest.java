@@ -96,6 +96,69 @@ public class Dim2ComparableArrayComparatorTest
      * Test method for {@link Dim2ComparableArrayComparator#compare}.
      */
     @Test
+    public void testCompare_EmptyArray_Lesser()
+    {
+        final String[][] arr1 = {};
+        final String[][] arr2 = { { "b" } };
+
+        final Dim2ComparableArrayComparator<String> comparator =
+                new Dim2ComparableArrayComparator<>(
+                        Nulls.FORBIDDEN ,
+                        Nulls.FORBIDDEN ,
+                        Nulls.FORBIDDEN );
+
+        ArrayComparatorTestUtil.assertLesserAndViceVersa(
+                comparator ,
+                arr1 ,
+                arr2 );
+    }
+
+    /**
+     * Test method for {@link Dim2ComparableArrayComparator#compare}.
+     */
+    @Test
+    public void testCompare_notEmptyArray_Greater()
+    {
+        final String[][] arr1 = { { "a" } };
+        final String[][] arr2 = {};
+
+        final Dim2ComparableArrayComparator<String> comparator =
+                new Dim2ComparableArrayComparator<>(
+                        Nulls.FORBIDDEN ,
+                        Nulls.FORBIDDEN ,
+                        Nulls.FORBIDDEN );
+
+        ArrayComparatorTestUtil.assertGreaterAndViceVersa(
+                comparator ,
+                arr1 ,
+                arr2 );
+    }
+
+    /**
+     * Test method for {@link Dim2ComparableArrayComparator#compare}.
+     */
+    @Test
+    public void testCompare_EmptyArray_Equal()
+    {
+        final String[][] arr1 = {};
+        final String[][] arr2 = {};
+
+        final Dim2ComparableArrayComparator<String> comparator =
+                new Dim2ComparableArrayComparator<>(
+                        Nulls.FORBIDDEN ,
+                        Nulls.FORBIDDEN ,
+                        Nulls.FORBIDDEN );
+
+        ArrayComparatorTestUtil.assertEqualAndViceVersa(
+                comparator ,
+                arr1 ,
+                arr2 );
+    }
+
+    /**
+     * Test method for {@link Dim2ComparableArrayComparator#compare}.
+     */
+    @Test
     public void testCompare_1()
     {
         final String[][] arr1 = { { "a" } };

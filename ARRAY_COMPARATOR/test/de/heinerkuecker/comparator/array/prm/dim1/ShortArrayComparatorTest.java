@@ -63,7 +63,7 @@ public class ShortArrayComparatorTest
      * Test method for {@link ShortArrayComparator#compare}.
      */
     @Test
-    public void testCompare_0_0()
+    public void testCompare_EmptyArray_Lesser()
     {
         final short[] arr1 = {};
         final short[] arr2 = { 2 };
@@ -82,7 +82,7 @@ public class ShortArrayComparatorTest
      * Test method for {@link ShortArrayComparator#compare}.
      */
     @Test
-    public void testCompare_0_1()
+    public void testCompare_notEmptyArray_Greater()
     {
         final short[] arr1 = { 1 };
         final short[] arr2 = {};
@@ -92,6 +92,25 @@ public class ShortArrayComparatorTest
                         Nulls.FORBIDDEN );
 
         ArrayComparatorTestUtil.assertGreaterAndViceVersa(
+                comparator ,
+                arr1 ,
+                arr2 );
+    }
+
+    /**
+     * Test method for {@link ShortArrayComparator#compare}.
+     */
+    @Test
+    public void testCompare_EmptyArray_Equal()
+    {
+        final short[] arr1 = {};
+        final short[] arr2 = {};
+
+        final ShortArrayComparator comparator =
+                new ShortArrayComparator(
+                        Nulls.FORBIDDEN );
+
+        ArrayComparatorTestUtil.assertEqualAndViceVersa(
                 comparator ,
                 arr1 ,
                 arr2 );
