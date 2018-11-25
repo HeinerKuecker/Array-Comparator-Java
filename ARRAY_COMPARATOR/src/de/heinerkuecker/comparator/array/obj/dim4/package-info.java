@@ -1,5 +1,5 @@
 /**
- * {@link java.util.Comparator} classes for four-dimensional object arrays.
+ * {@link java.util.Comparator} classes for 4-dimensional object arrays.
  *
  * @author Heiner K&uuml;cker
  */

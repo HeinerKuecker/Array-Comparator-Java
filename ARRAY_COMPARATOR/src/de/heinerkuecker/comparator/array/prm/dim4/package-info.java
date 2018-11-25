@@ -1,5 +1,5 @@
 /**
- * {@link java.util.Comparator} classes for four-dimensional primitive arrays.
+ * {@link java.util.Comparator} classes for 4-dimensional primitive arrays.
  *
  * @author Heiner K&uuml;cker
  */

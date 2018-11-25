@@ -1,5 +1,5 @@
 /**
- * {@link java.util.Comparator} classes for three-dimensional object arrays.
+ * {@link java.util.Comparator} classes for 3-dimensional object arrays.
  *
  * @author Heiner K&uuml;cker
  */
