@@ -7,9 +7,8 @@ package de.heinerkuecker.util.array;
  */
 public final class ArrayDeepClone
 {
-
     /**
-     *
+     * Constructor for util class with only static methods.
      */
     private ArrayDeepClone()
     {
@@ -18,7 +17,9 @@ public final class ArrayDeepClone
 
     /**
      * Util method to clone multi-dimensional arrays.
-     * Nicht Array Elemente werden nicht geclont.
+     *
+     * Not array elemente dont be cloned because
+     * obscure {@link Cloneable} interface.
      *
      * @param arrToClone array to clone
      * @return clone
@@ -104,8 +105,8 @@ public final class ArrayDeepClone
                     else
                     {
                         clonedElement =
-                                // leider nicht kompilierbar
-                                //( (Cloneable) arrToClone[ i ] ).clone();
+                                // sadly impossible
+                                //( (Cloneable) elementToClone ).clone();
                                 elementToClone;
                     }
 
