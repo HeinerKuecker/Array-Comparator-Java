@@ -4,7 +4,7 @@ import java.util.Comparator;
 
 import de.heinerkuecker.comparator.array.Nulls;
 import de.heinerkuecker.comparator.array.obj.dim1.ComparatorArrayComparator;
-import de.heinerkuecker.comparator.array.obj.dim2.Dim2ComparableArrayComparator;
+import de.heinerkuecker.comparator.array.obj.dim2.NullsLesserDim2ComparableArrayComparator;
 
 /**
  * {@link Comparator} for
@@ -32,11 +32,7 @@ extends ComparatorArrayComparator<T[][]>
         super(
                 Nulls.LESSER ,
                 Nulls.LESSER ,
-                new Dim2ComparableArrayComparator<T>(
-                        // null arrays already handled by one level higher
-                        Nulls.FORBIDDEN ,
-                        Nulls.LESSER ,
-                        Nulls.LESSER ) );
+                new NullsLesserDim2ComparableArrayComparator<T>() );
     }
 
     /**
