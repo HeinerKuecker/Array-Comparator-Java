@@ -768,7 +768,7 @@ public class Dim2ComparableArrayComparatorTest
                 new Dim2ComparableArrayComparator<>(
                         Nulls.LESSER ,
                         Nulls.GREATER ,
-                        Nulls.FORBIDDEN  );
+                        Nulls.FORBIDDEN );
 
         Assert.assertEquals(
                 //expected
