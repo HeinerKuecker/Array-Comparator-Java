@@ -8,7 +8,7 @@ import de.heinerkuecker.comparator.array.obj.dim2.Dim2ComparatorArrayComparator;
 
 /**
  * {@link Comparator} for
- * three-dimensional arrays
+ * 3-dimensional arrays
  * with an dedicated
  * {@link Comparator} for
  * array elements.

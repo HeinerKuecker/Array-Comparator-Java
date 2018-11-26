@@ -7,7 +7,7 @@ import de.heinerkuecker.comparator.array.Nulls;
 
 /**
  * {@link Comparator} for
- * one-dimensional arrays
+ * 1-dimensional arrays
  * whose elements are
  * {@link Comparable}.
  *

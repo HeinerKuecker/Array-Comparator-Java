@@ -9,7 +9,7 @@ import de.heinerkuecker.comparator.array.obj.dim3.Dim3ComparatorArrayComparator;
 
 /**
  * {@link Comparator} for
- * four-dimensional arrays
+ * 4-dimensional arrays
  * with an dedicated
  * {@link Comparator} for
  * array elements.

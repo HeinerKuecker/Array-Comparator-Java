@@ -13,8 +13,8 @@ import de.heinerkuecker.comparator.array.obj.dim1.ComparatorArrayComparator;
  * {@link Comparable}
  * with throwing
  * {@link NullPointerException}
- * for null arrays and null
- * elements.
+ * for null arrays and
+ * null elements.
  *
  * @param <T> Element type of arrays to compare
  * @author Heiner K&uuml;cker

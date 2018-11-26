@@ -8,12 +8,13 @@ import de.heinerkuecker.comparator.array.obj.dim1.ComparatorArrayComparator;
 
 /**
  * {@link Comparator} for
- * two-dimensional arrays
+ * 2-dimensional arrays
  * whose elements are
  * {@link Comparable}
- * with sorting null
- * arrays and null
- * elements at last.
+ * with handling
+ * null arrays and
+ * null elements
+ * as greater.
  *
  * @param <T> Element type of arrays to compare
  * @author Heiner K&uuml;cker
