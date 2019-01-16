@@ -7,7 +7,7 @@ import org.junit.Assert;
 import org.junit.Test;
 
 import de.heinerkuecker.comparator.array.ArrayComparatorTestUtil;
-import de.heinerkuecker.comparator.array.Nulls;
+import de.heinerkuecker.comparator.array.HandleNullAs;
 import de.heinerkuecker.comparator.array.obj.dim1.ComparableArrayComparator;
 
 /**
@@ -25,9 +25,9 @@ public class Dim2ComparatorArrayComparatorTest
     {
         final Dim2ComparatorArrayComparator<String> comparator =
                 new Dim2ComparatorArrayComparator<>(
-                        Nulls.FORBIDDEN ,
-                        Nulls.FORBIDDEN ,
-                        Nulls.FORBIDDEN ,
+                        HandleNullAs.FORBIDDEN ,
+                        HandleNullAs.FORBIDDEN ,
+                        HandleNullAs.FORBIDDEN ,
                         Comparator.<String>naturalOrder() );
 
         Assert.assertNotNull(
@@ -43,8 +43,8 @@ public class Dim2ComparatorArrayComparatorTest
         new Dim2ComparatorArrayComparator<>(
                 // arrayNulls
                 null ,
-                Nulls.FORBIDDEN ,
-                Nulls.FORBIDDEN ,
+                HandleNullAs.FORBIDDEN ,
+                HandleNullAs.FORBIDDEN ,
                 Comparator.<String>naturalOrder() );
     }
 
@@ -55,10 +55,10 @@ public class Dim2ComparatorArrayComparatorTest
     public void testDim2ComparatorArrayComparator_subArrayNulls_is_null()
     {
         new Dim2ComparatorArrayComparator<>(
-                Nulls.FORBIDDEN ,
+                HandleNullAs.FORBIDDEN ,
                 // subArrayNulls
                 null ,
-                Nulls.FORBIDDEN ,
+                HandleNullAs.FORBIDDEN ,
                 Comparator.<String>naturalOrder() );
     }
 
@@ -69,8 +69,8 @@ public class Dim2ComparatorArrayComparatorTest
     public void testDim2ComparatorArrayComparator_elementNulls_is_null()
     {
         new Dim2ComparatorArrayComparator<>(
-                Nulls.FORBIDDEN ,
-                Nulls.FORBIDDEN ,
+                HandleNullAs.FORBIDDEN ,
+                HandleNullAs.FORBIDDEN ,
                 // elementNulls
                 null ,
                 Comparator.<String>naturalOrder() );
@@ -84,9 +84,9 @@ public class Dim2ComparatorArrayComparatorTest
     public void testComparableArrayComparator_Comparator_is_null()
     {
         new Dim2ComparatorArrayComparator<>(
-                Nulls.FORBIDDEN ,
-                Nulls.FORBIDDEN ,
-                Nulls.FORBIDDEN ,
+                HandleNullAs.FORBIDDEN ,
+                HandleNullAs.FORBIDDEN ,
+                HandleNullAs.FORBIDDEN ,
                 // comparator
                 null );
     }
@@ -102,9 +102,9 @@ public class Dim2ComparatorArrayComparatorTest
 
         final Dim2ComparatorArrayComparator<String> comparator =
                 new Dim2ComparatorArrayComparator<>(
-                        Nulls.FORBIDDEN ,
-                        Nulls.FORBIDDEN ,
-                        Nulls.FORBIDDEN ,
+                        HandleNullAs.FORBIDDEN ,
+                        HandleNullAs.FORBIDDEN ,
+                        HandleNullAs.FORBIDDEN ,
                         Comparator.<String>naturalOrder() );
 
         ArrayComparatorTestUtil.assertEqualAndViceVersa(
@@ -124,9 +124,9 @@ public class Dim2ComparatorArrayComparatorTest
 
         final Dim2ComparatorArrayComparator<String> comparator =
                 new Dim2ComparatorArrayComparator<>(
-                        Nulls.FORBIDDEN ,
-                        Nulls.FORBIDDEN ,
-                        Nulls.FORBIDDEN ,
+                        HandleNullAs.FORBIDDEN ,
+                        HandleNullAs.FORBIDDEN ,
+                        HandleNullAs.FORBIDDEN ,
                         Comparator.<String>naturalOrder() );
 
         ArrayComparatorTestUtil.assertLesserAndViceVersa(
@@ -146,9 +146,9 @@ public class Dim2ComparatorArrayComparatorTest
 
         final Dim2ComparatorArrayComparator<String> comparator =
                 new Dim2ComparatorArrayComparator<>(
-                        Nulls.FORBIDDEN ,
-                        Nulls.FORBIDDEN ,
-                        Nulls.FORBIDDEN ,
+                        HandleNullAs.FORBIDDEN ,
+                        HandleNullAs.FORBIDDEN ,
+                        HandleNullAs.FORBIDDEN ,
                         Comparator.<String>naturalOrder() );
 
         ArrayComparatorTestUtil.assertGreaterAndViceVersa(
@@ -168,9 +168,9 @@ public class Dim2ComparatorArrayComparatorTest
 
         final Dim2ComparatorArrayComparator<String> comparator =
                 new Dim2ComparatorArrayComparator<>(
-                        Nulls.FORBIDDEN ,
-                        Nulls.FORBIDDEN ,
-                        Nulls.FORBIDDEN ,
+                        HandleNullAs.FORBIDDEN ,
+                        HandleNullAs.FORBIDDEN ,
+                        HandleNullAs.FORBIDDEN ,
                         Comparator.<String>naturalOrder() );
 
         ArrayComparatorTestUtil.assertEqualAndViceVersa(
@@ -190,9 +190,9 @@ public class Dim2ComparatorArrayComparatorTest
 
         final Dim2ComparatorArrayComparator<String> comparator =
                 new Dim2ComparatorArrayComparator<>(
-                        Nulls.FORBIDDEN ,
-                        Nulls.FORBIDDEN ,
-                        Nulls.FORBIDDEN ,
+                        HandleNullAs.FORBIDDEN ,
+                        HandleNullAs.FORBIDDEN ,
+                        HandleNullAs.FORBIDDEN ,
                         Comparator.<String>naturalOrder() );
 
         ArrayComparatorTestUtil.assertLesserAndViceVersa(
@@ -212,9 +212,9 @@ public class Dim2ComparatorArrayComparatorTest
 
         final Dim2ComparatorArrayComparator<String> comparator =
                 new Dim2ComparatorArrayComparator<>(
-                        Nulls.FORBIDDEN ,
-                        Nulls.FORBIDDEN ,
-                        Nulls.FORBIDDEN ,
+                        HandleNullAs.FORBIDDEN ,
+                        HandleNullAs.FORBIDDEN ,
+                        HandleNullAs.FORBIDDEN ,
                         Comparator.<String>naturalOrder() );
 
         ArrayComparatorTestUtil.assertLesserAndViceVersa(
@@ -234,9 +234,9 @@ public class Dim2ComparatorArrayComparatorTest
 
         final Dim2ComparatorArrayComparator<String> comparator =
                 new Dim2ComparatorArrayComparator<>(
-                        Nulls.FORBIDDEN ,
-                        Nulls.FORBIDDEN ,
-                        Nulls.FORBIDDEN ,
+                        HandleNullAs.FORBIDDEN ,
+                        HandleNullAs.FORBIDDEN ,
+                        HandleNullAs.FORBIDDEN ,
                         Comparator.<String>naturalOrder() );
 
         ArrayComparatorTestUtil.assertLesserAndViceVersa(
@@ -256,9 +256,9 @@ public class Dim2ComparatorArrayComparatorTest
 
         final Dim2ComparatorArrayComparator<String> comparator =
                 new Dim2ComparatorArrayComparator<>(
-                        Nulls.LESSER ,
-                        Nulls.FORBIDDEN ,
-                        Nulls.FORBIDDEN ,
+                        HandleNullAs.LESSER ,
+                        HandleNullAs.FORBIDDEN ,
+                        HandleNullAs.FORBIDDEN ,
                         Comparator.<String>naturalOrder() );
 
         ArrayComparatorTestUtil.assertLesserAndViceVersa(
@@ -278,9 +278,9 @@ public class Dim2ComparatorArrayComparatorTest
 
         final Dim2ComparatorArrayComparator<String> comparator =
                 new Dim2ComparatorArrayComparator<>(
-                        Nulls.LESSER ,
-                        Nulls.FORBIDDEN ,
-                        Nulls.FORBIDDEN ,
+                        HandleNullAs.LESSER ,
+                        HandleNullAs.FORBIDDEN ,
+                        HandleNullAs.FORBIDDEN ,
                         Comparator.<String>naturalOrder() );
 
         ArrayComparatorTestUtil.assertGreaterAndViceVersa(
@@ -300,9 +300,9 @@ public class Dim2ComparatorArrayComparatorTest
 
         final Dim2ComparatorArrayComparator<String> comparator =
                 new Dim2ComparatorArrayComparator<>(
-                        Nulls.GREATER ,
-                        Nulls.FORBIDDEN ,
-                        Nulls.FORBIDDEN ,
+                        HandleNullAs.GREATER ,
+                        HandleNullAs.FORBIDDEN ,
+                        HandleNullAs.FORBIDDEN ,
                         Comparator.<String>naturalOrder() );
 
         ArrayComparatorTestUtil.assertLesserAndViceVersa(
@@ -322,9 +322,9 @@ public class Dim2ComparatorArrayComparatorTest
 
         final Dim2ComparatorArrayComparator<String> comparator =
                 new Dim2ComparatorArrayComparator<>(
-                        Nulls.GREATER ,
-                        Nulls.FORBIDDEN ,
-                        Nulls.FORBIDDEN ,
+                        HandleNullAs.GREATER ,
+                        HandleNullAs.FORBIDDEN ,
+                        HandleNullAs.FORBIDDEN ,
                         Comparator.<String>naturalOrder() );
 
         ArrayComparatorTestUtil.assertGreaterAndViceVersa(
@@ -344,9 +344,9 @@ public class Dim2ComparatorArrayComparatorTest
 
         final Dim2ComparatorArrayComparator<String> comparator =
                 new Dim2ComparatorArrayComparator<>(
-                        Nulls.FORBIDDEN ,
-                        Nulls.LESSER ,
-                        Nulls.FORBIDDEN ,
+                        HandleNullAs.FORBIDDEN ,
+                        HandleNullAs.LESSER ,
+                        HandleNullAs.FORBIDDEN ,
                         Comparator.<String>naturalOrder() );
 
         ArrayComparatorTestUtil.assertLesserAndViceVersa(
@@ -366,9 +366,9 @@ public class Dim2ComparatorArrayComparatorTest
 
         final Dim2ComparatorArrayComparator<String> comparator =
                 new Dim2ComparatorArrayComparator<>(
-                        Nulls.FORBIDDEN ,
-                        Nulls.LESSER ,
-                        Nulls.FORBIDDEN ,
+                        HandleNullAs.FORBIDDEN ,
+                        HandleNullAs.LESSER ,
+                        HandleNullAs.FORBIDDEN ,
                         Comparator.<String>naturalOrder() );
 
         ArrayComparatorTestUtil.assertGreaterAndViceVersa(
@@ -388,9 +388,9 @@ public class Dim2ComparatorArrayComparatorTest
 
         final Dim2ComparatorArrayComparator<String> comparator =
                 new Dim2ComparatorArrayComparator<>(
-                        Nulls.FORBIDDEN ,
-                        Nulls.GREATER ,
-                        Nulls.FORBIDDEN ,
+                        HandleNullAs.FORBIDDEN ,
+                        HandleNullAs.GREATER ,
+                        HandleNullAs.FORBIDDEN ,
                         Comparator.<String>naturalOrder() );
 
         ArrayComparatorTestUtil.assertLesserAndViceVersa(
@@ -410,9 +410,9 @@ public class Dim2ComparatorArrayComparatorTest
 
         final Dim2ComparatorArrayComparator<String> comparator =
                 new Dim2ComparatorArrayComparator<>(
-                        Nulls.FORBIDDEN ,
-                        Nulls.GREATER ,
-                        Nulls.FORBIDDEN ,
+                        HandleNullAs.FORBIDDEN ,
+                        HandleNullAs.GREATER ,
+                        HandleNullAs.FORBIDDEN ,
                         Comparator.<String>naturalOrder() );
 
         ArrayComparatorTestUtil.assertGreaterAndViceVersa(
@@ -432,9 +432,9 @@ public class Dim2ComparatorArrayComparatorTest
 
         final Dim2ComparatorArrayComparator<String> comparator =
                 new Dim2ComparatorArrayComparator<>(
-                        Nulls.FORBIDDEN ,
-                        Nulls.FORBIDDEN ,
-                        Nulls.LESSER ,
+                        HandleNullAs.FORBIDDEN ,
+                        HandleNullAs.FORBIDDEN ,
+                        HandleNullAs.LESSER ,
                         Comparator.<String>naturalOrder() );
 
         ArrayComparatorTestUtil.assertLesserAndViceVersa(
@@ -454,9 +454,9 @@ public class Dim2ComparatorArrayComparatorTest
 
         final Dim2ComparatorArrayComparator<String> comparator =
                 new Dim2ComparatorArrayComparator<>(
-                        Nulls.FORBIDDEN ,
-                        Nulls.FORBIDDEN ,
-                        Nulls.LESSER ,
+                        HandleNullAs.FORBIDDEN ,
+                        HandleNullAs.FORBIDDEN ,
+                        HandleNullAs.LESSER ,
                         Comparator.<String>naturalOrder() );
 
         ArrayComparatorTestUtil.assertGreaterAndViceVersa(
@@ -476,9 +476,9 @@ public class Dim2ComparatorArrayComparatorTest
 
         final Dim2ComparatorArrayComparator<String> comparator =
                 new Dim2ComparatorArrayComparator<>(
-                        Nulls.FORBIDDEN ,
-                        Nulls.FORBIDDEN ,
-                        Nulls.GREATER ,
+                        HandleNullAs.FORBIDDEN ,
+                        HandleNullAs.FORBIDDEN ,
+                        HandleNullAs.GREATER ,
                         Comparator.<String>naturalOrder() );
 
         ArrayComparatorTestUtil.assertLesserAndViceVersa(
@@ -498,9 +498,9 @@ public class Dim2ComparatorArrayComparatorTest
 
         final Dim2ComparatorArrayComparator<String> comparator =
                 new Dim2ComparatorArrayComparator<>(
-                        Nulls.FORBIDDEN ,
-                        Nulls.FORBIDDEN ,
-                        Nulls.GREATER ,
+                        HandleNullAs.FORBIDDEN ,
+                        HandleNullAs.FORBIDDEN ,
+                        HandleNullAs.GREATER ,
                         Comparator.<String>naturalOrder() );
 
         ArrayComparatorTestUtil.assertGreaterAndViceVersa(
@@ -520,9 +520,9 @@ public class Dim2ComparatorArrayComparatorTest
 
         final Dim2ComparatorArrayComparator<String> comparator =
                 new Dim2ComparatorArrayComparator<>(
-                        Nulls.FORBIDDEN ,
-                        Nulls.LESSER ,
-                        Nulls.LESSER ,
+                        HandleNullAs.FORBIDDEN ,
+                        HandleNullAs.LESSER ,
+                        HandleNullAs.LESSER ,
                         Comparator.<String>naturalOrder() );
 
         comparator.compare(
@@ -541,9 +541,9 @@ public class Dim2ComparatorArrayComparatorTest
 
         final Dim2ComparatorArrayComparator<String> comparator =
                 new Dim2ComparatorArrayComparator<>(
-                        Nulls.FORBIDDEN ,
-                        Nulls.LESSER ,
-                        Nulls.LESSER ,
+                        HandleNullAs.FORBIDDEN ,
+                        HandleNullAs.LESSER ,
+                        HandleNullAs.LESSER ,
                         Comparator.<String>naturalOrder() );
 
         comparator.compare(
@@ -562,9 +562,9 @@ public class Dim2ComparatorArrayComparatorTest
 
         final Dim2ComparatorArrayComparator<String> comparator =
                 new Dim2ComparatorArrayComparator<>(
-                        Nulls.FORBIDDEN ,
-                        Nulls.LESSER ,
-                        Nulls.LESSER ,
+                        HandleNullAs.FORBIDDEN ,
+                        HandleNullAs.LESSER ,
+                        HandleNullAs.LESSER ,
                         Comparator.<String>naturalOrder() );
 
         comparator.compare(
@@ -583,9 +583,9 @@ public class Dim2ComparatorArrayComparatorTest
 
         final Dim2ComparatorArrayComparator<String> comparator =
                 new Dim2ComparatorArrayComparator<>(
-                        Nulls.LESSER ,
-                        Nulls.FORBIDDEN ,
-                        Nulls.LESSER ,
+                        HandleNullAs.LESSER ,
+                        HandleNullAs.FORBIDDEN ,
+                        HandleNullAs.LESSER ,
                         Comparator.<String>naturalOrder() );
 
         comparator.compare(
@@ -604,9 +604,9 @@ public class Dim2ComparatorArrayComparatorTest
 
         final Dim2ComparatorArrayComparator<String> comparator =
                 new Dim2ComparatorArrayComparator<>(
-                        Nulls.LESSER ,
-                        Nulls.FORBIDDEN ,
-                        Nulls.LESSER ,
+                        HandleNullAs.LESSER ,
+                        HandleNullAs.FORBIDDEN ,
+                        HandleNullAs.LESSER ,
                         Comparator.<String>naturalOrder() );
 
         comparator.compare(
@@ -625,9 +625,9 @@ public class Dim2ComparatorArrayComparatorTest
 
         final Dim2ComparatorArrayComparator<String> comparator =
                 new Dim2ComparatorArrayComparator<>(
-                        Nulls.LESSER ,
-                        Nulls.FORBIDDEN ,
-                        Nulls.LESSER ,
+                        HandleNullAs.LESSER ,
+                        HandleNullAs.FORBIDDEN ,
+                        HandleNullAs.LESSER ,
                         Comparator.<String>naturalOrder() );
 
         comparator.compare(
@@ -646,9 +646,9 @@ public class Dim2ComparatorArrayComparatorTest
 
         final Dim2ComparatorArrayComparator<String> comparator =
                 new Dim2ComparatorArrayComparator<>(
-                        Nulls.LESSER ,
-                        Nulls.LESSER ,
-                        Nulls.FORBIDDEN ,
+                        HandleNullAs.LESSER ,
+                        HandleNullAs.LESSER ,
+                        HandleNullAs.FORBIDDEN ,
                         Comparator.<String>naturalOrder() );
 
         comparator.compare(
@@ -667,9 +667,9 @@ public class Dim2ComparatorArrayComparatorTest
 
         final Dim2ComparatorArrayComparator<String> comparator =
                 new Dim2ComparatorArrayComparator<>(
-                        Nulls.LESSER ,
-                        Nulls.LESSER ,
-                        Nulls.FORBIDDEN ,
+                        HandleNullAs.LESSER ,
+                        HandleNullAs.LESSER ,
+                        HandleNullAs.FORBIDDEN ,
                         Comparator.<String>naturalOrder() );
 
         comparator.compare(
@@ -688,9 +688,9 @@ public class Dim2ComparatorArrayComparatorTest
 
         final Dim2ComparatorArrayComparator<String> comparator =
                 new Dim2ComparatorArrayComparator<>(
-                        Nulls.FORBIDDEN ,
-                        Nulls.FORBIDDEN ,
-                        Nulls.FORBIDDEN ,
+                        HandleNullAs.FORBIDDEN ,
+                        HandleNullAs.FORBIDDEN ,
+                        HandleNullAs.FORBIDDEN ,
                         Comparator.<String>naturalOrder() );
 
         ArrayComparatorTestUtil.assertLesserAndViceVersa(
@@ -710,9 +710,9 @@ public class Dim2ComparatorArrayComparatorTest
 
         final Dim2ComparatorArrayComparator<String> comparator =
                 new Dim2ComparatorArrayComparator<>(
-                        Nulls.FORBIDDEN ,
-                        Nulls.FORBIDDEN ,
-                        Nulls.FORBIDDEN ,
+                        HandleNullAs.FORBIDDEN ,
+                        HandleNullAs.FORBIDDEN ,
+                        HandleNullAs.FORBIDDEN ,
                         Comparator.<String>naturalOrder() );
 
         ArrayComparatorTestUtil.assertLesserAndViceVersa(
@@ -731,8 +731,8 @@ public class Dim2ComparatorArrayComparatorTest
 
         final ComparableArrayComparator<String> comparator =
                 new ComparableArrayComparator<>(
-                        Nulls.FORBIDDEN ,
-                        Nulls.FORBIDDEN );
+                        HandleNullAs.FORBIDDEN ,
+                        HandleNullAs.FORBIDDEN );
 
         Arrays.sort(
                 arr ,
@@ -757,9 +757,9 @@ public class Dim2ComparatorArrayComparatorTest
     {
         final Dim2ComparatorArrayComparator<String> comparator =
                 new Dim2ComparatorArrayComparator<>(
-                        Nulls.FORBIDDEN ,
-                        Nulls.FORBIDDEN ,
-                        Nulls.FORBIDDEN ,
+                        HandleNullAs.FORBIDDEN ,
+                        HandleNullAs.FORBIDDEN ,
+                        HandleNullAs.FORBIDDEN ,
                         Comparator.<String>naturalOrder() );
 
         Assert.assertEquals(
@@ -777,9 +777,9 @@ public class Dim2ComparatorArrayComparatorTest
     {
         final Dim2ComparatorArrayComparator<String> comparator =
                 new Dim2ComparatorArrayComparator<>(
-                        Nulls.FORBIDDEN ,
-                        Nulls.LESSER ,
-                        Nulls.GREATER ,
+                        HandleNullAs.FORBIDDEN ,
+                        HandleNullAs.LESSER ,
+                        HandleNullAs.GREATER ,
                         Comparator.<String>naturalOrder() );
 
         Assert.assertEquals(
@@ -797,9 +797,9 @@ public class Dim2ComparatorArrayComparatorTest
     {
         final Dim2ComparatorArrayComparator<String> comparator =
                 new Dim2ComparatorArrayComparator<>(
-                        Nulls.LESSER ,
-                        Nulls.GREATER ,
-                        Nulls.FORBIDDEN ,
+                        HandleNullAs.LESSER ,
+                        HandleNullAs.GREATER ,
+                        HandleNullAs.FORBIDDEN ,
                         Comparator.<String>naturalOrder() );
 
         Assert.assertEquals(

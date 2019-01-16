@@ -3,7 +3,7 @@ package de.heinerkuecker.comparator.array.obj.dim1;
 import java.util.Comparator;
 import java.util.Objects;
 
-import de.heinerkuecker.comparator.array.Nulls;
+import de.heinerkuecker.comparator.array.HandleNullAs;
 
 /**
  * {@link Comparator} for
@@ -36,12 +36,12 @@ implements Comparator<T[]>
     /**
      * Control handling of null arrays to sort.
      */
-    public final Nulls arrayNulls;
+    public final HandleNullAs arrayNulls;
 
     /**
      * Control handling of null elements in arrays to sort.
      */
-    public final Nulls elementNulls;
+    public final HandleNullAs elementNulls;
 
     /**
      * Constructor.
@@ -50,8 +50,8 @@ implements Comparator<T[]>
      * @param elementNulls Control handling of null elements in arrays to sort
      */
     public ComparableArrayComparator(
-            final Nulls arrayNulls ,
-            final Nulls elementNulls )
+            final HandleNullAs arrayNulls ,
+            final HandleNullAs elementNulls )
     {
         this.arrayNulls =
                 Objects.requireNonNull(
@@ -72,8 +72,8 @@ implements Comparator<T[]>
      * @return new instance
      */
     public static <T extends Comparable<T>> ComparableArrayComparator<T> newComparableArrayComparator(
-            final Nulls arrayNulls ,
-            final Nulls elementNulls )
+            final HandleNullAs arrayNulls ,
+            final HandleNullAs elementNulls )
     {
         return new ComparableArrayComparator<T>(
                 arrayNulls ,

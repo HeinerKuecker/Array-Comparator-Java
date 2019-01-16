@@ -7,7 +7,7 @@ import java.util.Arrays;
  * multi-dimensional arrays
  * to {@link String}.
  *
- * @author Heiner Kücker
+ * @author Heiner K&uuml;cker
  */
 public final class ArrayDeepToString
 {
@@ -28,7 +28,7 @@ public final class ArrayDeepToString
      * {@link StackOverflowError}
      * on circular references.
      *
-     * @author Heiner Kücker
+     * @author Heiner K&uuml;cker
      */
     public static String deepToString(
             final Object[] arrToStr )

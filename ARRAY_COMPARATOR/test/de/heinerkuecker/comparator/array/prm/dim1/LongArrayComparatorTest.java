@@ -6,7 +6,7 @@ import org.junit.Assert;
 import org.junit.Test;
 
 import de.heinerkuecker.comparator.array.ArrayComparatorTestUtil;
-import de.heinerkuecker.comparator.array.Nulls;
+import de.heinerkuecker.comparator.array.HandleNullAs;
 
 /**
  * JUnit4 test case for class {@link LongArrayComparator}.
@@ -23,7 +23,7 @@ public class LongArrayComparatorTest
     {
         final LongArrayComparator comparator =
                 new LongArrayComparator(
-                        Nulls.FORBIDDEN );
+                        HandleNullAs.FORBIDDEN );
 
         Assert.assertNotNull(
                 comparator );
@@ -51,7 +51,7 @@ public class LongArrayComparatorTest
 
         final LongArrayComparator comparator =
                 new LongArrayComparator(
-                        Nulls.FORBIDDEN );
+                        HandleNullAs.FORBIDDEN );
 
         ArrayComparatorTestUtil.assertEqualAndViceVersa(
                 comparator,
@@ -70,7 +70,7 @@ public class LongArrayComparatorTest
 
         final LongArrayComparator comparator =
                 new LongArrayComparator(
-                        Nulls.FORBIDDEN );
+                        HandleNullAs.FORBIDDEN );
 
         ArrayComparatorTestUtil.assertLesserAndViceVersa(
                 comparator ,
@@ -89,7 +89,7 @@ public class LongArrayComparatorTest
 
         final LongArrayComparator comparator =
                 new LongArrayComparator(
-                        Nulls.FORBIDDEN );
+                        HandleNullAs.FORBIDDEN );
 
         ArrayComparatorTestUtil.assertGreaterAndViceVersa(
                 comparator ,
@@ -108,7 +108,7 @@ public class LongArrayComparatorTest
 
         final LongArrayComparator comparator =
                 new LongArrayComparator(
-                        Nulls.FORBIDDEN );
+                        HandleNullAs.FORBIDDEN );
 
         ArrayComparatorTestUtil.assertEqualAndViceVersa(
                 comparator ,
@@ -127,7 +127,7 @@ public class LongArrayComparatorTest
 
         final LongArrayComparator comparator =
                 new LongArrayComparator(
-                        Nulls.FORBIDDEN );
+                        HandleNullAs.FORBIDDEN );
 
         ArrayComparatorTestUtil.assertLesserAndViceVersa(
                 comparator ,
@@ -146,7 +146,7 @@ public class LongArrayComparatorTest
 
         final LongArrayComparator comparator =
                 new LongArrayComparator(
-                        Nulls.FORBIDDEN );
+                        HandleNullAs.FORBIDDEN );
 
         ArrayComparatorTestUtil.assertLesserAndViceVersa(
                 comparator ,
@@ -165,7 +165,7 @@ public class LongArrayComparatorTest
 
         final LongArrayComparator comparator =
                 new LongArrayComparator(
-                        Nulls.LESSER );
+                        HandleNullAs.LESSER );
 
         ArrayComparatorTestUtil.assertLesserAndViceVersa(
                 comparator ,
@@ -184,7 +184,7 @@ public class LongArrayComparatorTest
 
         final LongArrayComparator comparator =
                 new LongArrayComparator(
-                        Nulls.LESSER );
+                        HandleNullAs.LESSER );
 
         ArrayComparatorTestUtil.assertGreaterAndViceVersa(
                 comparator ,
@@ -203,7 +203,7 @@ public class LongArrayComparatorTest
 
         final LongArrayComparator comparator =
                 new LongArrayComparator(
-                        Nulls.GREATER );
+                        HandleNullAs.GREATER );
 
         ArrayComparatorTestUtil.assertLesserAndViceVersa(
                 comparator ,
@@ -222,7 +222,7 @@ public class LongArrayComparatorTest
 
         final LongArrayComparator comparator =
                 new LongArrayComparator(
-                        Nulls.GREATER );
+                        HandleNullAs.GREATER );
 
         ArrayComparatorTestUtil.assertGreaterAndViceVersa(
                 comparator ,
@@ -241,7 +241,7 @@ public class LongArrayComparatorTest
 
         final LongArrayComparator comparator =
                 new LongArrayComparator(
-                        Nulls.FORBIDDEN );
+                        HandleNullAs.FORBIDDEN );
 
         comparator.compare(
                 arr1 ,
@@ -259,7 +259,7 @@ public class LongArrayComparatorTest
 
         final LongArrayComparator comparator =
                 new LongArrayComparator(
-                        Nulls.FORBIDDEN );
+                        HandleNullAs.FORBIDDEN );
 
         comparator.compare(
                 arr1 ,
@@ -277,7 +277,7 @@ public class LongArrayComparatorTest
 
         final LongArrayComparator comparator =
                 new LongArrayComparator(
-                        Nulls.FORBIDDEN );
+                        HandleNullAs.FORBIDDEN );
 
         comparator.compare(
                 arr1 ,
@@ -295,7 +295,7 @@ public class LongArrayComparatorTest
 
         final LongArrayComparator comparator =
                 new LongArrayComparator(
-                        Nulls.FORBIDDEN );
+                        HandleNullAs.FORBIDDEN );
 
         ArrayComparatorTestUtil.assertLesserAndViceVersa(
                 comparator ,
@@ -314,7 +314,7 @@ public class LongArrayComparatorTest
 
         final LongArrayComparator comparator =
                 new LongArrayComparator(
-                        Nulls.FORBIDDEN );
+                        HandleNullAs.FORBIDDEN );
 
         ArrayComparatorTestUtil.assertLesserAndViceVersa(
                 comparator ,
@@ -332,7 +332,7 @@ public class LongArrayComparatorTest
 
         final LongArrayComparator comparator =
                 new LongArrayComparator(
-                        Nulls.FORBIDDEN );
+                        HandleNullAs.FORBIDDEN );
 
         Arrays.sort(
                 arr ,
@@ -357,7 +357,7 @@ public class LongArrayComparatorTest
     {
         final LongArrayComparator comparator =
                 new LongArrayComparator(
-                        Nulls.FORBIDDEN );
+                        HandleNullAs.FORBIDDEN );
 
         Assert.assertEquals(
                 //expected

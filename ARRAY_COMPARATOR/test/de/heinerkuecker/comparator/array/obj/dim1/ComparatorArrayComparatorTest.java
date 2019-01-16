@@ -7,7 +7,7 @@ import org.junit.Assert;
 import org.junit.Test;
 
 import de.heinerkuecker.comparator.array.ArrayComparatorTestUtil;
-import de.heinerkuecker.comparator.array.Nulls;
+import de.heinerkuecker.comparator.array.HandleNullAs;
 
 /**
  * JUnit4 test case for class {@link ComparatorArrayComparator}.
@@ -24,8 +24,8 @@ public class ComparatorArrayComparatorTest
     {
         final ComparatorArrayComparator<String> comparator =
                 new ComparatorArrayComparator<>(
-                        Nulls.FORBIDDEN ,
-                        Nulls.FORBIDDEN ,
+                        HandleNullAs.FORBIDDEN ,
+                        HandleNullAs.FORBIDDEN ,
                         Comparator.<String>naturalOrder() );
 
         Assert.assertNotNull(
@@ -41,7 +41,7 @@ public class ComparatorArrayComparatorTest
         new ComparatorArrayComparator<>(
                 // arrayNulls
                 null ,
-                Nulls.FORBIDDEN ,
+                HandleNullAs.FORBIDDEN ,
                 Comparator.<String>naturalOrder() );
     }
 
@@ -52,7 +52,7 @@ public class ComparatorArrayComparatorTest
     public void testComparableArrayComparator_elementNulls_is_null()
     {
         new ComparatorArrayComparator<>(
-                Nulls.FORBIDDEN ,
+                HandleNullAs.FORBIDDEN ,
                 // elementNulls
                 null ,
                 Comparator.<String>naturalOrder() );
@@ -65,8 +65,8 @@ public class ComparatorArrayComparatorTest
     public void testComparableArrayComparator_Comparator_is_null()
     {
         new ComparatorArrayComparator<>(
-                Nulls.FORBIDDEN ,
-                Nulls.FORBIDDEN ,
+                HandleNullAs.FORBIDDEN ,
+                HandleNullAs.FORBIDDEN ,
                 // comparator
                 null );
     }
@@ -82,8 +82,8 @@ public class ComparatorArrayComparatorTest
 
         final ComparatorArrayComparator<String> comparator =
                 new ComparatorArrayComparator<>(
-                        Nulls.FORBIDDEN ,
-                        Nulls.FORBIDDEN ,
+                        HandleNullAs.FORBIDDEN ,
+                        HandleNullAs.FORBIDDEN ,
                         Comparator.<String>naturalOrder() );
 
         ArrayComparatorTestUtil.assertEqualAndViceVersa(
@@ -103,8 +103,8 @@ public class ComparatorArrayComparatorTest
 
         final ComparatorArrayComparator<String> comparator =
                 new ComparatorArrayComparator<>(
-                        Nulls.FORBIDDEN ,
-                        Nulls.FORBIDDEN ,
+                        HandleNullAs.FORBIDDEN ,
+                        HandleNullAs.FORBIDDEN ,
                         Comparator.<String>naturalOrder() );
 
         ArrayComparatorTestUtil.assertLesserAndViceVersa(
@@ -124,8 +124,8 @@ public class ComparatorArrayComparatorTest
 
         final ComparatorArrayComparator<String> comparator =
                 new ComparatorArrayComparator<>(
-                        Nulls.FORBIDDEN ,
-                        Nulls.FORBIDDEN ,
+                        HandleNullAs.FORBIDDEN ,
+                        HandleNullAs.FORBIDDEN ,
                         Comparator.<String>naturalOrder() );
 
         ArrayComparatorTestUtil.assertGreaterAndViceVersa(
@@ -145,8 +145,8 @@ public class ComparatorArrayComparatorTest
 
         final ComparatorArrayComparator<String> comparator =
                 new ComparatorArrayComparator<>(
-                        Nulls.FORBIDDEN ,
-                        Nulls.FORBIDDEN ,
+                        HandleNullAs.FORBIDDEN ,
+                        HandleNullAs.FORBIDDEN ,
                         Comparator.<String>naturalOrder() );
 
         ArrayComparatorTestUtil.assertEqualAndViceVersa(
@@ -166,8 +166,8 @@ public class ComparatorArrayComparatorTest
 
         final ComparatorArrayComparator<String> comparator =
                 new ComparatorArrayComparator<>(
-                        Nulls.FORBIDDEN ,
-                        Nulls.FORBIDDEN ,
+                        HandleNullAs.FORBIDDEN ,
+                        HandleNullAs.FORBIDDEN ,
                         Comparator.<String>naturalOrder() );
 
         ArrayComparatorTestUtil.assertLesserAndViceVersa(
@@ -187,8 +187,8 @@ public class ComparatorArrayComparatorTest
 
         final ComparatorArrayComparator<String> comparator =
                 new ComparatorArrayComparator<>(
-                        Nulls.FORBIDDEN ,
-                        Nulls.FORBIDDEN ,
+                        HandleNullAs.FORBIDDEN ,
+                        HandleNullAs.FORBIDDEN ,
                         Comparator.<String>naturalOrder() );
 
         ArrayComparatorTestUtil.assertLesserAndViceVersa(
@@ -208,8 +208,8 @@ public class ComparatorArrayComparatorTest
 
         final ComparatorArrayComparator<String> comparator =
                 new ComparatorArrayComparator<>(
-                        Nulls.LESSER ,
-                        Nulls.FORBIDDEN ,
+                        HandleNullAs.LESSER ,
+                        HandleNullAs.FORBIDDEN ,
                         Comparator.<String>naturalOrder() );
 
         ArrayComparatorTestUtil.assertLesserAndViceVersa(
@@ -229,8 +229,8 @@ public class ComparatorArrayComparatorTest
 
         final ComparatorArrayComparator<String> comparator =
                 new ComparatorArrayComparator<>(
-                        Nulls.LESSER ,
-                        Nulls.FORBIDDEN ,
+                        HandleNullAs.LESSER ,
+                        HandleNullAs.FORBIDDEN ,
                         Comparator.<String>naturalOrder() );
 
         ArrayComparatorTestUtil.assertGreaterAndViceVersa(
@@ -250,8 +250,8 @@ public class ComparatorArrayComparatorTest
 
         final ComparatorArrayComparator<String> comparator =
                 new ComparatorArrayComparator<>(
-                        Nulls.GREATER ,
-                        Nulls.FORBIDDEN ,
+                        HandleNullAs.GREATER ,
+                        HandleNullAs.FORBIDDEN ,
                         Comparator.<String>naturalOrder() );
 
         ArrayComparatorTestUtil.assertLesserAndViceVersa(
@@ -271,8 +271,8 @@ public class ComparatorArrayComparatorTest
 
         final ComparatorArrayComparator<String> comparator =
                 new ComparatorArrayComparator<>(
-                        Nulls.GREATER ,
-                        Nulls.FORBIDDEN ,
+                        HandleNullAs.GREATER ,
+                        HandleNullAs.FORBIDDEN ,
                         Comparator.<String>naturalOrder() );
 
         ArrayComparatorTestUtil.assertGreaterAndViceVersa(
@@ -292,8 +292,8 @@ public class ComparatorArrayComparatorTest
 
         final ComparatorArrayComparator<String> comparator =
                 new ComparatorArrayComparator<>(
-                        Nulls.FORBIDDEN ,
-                        Nulls.LESSER ,
+                        HandleNullAs.FORBIDDEN ,
+                        HandleNullAs.LESSER ,
                         Comparator.<String>naturalOrder() );
 
         ArrayComparatorTestUtil.assertLesserAndViceVersa(
@@ -313,8 +313,8 @@ public class ComparatorArrayComparatorTest
 
         final ComparatorArrayComparator<String> comparator =
                 new ComparatorArrayComparator<>(
-                        Nulls.FORBIDDEN ,
-                        Nulls.LESSER ,
+                        HandleNullAs.FORBIDDEN ,
+                        HandleNullAs.LESSER ,
                         Comparator.<String>naturalOrder() );
 
         ArrayComparatorTestUtil.assertLesserAndViceVersa(
@@ -334,8 +334,8 @@ public class ComparatorArrayComparatorTest
 
         final ComparatorArrayComparator<String> comparator =
                 new ComparatorArrayComparator<>(
-                        Nulls.FORBIDDEN ,
-                        Nulls.LESSER ,
+                        HandleNullAs.FORBIDDEN ,
+                        HandleNullAs.LESSER ,
                         Comparator.<String>naturalOrder() );
 
         ArrayComparatorTestUtil.assertGreaterAndViceVersa(
@@ -355,8 +355,8 @@ public class ComparatorArrayComparatorTest
 
         final ComparatorArrayComparator<String> comparator =
                 new ComparatorArrayComparator<>(
-                        Nulls.FORBIDDEN ,
-                        Nulls.LESSER ,
+                        HandleNullAs.FORBIDDEN ,
+                        HandleNullAs.LESSER ,
                         Comparator.<String>naturalOrder() );
 
         ArrayComparatorTestUtil.assertGreaterAndViceVersa(
@@ -376,8 +376,8 @@ public class ComparatorArrayComparatorTest
 
         final ComparatorArrayComparator<String> comparator =
                 new ComparatorArrayComparator<>(
-                        Nulls.FORBIDDEN ,
-                        Nulls.GREATER ,
+                        HandleNullAs.FORBIDDEN ,
+                        HandleNullAs.GREATER ,
                         Comparator.<String>naturalOrder() );
 
         ArrayComparatorTestUtil.assertLesserAndViceVersa(
@@ -397,8 +397,8 @@ public class ComparatorArrayComparatorTest
 
         final ComparatorArrayComparator<String> comparator =
                 new ComparatorArrayComparator<>(
-                        Nulls.FORBIDDEN ,
-                        Nulls.GREATER ,
+                        HandleNullAs.FORBIDDEN ,
+                        HandleNullAs.GREATER ,
                         Comparator.<String>naturalOrder() );
 
         ArrayComparatorTestUtil.assertGreaterAndViceVersa(
@@ -418,8 +418,8 @@ public class ComparatorArrayComparatorTest
 
         final ComparatorArrayComparator<String> comparator =
                 new ComparatorArrayComparator<>(
-                        Nulls.FORBIDDEN ,
-                        Nulls.GREATER ,
+                        HandleNullAs.FORBIDDEN ,
+                        HandleNullAs.GREATER ,
                         Comparator.<String>naturalOrder() );
 
         ArrayComparatorTestUtil.assertLesserAndViceVersa(
@@ -439,8 +439,8 @@ public class ComparatorArrayComparatorTest
 
         final ComparatorArrayComparator<String> comparator =
                 new ComparatorArrayComparator<>(
-                        Nulls.FORBIDDEN ,
-                        Nulls.GREATER ,
+                        HandleNullAs.FORBIDDEN ,
+                        HandleNullAs.GREATER ,
                         Comparator.<String>naturalOrder() );
 
         ArrayComparatorTestUtil.assertGreaterAndViceVersa(
@@ -460,8 +460,8 @@ public class ComparatorArrayComparatorTest
 
         final ComparatorArrayComparator<String> comparator =
                 new ComparatorArrayComparator<>(
-                        Nulls.FORBIDDEN ,
-                        Nulls.LESSER ,
+                        HandleNullAs.FORBIDDEN ,
+                        HandleNullAs.LESSER ,
                         Comparator.<String>naturalOrder() );
 
         comparator.compare(
@@ -480,8 +480,8 @@ public class ComparatorArrayComparatorTest
 
         final ComparatorArrayComparator<String> comparator =
                 new ComparatorArrayComparator<>(
-                        Nulls.FORBIDDEN ,
-                        Nulls.LESSER ,
+                        HandleNullAs.FORBIDDEN ,
+                        HandleNullAs.LESSER ,
                         Comparator.<String>naturalOrder() );
 
         comparator.compare(
@@ -500,8 +500,8 @@ public class ComparatorArrayComparatorTest
 
         final ComparatorArrayComparator<String> comparator =
                 new ComparatorArrayComparator<>(
-                        Nulls.FORBIDDEN ,
-                        Nulls.LESSER ,
+                        HandleNullAs.FORBIDDEN ,
+                        HandleNullAs.LESSER ,
                         Comparator.<String>naturalOrder() );
 
         comparator.compare(
@@ -520,8 +520,8 @@ public class ComparatorArrayComparatorTest
 
         final ComparatorArrayComparator<String> comparator =
                 new ComparatorArrayComparator<>(
-                        Nulls.LESSER ,
-                        Nulls.FORBIDDEN ,
+                        HandleNullAs.LESSER ,
+                        HandleNullAs.FORBIDDEN ,
                         Comparator.<String>naturalOrder() );
 
         comparator.compare(
@@ -540,8 +540,8 @@ public class ComparatorArrayComparatorTest
 
         final ComparatorArrayComparator<String> comparator =
                 new ComparatorArrayComparator<>(
-                        Nulls.LESSER ,
-                        Nulls.FORBIDDEN ,
+                        HandleNullAs.LESSER ,
+                        HandleNullAs.FORBIDDEN ,
                         Comparator.<String>naturalOrder() );
 
         comparator.compare(
@@ -560,8 +560,8 @@ public class ComparatorArrayComparatorTest
 
         final ComparatorArrayComparator<String> comparator =
                 new ComparatorArrayComparator<>(
-                        Nulls.FORBIDDEN ,
-                        Nulls.FORBIDDEN ,
+                        HandleNullAs.FORBIDDEN ,
+                        HandleNullAs.FORBIDDEN ,
                         Comparator.<String>naturalOrder() );
 
         ArrayComparatorTestUtil.assertLesserAndViceVersa(
@@ -581,8 +581,8 @@ public class ComparatorArrayComparatorTest
 
         final ComparatorArrayComparator<String> comparator =
                 new ComparatorArrayComparator<>(
-                        Nulls.FORBIDDEN ,
-                        Nulls.FORBIDDEN ,
+                        HandleNullAs.FORBIDDEN ,
+                        HandleNullAs.FORBIDDEN ,
                         Comparator.<String>naturalOrder() );
 
         ArrayComparatorTestUtil.assertLesserAndViceVersa(
@@ -601,8 +601,8 @@ public class ComparatorArrayComparatorTest
 
         final ComparatorArrayComparator<String> comparator =
                 new ComparatorArrayComparator<>(
-                        Nulls.FORBIDDEN ,
-                        Nulls.FORBIDDEN ,
+                        HandleNullAs.FORBIDDEN ,
+                        HandleNullAs.FORBIDDEN ,
                         Comparator.<String>naturalOrder() );
 
         Arrays.sort(
@@ -628,8 +628,8 @@ public class ComparatorArrayComparatorTest
     {
         final ComparatorArrayComparator<String> comparator =
                 new ComparatorArrayComparator<>(
-                        Nulls.FORBIDDEN ,
-                        Nulls.FORBIDDEN ,
+                        HandleNullAs.FORBIDDEN ,
+                        HandleNullAs.FORBIDDEN ,
                         Comparator.<String>naturalOrder() );
 
         Assert.assertEquals(

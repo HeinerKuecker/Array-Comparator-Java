@@ -8,7 +8,7 @@ import org.junit.Assert;
 import org.junit.Test;
 
 /**
- * @author Heiner Kücker
+ * @author Heiner K&uuml;cker
  */
 public class CartesianProductIteratorTest
 {

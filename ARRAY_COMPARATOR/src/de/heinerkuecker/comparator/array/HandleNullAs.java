@@ -8,7 +8,7 @@ package de.heinerkuecker.comparator.array;
  *
  * @author Heiner K&uuml;cker
  */
-public enum Nulls
+public enum HandleNullAs
 {
     /**
      * Handle null arrays or null elements

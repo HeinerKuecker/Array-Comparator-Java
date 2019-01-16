@@ -2,7 +2,7 @@ package de.heinerkuecker.comparator.array.prm.dim3;
 
 import java.util.Comparator;
 
-import de.heinerkuecker.comparator.array.Nulls;
+import de.heinerkuecker.comparator.array.HandleNullAs;
 import de.heinerkuecker.comparator.array.obj.dim1.ComparatorArrayComparator;
 import de.heinerkuecker.comparator.array.prm.dim2.Dim2FloatArrayComparator;
 
@@ -26,9 +26,9 @@ extends ComparatorArrayComparator<float[][]>
      * @param sub2ArrayNulls Control handling of null sub sub arrays to sort
      */
     public Dim3FloatArrayComparator(
-            final Nulls arrayNulls ,
-            final Nulls sub1ArrayNulls ,
-            final Nulls sub2ArrayNulls )
+            final HandleNullAs arrayNulls ,
+            final HandleNullAs sub1ArrayNulls ,
+            final HandleNullAs sub2ArrayNulls )
     {
         // TODO test
         // TODO null handling params correct???
@@ -37,7 +37,7 @@ extends ComparatorArrayComparator<float[][]>
                 sub1ArrayNulls ,
                 new Dim2FloatArrayComparator(
                         // null arrays already handled by one level higher
-                        Nulls.FORBIDDEN ,
+                        HandleNullAs.FORBIDDEN ,
                         sub2ArrayNulls ) );
     }
 

@@ -3,7 +3,7 @@ package de.heinerkuecker.comparator.array.prm.dim1;
 import java.util.Comparator;
 import java.util.Objects;
 
-import de.heinerkuecker.comparator.array.Nulls;
+import de.heinerkuecker.comparator.array.HandleNullAs;
 
 /**
  * {@link Comparator} for arrays
@@ -33,7 +33,7 @@ implements Comparator<float[]>
     /**
      * Control handling of null arrays to sort.
      */
-    public final Nulls arrayNulls;
+    public final HandleNullAs arrayNulls;
 
     /**
      * Constructor.
@@ -41,7 +41,7 @@ implements Comparator<float[]>
      * @param arrayNulls Control handling of null arrays to sort
      */
     public FloatArrayComparator(
-            final Nulls arrayNulls )
+            final HandleNullAs arrayNulls )
     {
         this.arrayNulls =
                 Objects.requireNonNull(

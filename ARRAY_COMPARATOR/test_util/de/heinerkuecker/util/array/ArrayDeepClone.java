@@ -3,7 +3,7 @@ package de.heinerkuecker.util.array;
 /**
  * Util class to clone multi-dimensional arrays.
  *
- * @author Heiner Kücker
+ * @author Heiner K&uuml;cker
  */
 public final class ArrayDeepClone
 {

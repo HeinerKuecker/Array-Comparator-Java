@@ -7,7 +7,7 @@ The Unit tests run in JUnit4.
 
 # Null handling:
 
-The Enum [Nulls](https://github.com/HeinerKuecker/Array-Comparator-Java/blob/master/ARRAY_COMPARATOR/src/de/heinerkuecker/comparator/array/Nulls.java "/ARRAY_COMPARATOR/src/de/heinerkuecker/comparator/array/Nulls.java") controls the handling of null arrays or null elements.
+The Enum [HandleNullAs](https://github.com/HeinerKuecker/Array-Comparator-Java/blob/master/ARRAY_COMPARATOR/src/de/heinerkuecker/comparator/array/HandleNullAs.java "/ARRAY_COMPARATOR/src/de/heinerkuecker/comparator/array/HandleNullAs.java") controls the handling of null arrays or null elements.
 
 **LESSER**: Handle null arrays or null elements as lesser than existing arrays or elements.
 

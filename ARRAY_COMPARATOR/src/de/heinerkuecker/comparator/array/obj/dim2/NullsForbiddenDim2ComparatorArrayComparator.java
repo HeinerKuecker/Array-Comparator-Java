@@ -2,7 +2,7 @@ package de.heinerkuecker.comparator.array.obj.dim2;
 
 import java.util.Comparator;
 
-import de.heinerkuecker.comparator.array.Nulls;
+import de.heinerkuecker.comparator.array.HandleNullAs;
 import de.heinerkuecker.comparator.array.obj.dim1.ComparatorArrayComparator;
 
 /**
@@ -33,11 +33,11 @@ extends ComparatorArrayComparator<T[]>
             final Comparator<? super T> comparator )
     {
         super(
-                Nulls.FORBIDDEN ,
-                Nulls.FORBIDDEN ,
+                HandleNullAs.FORBIDDEN ,
+                HandleNullAs.FORBIDDEN ,
                 ComparatorArrayComparator.<T>newComparatorArrayComparator(
-                        Nulls.FORBIDDEN ,
-                        Nulls.FORBIDDEN ,
+                        HandleNullAs.FORBIDDEN ,
+                        HandleNullAs.FORBIDDEN ,
                         comparator ) );
     }
 

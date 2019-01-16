@@ -2,7 +2,7 @@ package de.heinerkuecker.comparator.array.obj.dim4;
 
 import java.util.Comparator;
 
-import de.heinerkuecker.comparator.array.Nulls;
+import de.heinerkuecker.comparator.array.HandleNullAs;
 import de.heinerkuecker.comparator.array.obj.dim1.ComparatorArrayComparator;
 import de.heinerkuecker.comparator.array.obj.dim2.Dim2ComparatorArrayComparator;
 import de.heinerkuecker.comparator.array.obj.dim3.Dim3ComparatorArrayComparator;
@@ -32,11 +32,11 @@ extends ComparatorArrayComparator<T[][][]>
      * @param comparator Comparator to compare array elements
      */
     public Dim4ComparatorArrayComparator(
-            final Nulls arrayNulls ,
-            final Nulls sub1ArrayNulls ,
-            final Nulls sub2ArrayNulls ,
-            final Nulls sub3ArrayNulls ,
-            final Nulls elementNulls ,
+            final HandleNullAs arrayNulls ,
+            final HandleNullAs sub1ArrayNulls ,
+            final HandleNullAs sub2ArrayNulls ,
+            final HandleNullAs sub3ArrayNulls ,
+            final HandleNullAs elementNulls ,
             final Comparator<? super T> comparator )
     {
         // TODO test
@@ -46,7 +46,7 @@ extends ComparatorArrayComparator<T[][][]>
                 sub1ArrayNulls ,
                 new Dim3ComparatorArrayComparator<T>(
                         // null arrays already handled by one level higher
-                        Nulls.FORBIDDEN ,
+                        HandleNullAs.FORBIDDEN ,
                         sub2ArrayNulls ,
                         sub3ArrayNulls ,
                         elementNulls ,

@@ -2,7 +2,7 @@ package de.heinerkuecker.comparator.array.obj.dim2;
 
 import java.util.Comparator;
 
-import de.heinerkuecker.comparator.array.Nulls;
+import de.heinerkuecker.comparator.array.HandleNullAs;
 import de.heinerkuecker.comparator.array.obj.dim1.ComparableArrayComparator;
 import de.heinerkuecker.comparator.array.obj.dim1.ComparatorArrayComparator;
 
@@ -30,12 +30,12 @@ extends ComparatorArrayComparator<T[]>
     public NullsGreaterDim2ComparableArrayComparator()
     {
         super(
-                Nulls.GREATER ,
-                Nulls.GREATER ,
+                HandleNullAs.GREATER ,
+                HandleNullAs.GREATER ,
                 ComparableArrayComparator.<T>newComparableArrayComparator(
                         // null arrays already handled by one level higher
-                        Nulls.FORBIDDEN ,
-                        Nulls.GREATER ) );
+                        HandleNullAs.FORBIDDEN ,
+                        HandleNullAs.GREATER ) );
     }
 
     /**

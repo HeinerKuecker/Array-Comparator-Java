@@ -6,7 +6,7 @@ import org.junit.Test;
 /**
  * JUnit4 test case for class {@link ArrayDeepClone}
  *
- * @author Heiner Kücker
+ * @author Heiner K&uuml;cker
  */
 public class ArrayDeepCloneTest
 {
